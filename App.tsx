@@ -4,7 +4,6 @@ import { Audio } from 'expo-av';
 import { useFonts, Jua_400Regular } from '@expo-google-fonts/jua';
 import { NanumGothic_400Regular, NanumGothic_700Bold, NanumGothic_800ExtraBold } from '@expo-google-fonts/nanum-gothic';
 import { GowunDodum_400Regular } from '@expo-google-fonts/gowun-dodum';
-import { RefreshCw } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import StartScreen from './components/StartScreen';
@@ -13,7 +12,6 @@ import DetailScreen from './components/DetailScreen';
 import { INITIAL_DATA } from './constants/constants';
 import { getDailyManna } from './services/mannaService';
 import { ScreenState, MannaData } from './types/types';
-// import { fetchDailyManna } from './services/geminiService';
 
 export default function App() {
     const [screen, setScreen] = useState<ScreenState>(ScreenState.START);
@@ -134,24 +132,8 @@ export default function App() {
         else setScreen(ScreenState.START);
     };
 
-    const handleRefresh = async () => {
-        setLoading(true);
-        try {
-            // TEMPORARILY DISABLED GEMINI API DUE TO KEY ERROR
-            // const newData = await fetchDailyManna();
 
-            // Just reload local data for now
-            const newData = await getDailyManna();
-            if (newData) {
-                setMannaData(newData);
-            }
-        } catch (error) {
-            console.error("Refresh failed:", error);
-            // Optionally show an alert to the user, or just log it
-        } finally {
-            setLoading(false);
-        }
-    };
+
 
     const toggleMute = () => {
         setIsMuted(!isMuted);
@@ -211,15 +193,6 @@ export default function App() {
                         />
                     )}
 
-                    <View style={styles.refreshButtonContainer}>
-                        <TouchableOpacity
-                            onPress={handleRefresh}
-                            disabled={loading}
-                            style={styles.refreshButton}
-                        >
-                            <RefreshCw size={24} color={loading ? "#888" : "#000"} />
-                        </TouchableOpacity>
-                    </View>
                 </View>
             </LinearGradient>
         </View>
@@ -253,17 +226,5 @@ const styles = StyleSheet.create({
     screenContainer: {
         flex: 1,
         overflow: 'hidden',
-    },
-    refreshButtonContainer: {
-        position: 'absolute',
-        bottom: 30,
-        right: 30,
-        zIndex: 999,
-        opacity: 0.3,
-    },
-    refreshButton: {
-        padding: 10,
-        backgroundColor: 'rgba(255,255,255,0.5)',
-        borderRadius: 20,
     },
 });

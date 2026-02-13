@@ -115,15 +115,17 @@ const styles = StyleSheet.create({
     iconButton: {
         width: 48,
         height: 48,
-        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        backgroundColor: 'rgba(255, 255, 255, 0.95)', // Increased opacity
         borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1.5,
+        borderColor: 'rgba(255, 255, 255, 0.8)',
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
+        shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.1,
-        shadowRadius: 3,
-        elevation: 2,
+        shadowRadius: 5,
+        elevation: 0, // Removed gray Android shadow
     },
     langText: {
         fontSize: 14,

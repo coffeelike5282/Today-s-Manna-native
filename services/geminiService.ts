@@ -13,9 +13,14 @@ const MANNA_SCHEMA = {
         verseText: { type: Type.STRING, description: "The verse broken into newlines for display, Korean" },
         fullVerse: { type: Type.STRING, description: "The full verse text in Korean" },
         interpretation: { type: Type.STRING, description: "A heartwarming interpretation of the verse, Korean" },
-        mission: { type: Type.STRING, description: "A simple, actionable daily mission, quote style, Korean" },
+        mission: { type: Type.STRING, description: "A simple, actionable daily mission, Korean" },
+        verseRefEn: { type: Type.STRING, description: "Bible reference in English" },
+        verseTextEn: { type: Type.STRING, description: "Bible verse in English, broken into newlines" },
+        fullVerseEn: { type: Type.STRING, description: "Full bible verse in English" },
+        interpretationEn: { type: Type.STRING, description: "Interpretation in English" },
+        missionEn: { type: Type.STRING, description: "Daily mission in English" },
     },
-    required: ["verseRef", "verseText", "fullVerse", "interpretation", "mission"],
+    required: ["verseRef", "verseText", "fullVerse", "interpretation", "mission", "verseRefEn", "verseTextEn", "fullVerseEn", "interpretationEn", "missionEn"],
 };
 
 export const fetchDailyManna = async (): Promise<MannaData | null> => {
@@ -27,7 +32,7 @@ export const fetchDailyManna = async (): Promise<MannaData | null> => {
     try {
         const response = await ai.models.generateContent({
             model: "gemini-2.0-flash",
-            contents: "Generate a daily manna for a Christian meditation app. The tone should be cute, pastel, encouraging, and warm. Include a Bible verse, a short interpretation, and a simple mission.",
+            contents: "Generate a daily manna for a Christian meditation app. The tone should be cute, pastel, encouraging, and warm. Provide the content in BOTH Korean and English based on the schema.",
             config: {
                 responseMimeType: "application/json",
                 responseSchema: MANNA_SCHEMA,

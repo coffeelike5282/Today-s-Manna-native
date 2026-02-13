@@ -17,16 +17,14 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
             <View style={styles.backgroundOverlay}>
                 <View style={styles.header}>
                     <View style={styles.headerRow}>
-                        <View style={styles.headerTitleContainer}>
-                            <TouchableOpacity onPress={toggleLanguage} style={styles.headerIconBox}>
-                                <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#8D6E63' }}>
-                                    {language === 'ko' ? 'EN' : '한글'}
-                                </Text>
-                            </TouchableOpacity>
-                            <Text style={styles.headerTitle}>
-                                {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
+                        <TouchableOpacity onPress={toggleLanguage} style={styles.headerIconBox}>
+                            <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#8D6E63' }}>
+                                {language === 'ko' ? 'EN' : '한글'}
                             </Text>
-                        </View>
+                        </TouchableOpacity>
+                        <Text style={styles.headerTitle}>
+                            {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
+                        </Text>
                         <TouchableOpacity onPress={toggleMute} style={styles.muteButton}>
                             {isMuted ? <VolumeX color="gray" size={20} /> : <Volume2 color="#5D4037" size={20} />}
                         </TouchableOpacity>
@@ -104,23 +102,27 @@ const styles = StyleSheet.create({
     headerRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center', // Centered title
         width: '100%',
-    },
-    headerTitleContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 12,
+        position: 'relative',
     },
     headerIconBox: {
+        position: 'absolute',
+        left: 0,
         width: 44,
         height: 44,
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
         borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 10, // Increased elevation
-        zIndex: 100, // Ensure it's on top
+        borderWidth: 1.5,
+        borderColor: 'rgba(255, 255, 255, 0.8)',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 0,
+        zIndex: 100,
     },
     headerTitle: {
         fontSize: 26,
@@ -128,17 +130,21 @@ const styles = StyleSheet.create({
         color: '#333',
     },
     muteButton: {
+        position: 'absolute',
+        right: 0,
         width: 40,
         height: 40,
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
         borderRadius: 14,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.5)',
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.1,
-        shadowRadius: 2,
-        elevation: 1,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.08,
+        shadowRadius: 3,
+        elevation: 0,
     },
     sheet: {
         flex: 1,

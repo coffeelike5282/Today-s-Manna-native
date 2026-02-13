@@ -100,7 +100,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                         showsVerticalScrollIndicator={false}
                     >
                         {/* Primary Verse (Based on Language Mode) */}
-                        {primaryVerseText.split('\n').map((line, i) => {
+                        {(primaryVerseText || "").split('\n').map((line, i) => {
                             const isHighlight = language === 'ko' && (line.includes("합력하여") || line.includes("기쁨"));
                             return (
                                 <Text key={`primary-${i}`} style={[styles.verseLine, isHighlight && styles.highlightText]}>
@@ -165,18 +165,18 @@ const styles = StyleSheet.create({
         left: 0,
         width: 44,
         height: 44,
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
         borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 2,
-        borderColor: 'rgba(165, 214, 167, 0.2)', // primary-20
+        borderWidth: 1.5,
+        borderColor: 'rgba(255, 255, 255, 0.8)',
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
+        shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 10, // Increased elevation
-        zIndex: 100, // Ensure it's on top
+        shadowRadius: 5,
+        elevation: 0,
+        zIndex: 100,
     },
     headerTitle: {
         fontSize: 28,
@@ -188,12 +188,17 @@ const styles = StyleSheet.create({
         right: 0,
         width: 40,
         height: 40,
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
         borderRadius: 14,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 1.5,
-        borderColor: '#f0f0f0',
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.5)',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.08,
+        shadowRadius: 3,
+        elevation: 0,
     },
     headerDateBadge: {
         paddingHorizontal: 12,
