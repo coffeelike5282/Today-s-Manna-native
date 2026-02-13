@@ -2,11 +2,11 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { ScreenProps } from '../types/types';
 import Mascot from './Mascot';
-import { Volume2, VolumeX, Cloud, Star, Heart } from 'lucide-react-native';
+import { Volume2, VolumeX, Cloud, Star, Heart, Languages } from 'lucide-react-native';
 
 const { width, height } = Dimensions.get('window');
 
-const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute }) => {
+const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute, language = 'ko', toggleLanguage }) => {
     return (
         <View style={styles.container}>
             {/* Background Floating Elements - Positioned absolutely */}
@@ -29,11 +29,21 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute }) => 
                 <Star size={30} color="#FFE082" fill="#FFE082" />
             </View>
 
+            {/* Language Button */}
+            <View style={styles.langButtonContainer}>
+                <TouchableOpacity
+                    onPress={toggleLanguage}
+                    style={styles.iconButton}
+                >
+                    <Text style={styles.langText}>{language === 'ko' ? 'EN' : '한글'}</Text>
+                </TouchableOpacity>
+            </View>
+
             {/* Mute Button */}
             <View style={styles.muteButtonContainer}>
                 <TouchableOpacity
                     onPress={toggleMute}
-                    style={styles.muteButton}
+                    style={styles.iconButton}
                 >
                     {isMuted ? (
                         <VolumeX color="gray" size={24} />
@@ -45,11 +55,17 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute }) => 
 
             {/* Main Content */}
             <View style={styles.mainContent}>
-                <Text style={styles.title}>오늘의 만나</Text>
+                <Text style={styles.title}>
+                    {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
+                </Text>
 
                 <View style={styles.dateBadge}>
                     <Text style={styles.dateText}>
-                        {new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        {new Date().toLocaleDateString(language === 'ko' ? 'ko-KR' : 'en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })}
                     </Text>
                 </View>
 
@@ -57,7 +73,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute }) => 
 
                 <TouchableOpacity onPress={onNext} style={styles.startButton}>
                     <Text style={styles.startButtonText}>
-                        터치하여 말씀 시작하기
+                        {language === 'ko' ? "터치하여 말씀 시작하기" : "Touch to Start"}
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -65,7 +81,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute }) => 
             {/* Footer */}
             <View style={styles.footer}>
                 <Text style={styles.footerText}>
-                    이어폰 착용을 권장합니다
+                    {language === 'ko' ? "이어폰 착용을 권장합니다" : "Earphones Recommended"}
                 </Text>
             </View>
         </View>
@@ -83,13 +99,20 @@ const styles = StyleSheet.create({
         position: 'absolute',
         opacity: 0.6,
     },
+    langButtonContainer: {
+        position: 'absolute',
+        top: 60,
+        right: 90, // Positioned to the left of mute button
+        zIndex: 100, // Ensure it's on top
+        elevation: 10,
+    },
     muteButtonContainer: {
         position: 'absolute',
         top: 60,
         right: 30,
         zIndex: 50,
     },
-    muteButton: {
+    iconButton: {
         width: 48,
         height: 48,
         backgroundColor: 'rgba(255, 255, 255, 0.5)',
@@ -101,6 +124,12 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 3,
         elevation: 2,
+    },
+    langText: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#5D4037',
+        fontFamily: 'NanumGothic_700Bold',
     },
     mainContent: {
         alignItems: 'center',

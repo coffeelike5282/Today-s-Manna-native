@@ -1,11 +1,16 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Dimensions } from 'react-native';
 import { ScreenProps } from '../types/types';
-import { Croissant, Sparkles, ClipboardCheck, Volume2, VolumeX } from 'lucide-react-native';
+import { Sparkles, ClipboardCheck, Volume2, VolumeX } from 'lucide-react-native';
 
 const { width, height } = Dimensions.get('window');
 
-const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute }) => {
+const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { } }) => {
+
+    // Select data based on language (fallback to Korean if English missing)
+    const interpretation = language === 'en' ? (data.interpretationEn || data.interpretation) : data.interpretation;
+    const mission = language === 'en' ? (data.missionEn || data.mission) : data.mission;
+
     return (
         <View style={styles.container}>
             {/* Header / Background Overlay */}
@@ -13,10 +18,14 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 <View style={styles.header}>
                     <View style={styles.headerRow}>
                         <View style={styles.headerTitleContainer}>
-                            <View style={styles.headerIconBox}>
-                                <Croissant color="#A5D6A7" size={24} />
-                            </View>
-                            <Text style={styles.headerTitle}>오늘의 만나</Text>
+                            <TouchableOpacity onPress={toggleLanguage} style={styles.headerIconBox}>
+                                <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#8D6E63' }}>
+                                    {language === 'ko' ? 'EN' : '한글'}
+                                </Text>
+                            </TouchableOpacity>
+                            <Text style={styles.headerTitle}>
+                                {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
+                            </Text>
                         </View>
                         <TouchableOpacity onPress={toggleMute} style={styles.muteButton}>
                             {isMuted ? <VolumeX color="gray" size={20} /> : <Volume2 color="#5D4037" size={20} />}
@@ -37,12 +46,14 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                     <View style={styles.section}>
                         <View style={styles.sectionHeader}>
                             <Sparkles color="#8D6E63" size={20} />
-                            <Text style={styles.sectionTitle}>오늘의 해석</Text>
+                            <Text style={styles.sectionTitle}>
+                                {language === 'ko' ? "오늘의 해석" : "Today's Message"}
+                            </Text>
                         </View>
                         <View style={styles.interpretationBox}>
                             <ScrollView showsVerticalScrollIndicator={true}>
                                 <Text style={styles.interpretationText}>
-                                    {data.interpretation}
+                                    {interpretation}
                                 </Text>
                             </ScrollView>
                         </View>
@@ -52,11 +63,13 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                     <View style={styles.missionSection}>
                         <View style={styles.sectionHeader}>
                             <ClipboardCheck color="#8D6E63" size={20} />
-                            <Text style={styles.sectionTitle}>오늘의 미션</Text>
+                            <Text style={styles.sectionTitle}>
+                                {language === 'ko' ? "오늘의 미션" : "Today's Mission"}
+                            </Text>
                         </View>
                         <View style={styles.missionCard}>
                             <Text style={styles.missionText}>
-                                {data.mission}
+                                {mission}
                             </Text>
                         </View>
                     </View>
@@ -65,7 +78,9 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 {/* Complete Button */}
                 <View style={styles.footer}>
                     <TouchableOpacity onPress={onBack} style={styles.completeButton}>
-                        <Text style={styles.completeButtonText}>미션 완료!</Text>
+                        <Text style={styles.completeButtonText}>
+                            {language === 'ko' ? "미션 완료!" : "Mission Complete!"}
+                        </Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -104,6 +119,8 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
+        elevation: 10, // Increased elevation
+        zIndex: 100, // Ensure it's on top
     },
     headerTitle: {
         fontSize: 26,

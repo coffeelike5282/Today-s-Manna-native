@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { View, StatusBar, ActivityIndicator, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, Text, StatusBar, ActivityIndicator, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { Audio } from 'expo-av';
 import { useFonts, Jua_400Regular } from '@expo-google-fonts/jua';
 import { NanumGothic_400Regular, NanumGothic_700Bold, NanumGothic_800ExtraBold } from '@expo-google-fonts/nanum-gothic';
@@ -13,7 +13,7 @@ import DetailScreen from './components/DetailScreen';
 import { INITIAL_DATA } from './constants/constants';
 import { getDailyManna } from './services/mannaService';
 import { ScreenState, MannaData } from './types/types';
-import { fetchDailyManna } from './services/geminiService';
+// import { fetchDailyManna } from './services/geminiService';
 
 export default function App() {
     const [screen, setScreen] = useState<ScreenState>(ScreenState.START);
@@ -21,8 +21,11 @@ export default function App() {
     const [loading, setLoading] = useState(false);
     const [sound, setSound] = useState<Audio.Sound>();
     const [isMuted, setIsMuted] = useState(false);
+    const [language, setLanguage] = useState<'ko' | 'en'>('ko'); // Language State
 
-    const [fontsLoaded] = useFonts({
+    const [fontsLoadedState, setFontsLoadedState] = useState(false);
+
+    const [fontsLoaded, error] = useFonts({
         Jua_400Regular,
         NanumGothic_400Regular,
         NanumGothic_700Bold,
@@ -31,9 +34,48 @@ export default function App() {
     });
 
     useEffect(() => {
+        if (error) {
+            console.error("Font loading error:", error);
+            setFontsLoadedState(true); // Fallback to render without fonts
+        }
+        if (fontsLoaded) {
+            setFontsLoadedState(true);
+        }
+    }, [fontsLoaded, error]);
+
+    // Force load content if fonts take too long (avoid infinite loading screen)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (!fontsLoadedState) {
+                console.warn("Font loading timed out, forcing app render.");
+                setFontsLoadedState(true);
+            }
+        }, 3000); // 3 seconds timeout
+
+        return () => clearTimeout(timer);
+    }, [fontsLoadedState]);
+
+    const isLoading = !fontsLoadedState;
+
+    // ... (rest of useEffects remain the same) ...
+
+    useEffect(() => {
         const loadData = async () => {
-            const data = await getDailyManna();
-            if (data) setMannaData(data);
+            try {
+                // setLoading(true); // Don't block UI with full screen loader, let it render using INITIAL_DATA first if needed
+                console.log("App mounted, fetching daily manna...");
+                const data = await getDailyManna();
+                if (data) {
+                    console.log("Data loaded successfully:", data.verseRef);
+                    setMannaData(data);
+                } else {
+                    console.log("No data returned from service");
+                }
+            } catch (e) {
+                console.error("Failed to load data:", e);
+            } finally {
+                // setLoading(false);
+            }
         };
         loadData();
     }, []);
@@ -44,13 +86,15 @@ export default function App() {
             try {
                 const { sound } = await Audio.Sound.createAsync(
                     require('./assets/bgm.wav'),
-                    { isLooping: true, volume: 0.5 }
+                    { isLooping: true, volume: 0.3 }
                 );
                 currentSound = sound;
                 setSound(sound);
-                await sound.playAsync();
+                if (!isMuted) {
+                    await sound.playAsync();
+                }
             } catch (error) {
-                console.log("Audio load error:", error);
+                console.log("Audio load error (non-critical):", error);
             }
         }
         loadSound();
@@ -92,11 +136,21 @@ export default function App() {
 
     const handleRefresh = async () => {
         setLoading(true);
-        const newData = await fetchDailyManna();
-        if (newData) {
-            setMannaData(newData);
+        try {
+            // TEMPORARILY DISABLED GEMINI API DUE TO KEY ERROR
+            // const newData = await fetchDailyManna();
+
+            // Just reload local data for now
+            const newData = await getDailyManna();
+            if (newData) {
+                setMannaData(newData);
+            }
+        } catch (error) {
+            console.error("Refresh failed:", error);
+            // Optionally show an alert to the user, or just log it
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     const toggleMute = () => {
@@ -104,7 +158,12 @@ export default function App() {
         attemptPlay();
     };
 
-    if (!fontsLoaded) {
+    const toggleLanguage = useCallback(() => {
+        setLanguage(prev => (prev === 'ko' ? 'en' : 'ko'));
+    }, []);
+
+    // RESTORED MAIN RENDER
+    if (!fontsLoadedState) {
         return (
             <View style={styles.loadingContainer}>
                 <ActivityIndicator size="large" color="#A5D6A7" />
@@ -121,16 +180,37 @@ export default function App() {
             >
                 <View style={styles.screenContainer}>
                     {screen === ScreenState.START && (
-                        <StartScreen onNext={handleNext} data={mannaData} isMuted={isMuted} toggleMute={toggleMute} />
+                        <StartScreen
+                            onNext={handleNext}
+                            data={mannaData}
+                            isMuted={isMuted}
+                            toggleMute={toggleMute}
+                            language={language}
+                            toggleLanguage={toggleLanguage}
+                        />
                     )}
                     {screen === ScreenState.VERSE && (
-                        <VerseScreen onNext={handleNext} data={mannaData} isMuted={isMuted} toggleMute={toggleMute} />
+                        <VerseScreen
+                            onNext={handleNext}
+                            data={mannaData}
+                            isMuted={isMuted}
+                            toggleMute={toggleMute}
+                            language={language}
+                            toggleLanguage={toggleLanguage}
+                        />
                     )}
                     {screen === ScreenState.DETAIL && (
-                        <DetailScreen onNext={handleNext} onBack={handleBack} data={mannaData} isMuted={isMuted} toggleMute={toggleMute} />
+                        <DetailScreen
+                            onNext={handleNext}
+                            onBack={handleBack}
+                            data={mannaData}
+                            isMuted={isMuted}
+                            toggleMute={toggleMute}
+                            language={language}
+                            toggleLanguage={toggleLanguage}
+                        />
                     )}
 
-                    {/* Hidden Refresh Button */}
                     <View style={styles.refreshButtonContainer}>
                         <TouchableOpacity
                             onPress={handleRefresh}
@@ -144,6 +224,16 @@ export default function App() {
             </LinearGradient>
         </View>
     );
+
+    /*
+    // SIMPLIFIED RENDER FOR DEBUGGING
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
+            <Text style={{ fontSize: 30, color: 'black' }}>TEST: Hello World</Text>
+            <Text style={{ fontSize: 20, color: 'blue', marginTop: 20 }}>Refactored Babel Config</Text>
+        </View>
+    );
+    */
 }
 
 const styles = StyleSheet.create({
@@ -166,10 +256,10 @@ const styles = StyleSheet.create({
     },
     refreshButtonContainer: {
         position: 'absolute',
-        top: 50,
-        left: 20,
-        zIndex: 100,
-        opacity: 0.1,
+        bottom: 30,
+        right: 30,
+        zIndex: 999,
+        opacity: 0.3,
     },
     refreshButton: {
         padding: 10,

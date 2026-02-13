@@ -1,11 +1,42 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { ScreenProps } from '../types/types';
-import { Volume2, VolumeX, Cloud, Star, ChevronUp, Croissant } from 'lucide-react-native';
+import { Volume2, VolumeX, Cloud, Star, ChevronUp } from 'lucide-react-native';
 
 const { width, height } = Dimensions.get('window');
 
-const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute }) => {
+const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { } }) => {
+
+    // Verify English data availability
+    const isEnglishAvailable = !!(data.verseTextEn && data.verseTextEn.length > 0);
+
+    let primaryVerseRef, primaryVerseText;
+    let secondaryVerseText;
+
+    if (language === 'ko') {
+        // Korean Mode
+        primaryVerseRef = data.verseRef;
+        primaryVerseText = data.verseText;
+
+        // Secondary is English (only if available)
+        secondaryVerseText = data.verseTextEn || "";
+    } else {
+        // English Mode
+        if (isEnglishAvailable) {
+            primaryVerseRef = data.verseRefEn || data.verseRef;
+            primaryVerseText = data.verseTextEn;
+
+            // Secondary is Korean
+            secondaryVerseText = data.verseText;
+        } else {
+            // English Mode but NO English Data -> Show Korean as Primary, Hide Secondary
+            primaryVerseRef = data.verseRef;
+            primaryVerseText = data.verseText;
+
+            secondaryVerseText = "";
+        }
+    }
+
     return (
         <View style={styles.container}>
             {/* Background Floating Elements */}
@@ -22,17 +53,25 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute 
             {/* Header */}
             <View style={styles.header}>
                 <View style={styles.headerRow}>
-                    <View style={styles.iconBox}>
-                        <Croissant color="#8D6E63" size={24} />
-                    </View>
-                    <Text style={styles.headerTitle}>오늘의 만나</Text>
+                    <TouchableOpacity onPress={toggleLanguage} style={styles.iconBox}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#8D6E63' }}>
+                            {language === 'ko' ? 'EN' : '한글'}
+                        </Text>
+                    </TouchableOpacity>
+                    <Text style={styles.headerTitle}>
+                        {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
+                    </Text>
                     <TouchableOpacity onPress={toggleMute} style={styles.smallMuteButton}>
                         {isMuted ? <VolumeX color="gray" size={20} /> : <Volume2 color="#5D4037" size={20} />}
                     </TouchableOpacity>
                 </View>
                 <View style={styles.headerDateBadge}>
                     <Text style={styles.headerDateText}>
-                        {new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        {new Date().toLocaleDateString(language === 'ko' ? 'ko-KR' : 'en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })}
                     </Text>
                 </View>
 
@@ -52,7 +91,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute 
             <View style={styles.cardContainer}>
                 <View style={styles.card}>
                     <View style={styles.verseRefBadge}>
-                        <Text style={styles.verseRefText}>{data.verseRef}</Text>
+                        <Text style={styles.verseRefText}>{primaryVerseRef}</Text>
                     </View>
 
                     <ScrollView
@@ -60,19 +99,26 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute 
                         contentContainerStyle={styles.scrollContent}
                         showsVerticalScrollIndicator={false}
                     >
-                        {data.verseText.split('\n').map((line, i) => {
-                            const isHighlight = line.includes("합력하여") || line.includes("기쁨");
+                        {/* Primary Verse (Based on Language Mode) */}
+                        {primaryVerseText.split('\n').map((line, i) => {
+                            const isHighlight = language === 'ko' && (line.includes("합력하여") || line.includes("기쁨"));
                             return (
-                                <Text key={i} style={[styles.verseLine, isHighlight && styles.highlightText]}>
+                                <Text key={`primary-${i}`} style={[styles.verseLine, isHighlight && styles.highlightText]}>
                                     {line}
                                 </Text>
                             );
                         })}
 
                         <Text style={styles.divider}>—</Text>
-                        <Text style={styles.fullVerse}>
-                            {data.fullVerse}
-                        </Text>
+
+                        {/* Secondary Verse (Translation) */}
+                        <View style={styles.secondaryContainer}>
+                            {secondaryVerseText.split('\n').map((line, i) => (
+                                <Text key={`secondary-${i}`} style={styles.secondaryVerseLine}>
+                                    {line}
+                                </Text>
+                            ))}
+                        </View>
                     </ScrollView>
                 </View>
             </View>
@@ -83,7 +129,9 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute 
                     <ChevronUp size={36} color="#8D6E63" strokeWidth={3} />
                 </View>
                 <TouchableOpacity onPress={onNext} style={styles.nextButton}>
-                    <Text style={styles.nextButtonText}>해석과 미션 보기</Text>
+                    <Text style={styles.nextButtonText}>
+                        {language === 'ko' ? "해석과 미션 보기" : "View Meaning & Mission"}
+                    </Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -127,7 +175,8 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
-        elevation: 3,
+        elevation: 10, // Increased elevation
+        zIndex: 100, // Ensure it's on top
     },
     headerTitle: {
         fontSize: 28,
@@ -248,11 +297,33 @@ const styles = StyleSheet.create({
     },
     fullVerse: {
         fontSize: 18,
-        color: '#888',
+        color: '#666',
         textAlign: 'center',
         lineHeight: 26,
         fontFamily: 'GowunDodum_400Regular',
+        marginTop: 10,
+    },
+    secondaryContainer: {
+        width: '100%',
+        alignItems: 'center',
+        opacity: 0.8,
+    },
+    secondaryVerseLine: {
+        fontSize: 18,
+        lineHeight: 28,
+        textAlign: 'center',
+        color: '#888',
+        fontFamily: 'GowunDodum_400Regular',
+        marginBottom: 6,
+    },
+    secondaryFullVerse: {
+        fontSize: 16,
+        color: '#999',
+        textAlign: 'center',
+        lineHeight: 24,
+        fontFamily: 'NanumGothic_400Regular',
         fontStyle: 'italic',
+        marginTop: 8,
     },
     footer: {
         paddingHorizontal: 24,

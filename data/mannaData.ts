@@ -1,282 +1,468 @@
 export const MANNA_DATA: any[] = [
     {
         "date": "2026-01-01",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "창세기 1:1",
+        "verse": "태초에 하나님이<br>천지를 창조하시니라",
+        "meaning_title": "새로운 시작",
+        "meaning": "모든 시작의 주인은 하나님이십니다.<br>올 한 해를 창조주 하나님께 맡겨드리세요.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "올해 꼭 이루고 싶은 기도제목 3가지 적기",
+        "reference_en": "Genesis 1:1",
+        "verse_en": "In the beginning God created<br>the heavens and the earth.",
+        "meaning_title_en": "New Beginning",
+        "meaning_en": "God is the master of all beginnings.<br>Entrust this coming year to God the Creator.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 prayer topics you want to achieve this year"
     },
     {
         "date": "2026-01-02",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "시편 37:5",
+        "verse": "너의 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
+        "meaning_title": "맡김의 축복",
+        "meaning": "내가 쥐고 있으면 근심이 되지만,<br>하나님께 맡기면 역사가 됩니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "가장 걱정되는 일 하나를 하나님께 맡긴다고 고백하기",
+        "reference_en": "Psalm 37:5",
+        "verse_en": "Commit your way to the LORD;<br>trust in him and he will do this:",
+        "meaning_title_en": "Blessing of Committing",
+        "meaning_en": "If I hold onto it, it becomes worry,<br>but if I commit it to God, it becomes history.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess to God that you commit your biggest worry to Him"
     },
     {
         "date": "2026-01-03",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "빌립보서 4:13",
+        "verse": "내게 능력 주시는 자 안에서<br>내가 모든 것을 할 수 있느니라",
+        "meaning_title": "무한한 가능성",
+        "meaning": "나의 능력이 아니라<br>주님의 능력이 내 한계를 뛰어넘게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "'나는 할 수 있다' 대신 '주님 안에서 할 수 있다' 세 번 외치기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Infinite Possibility",
+        "meaning_en": "Not my ability,<br>but the Lord's power allows me to overcome my limits.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Shout 'I can do it in the Lord' three times instead of just 'I can do it'"
     },
     {
         "date": "2026-01-04",
-        "reference": "이사야 43:19",
-        "verse": "보라 내가 새 일을 행하리니<br>이제 나타낼 것이라",
-        "meaning_title": "새로운 시작",
-        "meaning": "하나님은 묵은 땅을 갈아엎고<br>당신을 위해 새 길을 내십니다.",
+        "reference": "잠언 16:9",
+        "verse": "사람이 마음으로 자기의 길을 계획할지라도<br>그의 걸음을 인도하시는 이는 여호와시니라",
+        "meaning_title": "하나님의 인도",
+        "meaning": "우리의 계획보다 더 완벽한<br>하나님의 발걸음을 신뢰하세요.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "올해 꼭 이루고 싶은 소망 한 가지 기도하기"
+        "mission": "뜻대로 되지 않은 일에 대해 감사하기",
+        "reference_en": "Proverbs 16:9",
+        "verse_en": "In their hearts humans plan their course,<br>but the LORD establishes their steps.",
+        "meaning_title_en": "God's Guidance",
+        "meaning_en": "Trust in God's steps<br>which are more perfect than our plans.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for something that didn't go as planned"
     },
     {
         "date": "2026-01-05",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "이사야 41:10",
+        "verse": "두려워하지 말라 내가 너와 함께 함이라<br>놀라지 말라 나는 네 하나님이 됨이라",
+        "meaning_title": "동행의 약속",
+        "meaning": "혼자가 아닙니다.<br>전능하신 하나님이 지금 당신 곁에 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "오늘 하루 '하나님이 나와 함께 하신다' 생각하며 걷기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "Promise of Companionship",
+        "meaning_en": "You are not alone.<br>Almighty God is right by your side now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Walk today thinking 'God is with me'"
     },
     {
         "date": "2026-01-06",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "마태복음 6:33",
+        "verse": "그런즉 너희는 먼저 그의 나라와 그의 의를 구하라<br>그리하면 이 모든 것을 너희에게 더하시리라",
+        "meaning_title": "우선순위",
+        "meaning": "가장 소중한 것을 먼저 붙잡으면<br>나머지 모든 것은 덤으로 주어집니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "오늘의 첫 시간을 기도로 시작하기 (또는 자기 전 기도)",
+        "reference_en": "Matthew 6:33",
+        "verse_en": "But seek first his kingdom and his righteousness,<br>and all these things will be given to you as well.",
+        "meaning_title_en": "Priority",
+        "meaning_en": "If you hold onto the most precious thing first,<br>everything else will be given as a bonus.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Start the first hour of today with prayer (or pray before bed)"
     },
     {
         "date": "2026-01-07",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "요한복음 15:5",
+        "verse": "나는 포도나무요 너희는 가지라<br>그가 내 안에, 내가 그 안에 거하면 사람이 열매를 많이 맺나니",
+        "meaning_title": "연합의 비밀",
+        "meaning": "노력으로 열매 맺는 것이 아니라<br>주님께 붙어있을 때 저절로 맺혀집니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "잠시 하던 일을 멈추고 1분간 주님 생각하기",
+        "reference_en": "John 15:5",
+        "verse_en": "I am the vine; you are the branches.<br>If you remain in me and I in you, you will bear much fruit;",
+        "meaning_title_en": "Secret of Union",
+        "meaning_en": "Fruit is not born by effort,<br>but naturally when we are attached to the Lord.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Stop what you are doing for a moment and think of the Lord for 1 minute"
     },
     {
         "date": "2026-01-08",
-        "reference": "이사야 43:19",
-        "verse": "보라 내가 새 일을 행하리니<br>이제 나타낼 것이라",
-        "meaning_title": "새로운 시작",
-        "meaning": "하나님은 묵은 땅을 갈아엎고<br>당신을 위해 새 길을 내십니다.",
+        "reference": "여호수아 1:9",
+        "verse": "강하고 담대하라 두려워하지 말며 놀라지 말라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
+        "meaning_title": "담대한 믿음",
+        "meaning": "두려움을 이기는 힘은<br>내 안이 아니라, 나와 함께 하시는 하나님께 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "올해 꼭 이루고 싶은 소망 한 가지 기도하기"
+        "mission": "두려운 상황이 올 때 '하나님이 함께 하신다' 선포하기",
+        "reference_en": "Joshua 1:9",
+        "verse_en": "Have I not commanded you? Be strong and courageous. Do not be afraid;<br>do not be discouraged, for the LORD your God will be with you wherever you go.",
+        "meaning_title_en": "Courageous Faith",
+        "meaning_en": "The power to overcome fear<br>is not within me, but in God who is with me.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Proclaim 'God is with me' when a fearful situation comes"
     },
     {
         "date": "2026-01-09",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "로마서 12:2",
+        "verse": "너희는 이 세대를 본받지 말고 오직 마음을 새롭게 함으로 변화를 받아<br>하나님의 선하시고 기뻐하시고 온전하신 뜻이 무엇인지 분별하도록 하라",
+        "meaning_title": "거룩한 구별",
+        "meaning": "세상의 유행을 따르기보다<br>하나님의 마음을 따르는 것이 진정한 '힙(Hip)'함입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "세상 유행이나 안 좋은 습관 하나 끊어보기",
+        "reference_en": "Romans 12:2",
+        "verse_en": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind.<br>Then you will be able to test and approve what God's will is—his good, pleasing and perfect will.",
+        "meaning_title_en": "Holy Distinction",
+        "meaning_en": "Following God's heart rather than worldly trends<br>is true 'hipness'.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Try to cut off one worldly trend or bad habit"
     },
     {
         "date": "2026-01-10",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "시편 119:105",
+        "verse": "주의 말씀은 내 발에 등이요<br>내 길에 빛이니이다",
+        "meaning_title": "인생의 나침반",
+        "meaning": "캄캄한 길을 걸을 때<br>말씀 한 구절이 가장 확실한 내비게이션입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "오늘의 말씀을 스마트폰 배경화면이나 메모장에 적어두기",
+        "reference_en": "Psalm 119:105",
+        "verse_en": "Your word is a lamp for my feet,<br>a light on my path.",
+        "meaning_title_en": "Compass of Life",
+        "meaning_en": "When walking on a dark path,<br>one verse of the Word is the most certain navigation.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write today's verse on your smartphone wallpaper or memo app"
     },
     {
         "date": "2026-01-11",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "고린도전서 13:13",
+        "verse": "그런즉 믿음, 소망, 사랑, 이 세 가지는 항상 있을 것인데<br>그 중의 제일은 사랑이라",
+        "meaning_title": "사랑의 위대함",
+        "meaning": "모든 은사보다, 모든 지식보다<br>사랑이 없으면 아무것도 아닙니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "오늘 만나는 사람들에게 마음속으로 축복해주기",
+        "reference_en": "1 Corinthians 13:13",
+        "verse_en": "And now these three remain: faith, hope and love.<br>But the greatest of these is love.",
+        "meaning_title_en": "Greatness of Love",
+        "meaning_en": "More than all gifts, more than all knowledge,<br>if there is no love, it is nothing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Bless the people you meet today in your heart"
     },
     {
         "date": "2026-01-12",
-        "reference": "이사야 43:19",
-        "verse": "보라 내가 새 일을 행하리니<br>이제 나타낼 것이라",
-        "meaning_title": "새로운 시작",
-        "meaning": "하나님은 묵은 땅을 갈아엎고<br>당신을 위해 새 길을 내십니다.",
+        "reference": "잠언 3:5-6",
+        "verse": "너는 마음을 다하여 여호와를 신뢰하고 네 명철을 의지하지 말라<br>너는 범사에 그를 인정하라 그리하면 네 길을 지도하시리라",
+        "meaning_title": "전적인 신뢰",
+        "meaning": "내 머리보다 하나님의 지혜가<br>훨씬 더 똑똑하고 정확합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "올해 꼭 이루고 싶은 소망 한 가지 기도하기"
+        "mission": "결정이 필요한 일 앞에서 1분간 기도하기",
+        "reference_en": "Proverbs 3:5-6",
+        "verse_en": "Trust in the LORD with all your heart and lean not on your own understanding;<br>in all your ways submit to him, and he will make your paths straight.",
+        "meaning_title_en": "Total Trust",
+        "meaning_en": "God's wisdom is much smarter and more accurate<br>than my brain.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray for 1 minute before making a decision"
     },
     {
         "date": "2026-01-13",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "빌립보서 4:6-7",
+        "verse": "아무 것도 염려하지 말고 다만 모든 일에 기도와 간구로,<br>너희 구할 것을 감사함으로 하나님께 아뢰라",
+        "meaning_title": "평안의 레시피",
+        "meaning": "염려를 기도로 바꾸면<br>하나님의 평강이 마음을 지켜주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "염려되는 일을 종이에 적고 '기도로 맡깁니다' 쓰고 찢어버리기",
+        "reference_en": "Philippians 4:6-7",
+        "verse_en": "Do not be anxious about anything, but in every situation, by prayer and petition,<br>with thanksgiving, present your requests to God.",
+        "meaning_title_en": "Recipe for Peace",
+        "meaning_en": "If you turn worry into prayer,<br>God's peace will guard your heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down your worries on paper, write 'I commit this to prayer', and tear it up"
     },
     {
         "date": "2026-01-14",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "예레미야 29:11",
+        "verse": "너희를 향한 나의 생각을 내가 아나니 평안이요 재앙이 아니니라<br>너희에게 미래와 희망을 주는 것이니라",
+        "meaning_title": "희망의 계획",
+        "meaning": "지금 힘들더라도 기억하세요.<br>하나님의 결말은 언제나 해피엔딩입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "거울을 보고 '내 미래는 하나님 손에 있다' 말해주기",
+        "reference_en": "Jeremiah 29:11",
+        "verse_en": "'For I know the plans I have for you,' declares the LORD,<br>'plans to prosper you and not to harm you, plans to give you hope and a future.'",
+        "meaning_title_en": "Plan of Hope",
+        "meaning_en": "Remember even if it is hard now.<br>God's ending is always a happy ending.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look in the mirror and say 'My future is in God's hands'"
     },
     {
         "date": "2026-01-15",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "마태복음 28:20",
+        "verse": "볼지어다 내가 세상 끝날까지<br>너희와 항상 함께 있으리라 하시니라",
+        "meaning_title": "영원한 약속",
+        "meaning": "세상 친구는 떠나도<br>예수님은 마지막 순간까지 의리를 지키십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "외롭다고 느껴질 때 예수님 이름 부르기",
+        "reference_en": "Matthew 28:20",
+        "verse_en": "And surely I am with you always,<br>to the very end of the age.",
+        "meaning_title_en": "Eternal Promise",
+        "meaning_en": "Even if worldly friends leave,<br>Jesus keeps His loyalty until the very last moment.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Call on Jesus' name when you feel lonely"
     },
     {
         "date": "2026-01-16",
-        "reference": "이사야 43:19",
-        "verse": "보라 내가 새 일을 행하리니<br>이제 나타낼 것이라",
-        "meaning_title": "새로운 시작",
-        "meaning": "하나님은 묵은 땅을 갈아엎고<br>당신을 위해 새 길을 내십니다.",
+        "reference": "시편 121:1-2",
+        "verse": "내가 산을 향하여 눈을 들리라 나의 도움이 어디서 올까<br>나의 도움은 천지를 지으신 여호와에게서로다",
+        "meaning_title": "도움의 원천",
+        "meaning": "사람 눈치 보지 말고<br>천지를 만드신 하나님을 바라보세요. 스케일이 다릅니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "올해 꼭 이루고 싶은 소망 한 가지 기도하기"
+        "mission": "하늘을 올려다보며 '하나님이 도와주신다' 생각하기",
+        "reference_en": "Psalm 121:1-2",
+        "verse_en": "I lift up my eyes to the mountains—where does my help come from?<br>My help comes from the LORD, the Maker of heaven and earth.",
+        "meaning_title_en": "Source of Help",
+        "meaning_en": "Don't look at people,<br>look at God who made heaven and earth. The scale is different.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and think 'God helps me'"
     },
     {
         "date": "2026-01-17",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "에베소서 2:8",
+        "verse": "너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니<br>이것은 너희에게서 난 것이 아니요 하나님의 선물이라",
+        "meaning_title": "값없는 선물",
+        "meaning": "구원은 내 노력의 대가가 아니라<br>하나님이 공짜로 주신 최고급 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "'구원해 주셔서 감사합니다' 고백하기",
+        "reference_en": "Ephesians 2:8",
+        "verse_en": "For it is by grace you have been saved, through faith—and this is not from yourselves,<br>it is the gift of God",
+        "meaning_title_en": "Priceless Gift",
+        "meaning_en": "Salvation is not the price of my effort,<br>but the finest gift God gave for free.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'Thank you for saving me'"
     },
     {
         "date": "2026-01-18",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "데살로니가전서 5:16-18",
+        "verse": "항상 기뻐하라 쉬지 말고 기도하라 범사에 감사하라<br>이것이 그리스도 예수 안에서 너희를 향하신 하나님의 뜻이니라",
+        "meaning_title": "행복 메뉴얼",
+        "meaning": "기쁨, 기도, 감사는<br>천국 백성의 필수 생활 습관입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "짜증 나는 상황에서도 '그럼에도 감사합니다' 말해보기",
+        "reference_en": "1 Thessalonians 5:16-18",
+        "verse_en": "Rejoice always, pray continually, give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Happiness Manual",
+        "meaning_en": "Joy, prayer, and thanksgiving<br>are essential lifestyle habits of heavenly citizens.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Say 'Nevertheless, thank you' even in annoying situations"
     },
     {
         "date": "2026-01-19",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "이사야 40:31",
+        "verse": "오직 여호와를 앙망하는 자는 새 힘을 얻으리니<br>독수리가 날개치며 올라감 같을 것이요",
+        "meaning_title": "새 힘의 공급",
+        "meaning": "지치고 피곤할 때,<br>주님을 바라보면 독수리 같은 에너지가 충전됩니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "스트레칭 하면서 '주님 힘 주시옵소서' 기도하기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "but those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles;",
+        "meaning_title_en": "Supply of New Strength",
+        "meaning_en": "When you are tired and weary,<br>looking at the Lord recharges you with energy like an eagle.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray 'Lord, give me strength' while stretching"
     },
     {
         "date": "2026-01-20",
-        "reference": "이사야 43:19",
-        "verse": "보라 내가 새 일을 행하리니<br>이제 나타낼 것이라",
-        "meaning_title": "새로운 시작",
-        "meaning": "하나님은 묵은 땅을 갈아엎고<br>당신을 위해 새 길을 내십니다.",
+        "reference": "갈라디아서 5:22-23",
+        "verse": "오직 성령의 열매는 사랑과 희락과 화평과 오래 참음과<br>자비와 양선과 충성과 온유와 절제니",
+        "meaning_title": "성령의 9가지 맛",
+        "meaning": "내 성격으로는 안 되지만,<br>성령님이 오시면 내 인격도 예수님 닮아갑니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "올해 꼭 이루고 싶은 소망 한 가지 기도하기"
+        "mission": "9가지 열매 중 오늘 나에게 가장 필요한 한 가지 구하기",
+        "reference_en": "Galatians 5:22-23",
+        "verse_en": "But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness,<br>gentleness and self-control.",
+        "meaning_title_en": "9 Flavors of the Holy Spirit",
+        "meaning_en": "It doesn't work with my personality,<br>but when the Holy Spirit comes, my character resembles Jesus.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Ask for one of the 9 fruits that you need most today"
     },
     {
         "date": "2026-01-21",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "시편 1:1-2",
+        "verse": "복 있는 사람은 악인들의 꾀를 따르지 아니하며...<br>오직 여호와의 율법을 즐거워하여 그의 율법을 주야로 묵상하는도다",
+        "meaning_title": "진정한 복",
+        "meaning": "복은 로또 당첨이 아니라,<br>말씀이 내 마음에 꿀송이처럼 달게 느껴지는 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "성경책(또는 어플) 펴서 한 장 읽기",
+        "reference_en": "Psalm 1:1-2",
+        "verse_en": "Blessed is the one who does not walk in step with the wicked...<br>but whose delight is in the law of the LORD, and who meditates on his law day and night.",
+        "meaning_title_en": "True Blessing",
+        "meaning_en": "Blessing is not winning the lottery,<br>but feeling the Word as sweet as honey in my heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Open the Bible (or app) and read one chapter"
     },
     {
         "date": "2026-01-22",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "마가복음 10:45",
+        "verse": "인자가 온 것은 섬김을 받으려 함이 아니라 도리어 섬기려 하고<br>자기 목숨을 많은 사람의 대속물로 주려 함이니라",
+        "meaning_title": "섬김의 왕",
+        "meaning": "진정한 리더십은<br>가장 낮은 곳에서 섬기는 것입니다. 예수님처럼요.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "오늘 누군가를 위해 작은 배려(문 열어주기, 커피 타주기 등) 실천하기",
+        "reference_en": "Mark 10:45",
+        "verse_en": "For even the Son of Man did not come to be served, but to serve,<br>and to give his life as a ransom for many.",
+        "meaning_title_en": "King of Service",
+        "meaning_en": "True leadership is<br>serving from the lowest place. Like Jesus.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Practice a small kindness (holding the door, making coffee) for someone today"
     },
     {
         "date": "2026-01-23",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "히브리서 11:1",
+        "verse": "믿음은 바라는 것들의 실상이요<br>보이지 않는 것들의 증거니",
+        "meaning_title": "믿음의 눈",
+        "meaning": "믿음은 눈에 보이는 현실 너머의<br>하나님의 일하심을 미리 당겨서 보는 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "지금 당장 눈에 보이지 않는 꿈을 믿음으로 선포하기",
+        "reference_en": "Hebrews 11:1",
+        "verse_en": "Now faith is confidence in what we hope for<br>and assurance about what we do not see.",
+        "meaning_title_en": "Eyes of Faith",
+        "meaning_en": "Faith is the ability to see God's work<br>beyond the visible reality in advance.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Proclaim by faith a dream that is not currently visible"
     },
     {
         "date": "2026-01-24",
-        "reference": "이사야 43:19",
-        "verse": "보라 내가 새 일을 행하리니<br>이제 나타낼 것이라",
-        "meaning_title": "새로운 시작",
-        "meaning": "하나님은 묵은 땅을 갈아엎고<br>당신을 위해 새 길을 내십니다.",
+        "reference": "요한복음 3:16",
+        "verse": "하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니<br>이는 그를 믿는 자마다 멸망하지 않고 영생을 얻게 하려 하심이라",
+        "meaning_title": "위대한 사랑",
+        "meaning": "당신은 하나님이 아들 예수님과<br>바꿀 만큼 소중한 존재입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "올해 꼭 이루고 싶은 소망 한 가지 기도하기"
+        "mission": "나를 사랑하시는 하나님께 '사랑합니다' 고백하기",
+        "reference_en": "John 3:16",
+        "verse_en": "For God so loved the world that he gave his one and only Son,<br>that whoever believes in him shall not perish but have eternal life.",
+        "meaning_title_en": "Great Love",
+        "meaning_en": "You are precious enough<br>for God to exchange His Son Jesus for.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you' to God who loves me"
     },
     {
         "date": "2026-01-25",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "고린도후서 5:17",
+        "verse": "그런즉 누구든지 그리스도 안에 있으면 새로운 피조물이라<br>이전 것은 지나갔으니 보라 새 것이 되었도다",
+        "meaning_title": "새로운 신분",
+        "meaning": "과거의 실수나 상처는 지나갔습니다.<br>당신은 오늘 주님 안에서 완전히 새 상품입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "과거의 후회되는 일 하나 떠올리고 '예수 이름으로 지나갔다' 선포하기",
+        "reference_en": "2 Corinthians 5:17",
+        "verse_en": "Therefore, if anyone is in Christ, the new creation has come:<br>The old has gone, the new is here!",
+        "meaning_title_en": "New Identity",
+        "meaning_en": "Past mistakes or wounds have passed.<br>You are a brand new product in the Lord today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Think of one regret from the past and proclaim 'It has passed in Jesus' name'"
     },
     {
         "date": "2026-01-26",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "시편 46:1",
+        "verse": "하나님은 우리의 피난처시요 힘이시니<br>환난 중에 만날 큰 도움이시라",
+        "meaning_title": "안전지대",
+        "meaning": "세상이 흔들려도 괜찮습니다.<br>우리에게는 하나님이라는 절대 무너지지 않는 벙커가 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "불안할 때 '하나님은 나의 피난처' 5번 암송하기",
+        "reference_en": "Psalm 46:1",
+        "verse_en": "God is our refuge and strength,<br>an ever-present help in trouble.",
+        "meaning_title_en": "Safety Zone",
+        "meaning_en": "It's okay if the world shakes.<br>We have a bunker called God that never collapses.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite 'God is my refuge' 5 times when you feel anxious"
     },
     {
         "date": "2026-01-27",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "마태복음 5:3",
+        "verse": "심령이 가난한 자는 복이 있나니<br>천국이 그들의 것임이요",
+        "meaning_title": "마음의 가난",
+        "meaning": "내 힘으로 안 됨을 인정하고 주님만 의지하는 마음,<br>그곳에 천국이 임합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "'나는 주님이 필요합니다' 겸손하게 고백하기",
+        "reference_en": "Matthew 5:3",
+        "verse_en": "Blessed are the poor in spirit,<br>for theirs is the kingdom of heaven.",
+        "meaning_title_en": "Poverty of Heart",
+        "meaning_en": "Expecting only the Lord acknowledging that I can't do it with my own strength,<br>that is where Heaven comes.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Humbly confess 'I need you, Lord'"
     },
     {
         "date": "2026-01-28",
-        "reference": "이사야 43:19",
-        "verse": "보라 내가 새 일을 행하리니<br>이제 나타낼 것이라",
-        "meaning_title": "새로운 시작",
-        "meaning": "하나님은 묵은 땅을 갈아엎고<br>당신을 위해 새 길을 내십니다.",
+        "reference": "잠언 4:23",
+        "verse": "모든 지킬 만한 것 중에 더욱 네 마음을 지키라<br>생명의 근원이 이에서 남이니라",
+        "meaning_title": "마음 지킴이",
+        "meaning": "돈이나 건강보다 더 중요한 건 마음입니다.<br>오늘 부정적인 생각으로부터 마음을 로그인 차단하세요.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "올해 꼭 이루고 싶은 소망 한 가지 기도하기"
+        "mission": "부정적인 생각이 들 때 '예수 이름으로 물러가라' 선포하기",
+        "reference_en": "Proverbs 4:23",
+        "verse_en": "Above all else, guard your heart,<br>for everything you do flows from it.",
+        "meaning_title_en": "Heart Keeper",
+        "meaning_en": "More important than money or health is the heart.<br>Block your heart from negative thoughts today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Proclaim 'Go away in Jesus name' when negative thoughts come"
     },
     {
         "date": "2026-01-29",
-        "reference": "민수기 6:24-26",
-        "verse": "여호와는 네게 복을 주시고<br>너를 지키시기를 원하며",
-        "meaning_title": "축복의 선언",
-        "meaning": "하나님의 얼굴 빛이<br>오늘 당신의 삶을 환하게 비추십니다.",
+        "reference": "로마서 5:8",
+        "verse": "우리가 아직 죄인 되었을 때에 그리스도께서 우리를 위하여 죽으심으로<br>하나님께서 우리에 대한 자기의 사랑을 확증하셨느니라",
+        "meaning_title": "확실한 증거",
+        "meaning": "자격 있어서 사랑하신 게 아닙니다.<br>죄인인 모습 그대로를 목숨 걸고 사랑하셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 만나는 사람에게 축복의 인사 건네기"
+        "mission": "나 자신의 부족한 모습도 안아주며 '괜찮아' 말해주기",
+        "reference_en": "Romans 5:8",
+        "verse_en": "But God demonstrates his own love for us in this:<br>While we were still sinners, Christ died for us.",
+        "meaning_title_en": "Sure Proof",
+        "meaning_en": "He didn't love us because we were qualified.<br>He loved us as sinners with His life.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Embrace your own shortcomings and say 'It's okay'"
     },
     {
         "date": "2026-01-30",
-        "reference": "여호수아 1:9",
-        "verse": "강하고 담대하라<br>네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라",
-        "meaning_title": "동행의 약속",
-        "meaning": "새로운 환경이 두려우신가요?<br>주님이 이미 그곳에 먼저 가 계십니다.",
+        "reference": "요한1서 4:18",
+        "verse": "사랑 안에 두려움이 없고<br>온전한 사랑이 두려움을 내쫓나니",
+        "meaning_title": "두려움 퇴치",
+        "meaning": "하나님의 사랑을 깊이 알면 알수록<br>두려움은 설 자리를 잃고 도망갑니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가장 두려운 일 하나를 주님께 맡기기"
+        "mission": "하나님의 사랑을 묵상하는 찬양 듣기",
+        "reference_en": "1 John 4:18",
+        "verse_en": "There is no fear in love. But perfect love drives out fear,<br>because fear has to do with punishment.",
+        "meaning_title_en": "Fear Repellent",
+        "meaning_en": "The more you know God's love,<br>fear loses its place and runs away.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song meditating on God's love"
     },
     {
         "date": "2026-01-31",
-        "reference": "시편 37:5",
-        "verse": "네 길을 여호와께 맡기라<br>그를 의지하면 그가 이루시고",
-        "meaning_title": "절대 신뢰",
-        "meaning": "당신의 미래는 당신보다<br>주님이 더 잘 알고 계십니다.",
+        "reference": "시편 103:2",
+        "verse": "내 영혼아 여호와를 송축하며<br>그의 모든 은택을 잊지 말지어다",
+        "meaning_title": "감사 기억",
+        "meaning": "받은 복을 세어보세요.<br>잊고 있던 감사가 회복될 때 기쁨이 샘솟습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘의 스케줄을 기도로 시작하기"
+        "mission": "1월 한 달 동안 감사했던 일 5가지 적어보기",
+        "reference_en": "Psalm 103:2",
+        "verse_en": "Praise the LORD, my soul,<br>and forget not all his benefits",
+        "meaning_title_en": "Remembering Thanks",
+        "meaning_en": "Count your blessings.<br>Joy springs up when forgotten gratitude is restored.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 5 things you were thankful for in January"
     },
     {
         "date": "2026-02-01",
@@ -393,7 +579,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord as your shepherd,<br>even the dark valley is not fearful.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Thank God for a small thing He led you to today"
     },
     {
         "date": "2026-02-14",
@@ -402,7 +594,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-02-15",
@@ -411,7 +609,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest in the Lord's embrace for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-02-16",
@@ -420,7 +624,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good<br>of those who love him, who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current hardships will eventually<br>fit into the most beautiful picture.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-02-17",
@@ -429,7 +639,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord as your shepherd,<br>even the dark valley is not fearful.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Thank God for a small thing He led you to today"
     },
     {
         "date": "2026-02-18",
@@ -438,7 +654,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-02-19",
@@ -447,7 +669,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-02-20",
@@ -456,7 +684,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-02-21",
@@ -465,7 +699,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-02-22",
@@ -474,7 +714,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-02-23",
@@ -483,7 +729,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-02-24",
@@ -492,7 +744,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-02-25",
@@ -501,7 +759,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-02-26",
@@ -510,7 +774,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-02-27",
@@ -519,7 +789,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-02-28",
@@ -528,7 +804,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-01",
@@ -537,7 +819,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-02",
@@ -546,7 +834,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-03",
@@ -555,7 +849,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-03-04",
@@ -564,7 +864,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-05",
@@ -573,7 +879,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-06",
@@ -582,7 +894,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-07",
@@ -591,7 +909,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-03-08",
@@ -600,7 +924,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-09",
@@ -609,7 +939,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-10",
@@ -618,7 +954,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-11",
@@ -627,7 +969,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-03-12",
@@ -636,7 +984,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-13",
@@ -645,7 +999,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-14",
@@ -654,7 +1014,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-15",
@@ -663,7 +1029,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-03-16",
@@ -672,7 +1044,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-17",
@@ -681,7 +1059,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-18",
@@ -690,7 +1074,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-19",
@@ -699,7 +1089,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-03-20",
@@ -708,7 +1104,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-21",
@@ -717,7 +1119,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-22",
@@ -726,7 +1134,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-23",
@@ -735,7 +1149,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-03-24",
@@ -744,7 +1164,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-25",
@@ -753,7 +1179,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-26",
@@ -762,7 +1194,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-27",
@@ -771,7 +1209,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-03-28",
@@ -780,7 +1224,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-03-29",
@@ -789,7 +1239,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-03-30",
@@ -798,7 +1254,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-03-31",
@@ -807,7 +1269,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-04-01",
@@ -816,7 +1284,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영적 갱신",
         "meaning": "회개는 후회가 아니라<br>하나님께로 방향을 돌리는 축제입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "내 안의 부끄러운 모습 고백하고 털어내기"
+        "mission": "내 안의 부끄러운 모습 고백하고 털어내기",
+        "reference_en": "Psalm 51:10",
+        "verse_en": "Create in me a pure heart, O God,<br>and renew a steadfast spirit within me.",
+        "meaning_title_en": "Spiritual Renewal",
+        "meaning_en": "Repentance is not just regret,<br>but a festival of turning back to God.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Confess and shake off shameful aspects within"
     },
     {
         "date": "2026-04-02",
@@ -825,7 +1299,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "시선 고정",
         "meaning": "세상의 복잡한 소음 대신<br>묵묵히 십자가를 지신 주님을 봅니다.",
         "mission_title": "CHALLENGE",
-        "mission": "조용한 시간 5분 내어 주님 생각하기"
+        "mission": "조용한 시간 5분 내어 주님 생각하기",
+        "reference_en": "Hebrews 12:2",
+        "verse_en": "fixing our eyes on Jesus,<br>the pioneer and perfecter of faith.",
+        "meaning_title_en": "Fixing Your Eyes",
+        "meaning_en": "Instead of the complex noise of the world,<br>look at the Lord who silently bore the cross.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Spend 5 minutes in quiet contemplation of the Lord"
     },
     {
         "date": "2026-04-03",
@@ -834,7 +1314,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자기 부인",
         "meaning": "내가 죽어야 내 안의 그리스도가<br>진정으로 살아나십니다.",
         "mission_title": "CHALLENGE",
-        "mission": "오늘 하루 나를 드러내는 말 줄여보기"
+        "mission": "오늘 하루 나를 드러내는 말 줄여보기",
+        "reference_en": "Galatians 2:20",
+        "verse_en": "I have been crucified with Christ<br>and I no longer live, but Christ lives in me.",
+        "meaning_title_en": "Self-Denial",
+        "meaning_en": "Only when I die can Christ truly<br>live within me.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Try to reduce self-centered speech today"
     },
     {
         "date": "2026-04-04",
@@ -843,7 +1329,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "제자의 길",
         "meaning": "십자가는 고통이 아니라<br>주님과 가장 가까워지는 통로입니다.",
         "mission_title": "CHALLENGE",
-        "mission": "불편한 일 하나를 기쁘게 감수하기"
+        "mission": "불편한 일 하나를 기쁘게 감수하기",
+        "reference_en": "Matthew 16:24",
+        "verse_en": "Whoever wants to be my disciple must deny themselves<br>and take up their cross and follow me.",
+        "meaning_title_en": "The Way of Discipleship",
+        "meaning_en": "The cross is not suffering,<br>but the closest path to the Lord.",
+        "mission_title_en": "CHALLENGE",
+        "mission_en": "Cheerfully accept one uncomfortable task"
     },
     {
         "date": "2026-04-05",
@@ -852,7 +1344,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-06",
@@ -861,7 +1359,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-07",
@@ -870,7 +1374,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-08",
@@ -879,7 +1389,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-09",
@@ -888,7 +1404,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-10",
@@ -897,7 +1419,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-11",
@@ -906,7 +1434,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-12",
@@ -915,7 +1449,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-13",
@@ -924,7 +1464,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-14",
@@ -933,7 +1479,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-15",
@@ -942,7 +1494,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-16",
@@ -951,7 +1509,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-17",
@@ -960,7 +1524,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-18",
@@ -969,7 +1539,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-19",
@@ -978,7 +1554,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-20",
@@ -987,7 +1569,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-21",
@@ -996,7 +1584,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-22",
@@ -1005,7 +1599,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-23",
@@ -1014,7 +1614,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-24",
@@ -1023,7 +1629,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-25",
@@ -1032,7 +1644,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-26",
@@ -1041,7 +1659,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-27",
@@ -1050,7 +1674,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-04-28",
@@ -1059,7 +1689,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "최종 승리",
         "meaning": "패배감에 젖어 있지 마세요.<br>우리는 이미 이긴 싸움을 싸우고 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "할 수 없다고 생각했던 일에 도전해보기"
+        "mission": "할 수 없다고 생각했던 일에 도전해보기",
+        "reference_en": "1 Corinthians 15:57",
+        "verse_en": "But thanks be to God!<br>He gives us the victory through our Lord Jesus Christ.",
+        "meaning_title_en": "Final Victory",
+        "meaning_en": "Do not be soaked in defeat.<br>We are fighting a battle already won.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Challenge yourself to do something you thought you couldn't"
     },
     {
         "date": "2026-04-29",
@@ -1068,7 +1704,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "산 소망",
         "meaning": "우리의 소망은 썩지 않고<br>하늘에 보관된 영원한 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "천국의 소망을 생각하며 웃어보기"
+        "mission": "천국의 소망을 생각하며 웃어보기",
+        "reference_en": "1 Peter 1:3",
+        "verse_en": "In his great mercy he has given us new birth<br>into a living hope through the resurrection of Jesus Christ from the dead,",
+        "meaning_title_en": "Living Hope",
+        "meaning_en": "Our hope is imperishable<br>and kept in heaven for eternity.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Smile thinking of the hope of heaven"
     },
     {
         "date": "2026-04-30",
@@ -1077,7 +1719,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "생명의 주님",
         "meaning": "죽음의 권세를 이기신 주님이<br>오늘 우리에게 새 생명을 주셨습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기"
+        "mission": "부활의 기쁨을 담아 찬양 한 곡 듣기",
+        "reference_en": "John 11:25",
+        "verse_en": "I am the resurrection and the life.<br>The one who believes in me will live, even though they die;",
+        "meaning_title_en": "Lord of Life",
+        "meaning_en": "The Lord who conquered the power of death<br>has given us new life today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Listen to a praise song with the joy of resurrection"
     },
     {
         "date": "2026-05-01",
@@ -1086,7 +1734,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-02",
@@ -1095,7 +1749,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-03",
@@ -1104,7 +1764,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-04",
@@ -1113,7 +1779,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-05",
@@ -1122,7 +1794,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-06",
@@ -1131,7 +1809,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-07",
@@ -1140,7 +1824,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-08",
@@ -1149,7 +1839,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-09",
@@ -1158,7 +1854,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-10",
@@ -1167,7 +1869,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-11",
@@ -1176,7 +1884,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-12",
@@ -1185,7 +1899,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-13",
@@ -1194,7 +1914,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-14",
@@ -1203,7 +1929,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-15",
@@ -1212,7 +1944,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-16",
@@ -1221,7 +1959,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-17",
@@ -1230,7 +1974,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-18",
@@ -1239,7 +1989,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-19",
@@ -1248,7 +2004,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-20",
@@ -1257,7 +2019,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-21",
@@ -1266,7 +2034,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-22",
@@ -1275,7 +2049,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-23",
@@ -1284,7 +2064,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-24",
@@ -1293,7 +2079,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-05-25",
@@ -1302,7 +2094,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-26",
@@ -1311,7 +2109,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-27",
@@ -1320,7 +2124,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-28",
@@ -1329,16 +2139,28 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-05-29",
         "reference": "시편 127:3",
-        "verse": "보라 자식들은 여호와의 기업이요<br>태의 열매는 그의 상급이로다",
+        "verse": "보라 자식들이 여호와의 기업이요<br>태의 열매는 그의 상급이로다",
         "meaning_title": "자녀는 선물",
         "meaning": "자녀는 내 소유가 아니라<br>하나님이 잠시 맡겨주신 고귀한 선물입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기"
+        "mission": "자녀(혹은 아끼는 이)를 위해 축복 기도하기",
+        "reference_en": "Psalm 127:3",
+        "verse_en": "Children are a heritage from the LORD,<br>offspring a reward from him.",
+        "meaning_title_en": "Children are a Gift",
+        "meaning_en": "Children are not my possession,<br>but a precious gift entrusted by God for a while.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a blessing for children (or loved ones)"
     },
     {
         "date": "2026-05-30",
@@ -1347,7 +2169,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "가정의 질서",
         "meaning": "부모님을 공경하는 것은<br>약속 있는 첫 계명이며 축복의 통로입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "부모님께 안부 문자나 전화 드리기"
+        "mission": "부모님께 안부 문자나 전화 드리기",
+        "reference_en": "Ephesians 6:1",
+        "verse_en": "Children, obey your parents in the Lord,<br>for this is right.",
+        "meaning_title_en": "Order of the Family",
+        "meaning_en": "Honoring parents is the first commandment with a promise<br>and a channel of blessing.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Send a text or call to parents to say hello"
     },
     {
         "date": "2026-05-31",
@@ -1356,7 +2184,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "화목의 가치",
         "meaning": "진정한 행복은 물질의 풍요보다<br>서로를 배려하는 따뜻한 말 한마디에 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "가족의 허물을 덮어주는 칭찬 한 마디"
+        "mission": "가족의 허물을 덮어주는 칭찬 한 마디",
+        "reference_en": "Proverbs 17:1",
+        "verse_en": "Better a dry crust with peace and quiet<br>than a house full of feasting, with strife.",
+        "meaning_title_en": "Value of Harmony",
+        "meaning_en": "True happiness lies not in material abundance,<br>but in a warm word of care for one another.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "A word of praise covering family's faults"
     },
     {
         "date": "2026-06-01",
@@ -1365,7 +2199,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-02",
@@ -1374,7 +2214,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-03",
@@ -1383,7 +2229,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-04",
@@ -1392,7 +2244,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-05",
@@ -1401,7 +2259,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-06",
@@ -1410,7 +2274,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-07",
@@ -1419,7 +2289,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-08",
@@ -1428,7 +2304,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-09",
@@ -1437,7 +2319,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-10",
@@ -1446,7 +2334,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-11",
@@ -1455,7 +2349,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-12",
@@ -1464,7 +2364,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-13",
@@ -1473,7 +2379,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-14",
@@ -1482,7 +2394,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-15",
@@ -1491,7 +2409,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-16",
@@ -1500,7 +2424,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-17",
@@ -1509,7 +2439,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-18",
@@ -1518,7 +2454,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-19",
@@ -1527,7 +2469,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-20",
@@ -1536,7 +2484,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-21",
@@ -1545,7 +2499,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-22",
@@ -1554,7 +2514,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-23",
@@ -1563,7 +2529,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-24",
@@ -1572,7 +2544,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-25",
@@ -1581,7 +2559,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-26",
@@ -1590,7 +2574,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-27",
@@ -1599,7 +2589,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-06-28",
@@ -1608,7 +2604,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-06-29",
@@ -1617,7 +2619,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-06-30",
@@ -1626,7 +2634,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-01",
@@ -1635,7 +2649,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-02",
@@ -1644,7 +2664,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-03",
@@ -1653,7 +2679,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-04",
@@ -1662,7 +2694,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-05",
@@ -1671,7 +2709,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-06",
@@ -1680,7 +2724,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-07",
@@ -1689,7 +2739,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-08",
@@ -1698,7 +2754,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-09",
@@ -1707,7 +2769,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-10",
@@ -1716,7 +2784,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-11",
@@ -1725,7 +2799,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-12",
@@ -1734,7 +2814,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-13",
@@ -1743,7 +2829,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-14",
@@ -1752,7 +2844,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-15",
@@ -1761,7 +2859,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-16",
@@ -1770,7 +2874,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-17",
@@ -1779,7 +2889,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-18",
@@ -1788,7 +2904,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-19",
@@ -1797,7 +2919,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-20",
@@ -1806,7 +2934,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-21",
@@ -1815,7 +2949,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-22",
@@ -1824,7 +2964,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-23",
@@ -1833,7 +2979,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-24",
@@ -1842,7 +2994,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-25",
@@ -1851,7 +3009,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-26",
@@ -1860,7 +3024,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-27",
@@ -1869,7 +3039,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-28",
@@ -1878,7 +3054,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-07-29",
@@ -1887,7 +3069,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-07-30",
@@ -1896,7 +3084,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-07-31",
@@ -1905,7 +3099,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-01",
@@ -1914,7 +3114,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-02",
@@ -1923,7 +3129,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-03",
@@ -1932,7 +3144,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-04",
@@ -1941,7 +3159,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-05",
@@ -1950,7 +3174,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-06",
@@ -1959,7 +3189,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-07",
@@ -1968,7 +3204,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-08",
@@ -1977,7 +3219,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-09",
@@ -1986,7 +3234,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-10",
@@ -1995,7 +3249,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-11",
@@ -2004,7 +3264,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-12",
@@ -2013,7 +3279,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-13",
@@ -2022,7 +3294,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-14",
@@ -2031,7 +3309,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-15",
@@ -2040,7 +3324,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-16",
@@ -2049,7 +3339,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-17",
@@ -2058,7 +3354,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-18",
@@ -2067,7 +3369,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-19",
@@ -2076,7 +3384,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-20",
@@ -2085,7 +3399,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-21",
@@ -2094,7 +3414,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-22",
@@ -2103,7 +3429,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-23",
@@ -2112,7 +3444,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-24",
@@ -2121,7 +3459,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-25",
@@ -2130,7 +3474,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-26",
@@ -2139,7 +3489,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-27",
@@ -2148,7 +3504,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-28",
@@ -2157,7 +3519,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-08-29",
@@ -2166,7 +3534,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "비상의 힘",
         "meaning": "지쳐 쓰러질 것 같을 때<br>주님을 바라보는 것이 곧 능력입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기"
+        "mission": "하늘을 한 번 쳐다보며 크게 숨 쉬기",
+        "reference_en": "Isaiah 40:31",
+        "verse_en": "But those who hope in the LORD will renew their strength.<br>They will soar on wings like eagles.",
+        "meaning_title_en": "Power to Soar",
+        "meaning_en": "When you feel like collapsing,<br>looking to the Lord is your power.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Look up at the sky and take a deep breath"
     },
     {
         "date": "2026-08-30",
@@ -2175,7 +3549,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "나의 에너지",
         "meaning": "세상 어떤 것보다<br>주님을 사랑하는 마음이 가장 큰 힘입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주님 사랑해요라고 고백해보기"
+        "mission": "주님 사랑해요라고 고백해보기",
+        "reference_en": "Psalm 18:1",
+        "verse_en": "I love you, LORD, my strength.",
+        "meaning_title_en": "My Energy",
+        "meaning_en": "Loving the Lord is the greatest strength<br>above anything else in the world.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess 'I love you Lord'"
     },
     {
         "date": "2026-08-31",
@@ -2184,7 +3564,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "무한 동력",
         "meaning": "내 능력이 아니라<br>공급하시는 주님의 힘으로 일어섭니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기"
+        "mission": "힘든 업무 시작 전 짧게 화이팅 기도하기",
+        "reference_en": "Philippians 4:13",
+        "verse_en": "I can do all this through him<br>who gives me strength.",
+        "meaning_title_en": "Limitless Power",
+        "meaning_en": "I stand not by my own ability,<br>but by the strength the Lord provides.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Pray a short 'Fighting!' prayer before starting difficult work"
     },
     {
         "date": "2026-09-01",
@@ -2193,7 +3579,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-02",
@@ -2202,7 +3594,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-09-03",
@@ -2211,7 +3609,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-09-04",
@@ -2220,7 +3624,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-09-05",
@@ -2229,7 +3639,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-06",
@@ -2238,7 +3654,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-09-07",
@@ -2247,7 +3669,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-09-08",
@@ -2256,7 +3684,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-09-09",
@@ -2265,7 +3699,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-10",
@@ -2274,7 +3714,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-09-11",
@@ -2283,7 +3729,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-09-12",
@@ -2292,7 +3744,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-09-13",
@@ -2301,7 +3759,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-14",
@@ -2310,7 +3774,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-09-15",
@@ -2319,7 +3789,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-09-16",
@@ -2328,7 +3804,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-09-17",
@@ -2337,7 +3819,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-18",
@@ -2346,7 +3834,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-09-19",
@@ -2355,7 +3849,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-09-20",
@@ -2364,7 +3864,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-09-21",
@@ -2373,7 +3879,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-22",
@@ -2382,7 +3894,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-09-23",
@@ -2391,7 +3909,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-09-24",
@@ -2400,7 +3924,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-09-25",
@@ -2409,7 +3939,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-26",
@@ -2418,7 +3954,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-09-27",
@@ -2427,7 +3969,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-09-28",
@@ -2436,7 +3984,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-09-29",
@@ -2445,7 +3999,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-09-30",
@@ -2454,7 +4014,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-01",
@@ -2463,7 +4029,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-02",
@@ -2472,7 +4044,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-03",
@@ -2481,7 +4059,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-10-04",
@@ -2490,7 +4074,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-05",
@@ -2499,7 +4089,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-06",
@@ -2508,7 +4104,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-07",
@@ -2517,7 +4119,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-10-08",
@@ -2526,7 +4134,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-09",
@@ -2535,7 +4149,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-10",
@@ -2544,7 +4164,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-11",
@@ -2553,7 +4179,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-10-12",
@@ -2562,7 +4194,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-13",
@@ -2571,7 +4209,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-14",
@@ -2580,7 +4224,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-15",
@@ -2589,7 +4239,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-10-16",
@@ -2598,7 +4254,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-17",
@@ -2607,7 +4269,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-18",
@@ -2616,7 +4284,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-19",
@@ -2625,7 +4299,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-10-20",
@@ -2634,7 +4314,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-21",
@@ -2643,7 +4329,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-22",
@@ -2652,7 +4344,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-23",
@@ -2661,7 +4359,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-10-24",
@@ -2670,7 +4374,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-25",
@@ -2679,7 +4389,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-26",
@@ -2688,7 +4404,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-27",
@@ -2697,7 +4419,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-10-28",
@@ -2706,7 +4434,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "하나님의 격려",
         "meaning": "당신이 떨고 있을 때<br>주님은 당신의 손을 더 세게 쥐어주십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "두려운 마음이 들 때 이 구절 암송하기"
+        "mission": "두려운 마음이 들 때 이 구절 암송하기",
+        "reference_en": "Isaiah 41:10",
+        "verse_en": "So do not fear, for I am with you;<br>do not be dismayed, for I am your God.",
+        "meaning_title_en": "God's Encouragement",
+        "meaning_en": "When you are trembling,<br>the Lord holds your hand even tighter.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Recite this verse when you feel afraid"
     },
     {
         "date": "2026-10-29",
@@ -2715,7 +4449,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "참된 안식",
         "meaning": "혼자서 다 감당하려 하지 마세요.<br>주님의 품 안에서 잠시 쉬어가도 괜찮습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "10분간 아무것도 하지 않고 주님 묵상하기"
+        "mission": "10분간 아무것도 하지 않고 주님 묵상하기",
+        "reference_en": "Matthew 11:28",
+        "verse_en": "Come to me, all you who are weary and burdened,<br>and I will give you rest.",
+        "meaning_title_en": "True Rest",
+        "meaning_en": "Don't try to bear it all alone.<br>It's okay to rest for a while in the Lord's arms.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Meditate on the Lord for 10 minutes doing nothing else"
     },
     {
         "date": "2026-10-30",
@@ -2724,7 +4464,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "선의 완성",
         "meaning": "지금의 고난도 결국에는<br>가장 아름다운 조각으로 맞춰질 것입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "이해되지 않는 상황도 믿음으로 수용하기"
+        "mission": "이해되지 않는 상황도 믿음으로 수용하기",
+        "reference_en": "Romans 8:28",
+        "verse_en": "And we know that in all things God works for the good of those who love him,<br>who have been called according to his purpose.",
+        "meaning_title_en": "Completion of Good",
+        "meaning_en": "Even current sufferings will eventually fit together<br>into the most beautiful masterpiece.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Accept situations you don't understand with faith"
     },
     {
         "date": "2026-10-31",
@@ -2733,7 +4479,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "완벽한 인도",
         "meaning": "목자 되신 주님만 따라가면<br>어두운 골짜기도 두렵지 않습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 주님이 인도하신 작은 일 감사하기"
+        "mission": "오늘 주님이 인도하신 작은 일 감사하기",
+        "reference_en": "Psalm 23:1",
+        "verse_en": "The LORD is my shepherd,<br>I lack nothing.",
+        "meaning_title_en": "Perfect Guidance",
+        "meaning_en": "If you follow the Lord your Shepherd,<br>you need not fear even the darkest valley.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Give thanks for a small thing the Lord guided you in today"
     },
     {
         "date": "2026-11-01",
@@ -2742,7 +4494,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-02",
@@ -2751,7 +4509,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-03",
@@ -2760,7 +4524,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-04",
@@ -2769,7 +4539,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-05",
@@ -2778,7 +4554,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-06",
@@ -2787,7 +4569,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-07",
@@ -2796,7 +4584,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-08",
@@ -2805,7 +4599,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-09",
@@ -2814,7 +4614,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-10",
@@ -2823,7 +4629,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-11",
@@ -2832,7 +4644,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-12",
@@ -2841,7 +4659,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-13",
@@ -2850,7 +4674,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-14",
@@ -2859,7 +4689,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-15",
@@ -2868,7 +4704,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-16",
@@ -2877,7 +4719,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-17",
@@ -2886,7 +4734,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-18",
@@ -2895,7 +4749,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-19",
@@ -2904,7 +4764,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-20",
@@ -2913,7 +4779,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-21",
@@ -2922,7 +4794,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-22",
@@ -2931,7 +4809,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-23",
@@ -2940,7 +4824,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-24",
@@ -2949,7 +4839,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-25",
@@ -2958,7 +4854,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-26",
@@ -2967,7 +4869,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-27",
@@ -2976,7 +4884,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "영원한 인자",
         "meaning": "주님의 인자하심은 어제도 오늘도<br>우리 삶 구석구석에 닿아 있습니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "지나온 1년을 돌아보며 감사 고백하기"
+        "mission": "지나온 1년을 돌아보며 감사 고백하기",
+        "reference_en": "Psalm 107:1",
+        "verse_en": "Give thanks to the LORD, for he is good;<br>his love endures forever.",
+        "meaning_title_en": "Everlasting Love",
+        "meaning_en": "The Lord's love touches every corner of our lives,<br>yesterday and today.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Confess thanks while looking back on the past year"
     },
     {
         "date": "2026-11-28",
@@ -2985,7 +4899,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-11-29",
@@ -2994,7 +4914,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-11-30",
@@ -3003,7 +4929,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "감사의 습관",
         "meaning": "감사는 문제의 해결보다<br>해결하시는 하나님을 먼저 보게 합니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "오늘 감사한 일 3가지 메모장에 적기"
+        "mission": "오늘 감사한 일 3가지 메모장에 적기",
+        "reference_en": "1 Thessalonians 5:18",
+        "verse_en": "Give thanks in all circumstances;<br>for this is God's will for you in Christ Jesus.",
+        "meaning_title_en": "Habit of Gratitude",
+        "meaning_en": "Gratitude makes you see the God who solves problems<br>before the solution to the problem.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Write down 3 things you are grateful for today in a notepad"
     },
     {
         "date": "2026-12-01",
@@ -3012,7 +4944,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-02",
@@ -3021,7 +4959,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-03",
@@ -3030,7 +4974,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-04",
@@ -3039,7 +4989,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-05",
@@ -3048,7 +5004,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-06",
@@ -3057,7 +5019,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-07",
@@ -3066,7 +5034,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-08",
@@ -3075,7 +5049,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-09",
@@ -3084,7 +5064,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-10",
@@ -3093,7 +5079,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-11",
@@ -3102,7 +5094,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-12",
@@ -3111,7 +5109,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-13",
@@ -3120,7 +5124,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-14",
@@ -3129,7 +5139,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-15",
@@ -3138,7 +5154,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-16",
@@ -3147,7 +5169,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-17",
@@ -3156,7 +5184,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-18",
@@ -3165,7 +5199,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-19",
@@ -3174,7 +5214,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-20",
@@ -3183,7 +5229,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-21",
@@ -3192,7 +5244,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-22",
@@ -3201,7 +5259,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-23",
@@ -3210,7 +5274,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-24",
@@ -3219,7 +5289,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-25",
@@ -3228,7 +5304,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-26",
@@ -3237,7 +5319,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-27",
@@ -3246,7 +5334,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-28",
@@ -3255,7 +5349,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     },
     {
         "date": "2026-12-29",
@@ -3264,7 +5364,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "우리와 함께",
         "meaning": "가장 낮고 천한 곳에 오신 주님은<br>지금 당신의 마음 문 앞에 서 계십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "예수님을 내 마음 중심에 모시기"
+        "mission": "예수님을 내 마음 중심에 모시기",
+        "reference_en": "Matthew 1:23",
+        "verse_en": "The virgin will conceive and give birth to a son, and they will call him Immanuel",
+        "meaning_title_en": "With Us",
+        "meaning_en": "The Lord who came to the lowest place<br>is standing at the door of your heart right now.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Invite Jesus into the center of your heart"
     },
     {
         "date": "2026-12-30",
@@ -3273,7 +5379,13 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "평강의 왕",
         "meaning": "평강의 왕으로 오신 예수님이<br>당신의 복잡한 마음을 잠재우십니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "주변에 예수님의 평화를 전하기"
+        "mission": "주변에 예수님의 평화를 전하기",
+        "reference_en": "Isaiah 9:6",
+        "verse_en": "For to us a child is born,<br>to us a son is given.",
+        "meaning_title_en": "Prince of Peace",
+        "meaning_en": "Jesus, who came as the Prince of Peace,<br>calms your complicated heart.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Share Jesus' peace with those around you"
     },
     {
         "date": "2026-12-31",
@@ -3282,6 +5394,12 @@ export const MANNA_DATA: any[] = [
         "meaning_title": "성육신의 은혜",
         "meaning": "하나님이 사람이 되신 이유는<br>당신을 사랑하시기 때문입니다.",
         "mission_title": "TODAY'S MISSION",
-        "mission": "작은 성탄 선물(혹은 마음) 준비하기"
+        "mission": "작은 성탄 선물(혹은 마음) 준비하기",
+        "reference_en": "John 1:14",
+        "verse_en": "The Word became flesh and made his dwelling among us.<br>We have seen his glory.",
+        "meaning_title_en": "Grace of Incarnation",
+        "meaning_en": "The reason God became a man<br>is because He loves you.",
+        "mission_title_en": "TODAY'S MISSION",
+        "mission_en": "Prepare a small Christmas gift (or heart)"
     }
 ];
