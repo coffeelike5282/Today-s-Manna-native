@@ -1,45 +1,70 @@
-import React from 'react';
-import { View, TouchableOpacity, StyleSheet, TouchableOpacityProps } from 'react-native';
+import React, { useRef } from 'react';
+import { View, Animated, StyleSheet, Pressable, PressableProps } from 'react-native';
 
-interface MascotProps extends TouchableOpacityProps {
+interface MascotProps extends PressableProps {
     onClick?: () => void;
 }
 
 const Mascot: React.FC<MascotProps> = ({ onClick, style, ...props }) => {
+    // Animation Value (Scale)
+    const scaleAnim = useRef(new Animated.Value(1)).current;
+
+    const handlePressIn = () => {
+        Animated.spring(scaleAnim, {
+            toValue: 0.9,
+            useNativeDriver: true,
+            speed: 20,
+            bounciness: 10,
+        }).start();
+    };
+
+    const handlePressOut = () => {
+        Animated.spring(scaleAnim, {
+            toValue: 1,
+            useNativeDriver: true,
+            speed: 20,
+            bounciness: 10,
+        }).start();
+    };
+
     return (
-        <TouchableOpacity
-            activeOpacity={0.8}
+        <Pressable
             onPress={onClick}
+            onPressIn={handlePressIn}
+            onPressOut={handlePressOut}
             style={[styles.container, style]}
             {...props}
         >
-            {/* Body */}
-            <View style={styles.body}>
-                {/* Eyes */}
-                <View style={styles.eyesRow}>
-                    <View style={styles.eye} />
-                    <View style={styles.eye} />
+            <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+                {/* Body */}
+                <View style={styles.body}>
+                    {/* Eyes */}
+                    <View style={styles.eyesRow}>
+                        <View style={styles.eye} />
+                        <View style={styles.eye} />
+                    </View>
+
+                    {/* Mouth */}
+                    <View style={styles.mouth} />
+
+                    {/* Cheeks */}
+                    <View style={[styles.cheek, styles.leftCheek]} />
+                    <View style={[styles.cheek, styles.rightCheek]} />
                 </View>
 
-                {/* Mouth */}
-                <View style={styles.mouth} />
-
-                {/* Cheeks */}
-                <View style={[styles.cheek, styles.leftCheek]} />
-                <View style={[styles.cheek, styles.rightCheek]} />
-            </View>
-
-            {/* Shine/Highlight */}
-            <View style={styles.shine} />
-        </TouchableOpacity>
+                {/* Shine/Highlight */}
+                <View style={styles.shine} />
+            </Animated.View>
+        </Pressable>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
-        itemsAlign: 'center',
+        alignItems: 'center',
         position: 'relative',
+        // Make sure container doesn't have background
     },
     body: {
         width: 192,

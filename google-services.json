@@ -1,0 +1,47 @@
+{
+    "project_info": {
+        "project_number": "545497224947",
+        "project_id": "todays-manna",
+        "storage_bucket": "todays-manna.firebasestorage.app"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:545497224947:android:f8ec7f400bdcc1437b4986",
+                "android_client_info": {
+                    "package_name": "com.coffeelike.todaysmanna"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "545497224947-89kn2uckqnqprlebr7889d8hvjk09fu6.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.coffeelike.todaysmanna",
+                        "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+                    }
+                },
+                {
+                    "client_id": "545497224947-013dv70g675p2151849o0dkqoartdfdv.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyD8IkNQMxNaXWP_U54qcIKB7ZN2KM3UStQ"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "545497224947-013dv70g675p2151849o0dkqoartdfdv.apps.googleusercontent.com",
+                            "client_type": 3
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}
