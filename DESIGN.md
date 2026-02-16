@@ -30,7 +30,7 @@
 
 - **Frontend**: React Native (Expo)
 - **Styling**: NativeWind (Tailwind CSS v4-ready structure)
-- **Backend**: Firebase Authentication & Firestore, Supabase
+- **Backend**: Supabase (Authentication & Database)
 - **Assets**: Localized fonts (ttf), Pre-bundled APK support
 
 ---

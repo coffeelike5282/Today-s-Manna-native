@@ -2,7 +2,7 @@ import 'react-native-url-polyfill/auto';
 import { createClient } from '@supabase/supabase-js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Constants from 'expo-constants';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, statusCodes, isErrorWithCode } from '@react-native-google-signin/google-signin';
 
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
@@ -29,11 +29,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     },
 });
 
-export type User = {
-    id: string;
-    email?: string;
-    user_metadata?: any;
-};
+import { User } from '../types/types';
 
 export type AuthStateCallback = (user: User | null) => void;
 
@@ -53,10 +49,11 @@ export const subscribeToAuthChanges = (callback: AuthStateCallback) => {
  */
 export const logout = async () => {
     try {
-        await supabase.auth.signOut();
-        console.log("User signed out successfully");
+        await GoogleSignin.signOut(); // Clear Google Session
+        await supabase.auth.signOut(); // Clear Supabase Session
+        console.log("User signed out successfully (Google & Supabase)");
     } catch (error) {
-        console.error("Logout failed:", error);
+        console.warn("Logout failed:", error);
         throw error;
     }
 };
@@ -82,10 +79,32 @@ export const signInWithGoogle = async () => {
             if (error) throw error;
             return data.user;
         } else {
-            throw new Error('Google Sign-In was cancelled');
+            // User cancelled the sign-in flow
+            console.log('Google Sign-In was cancelled by user (userInfo.type !== success)');
+            return null;
         }
     } catch (error) {
-        console.error("Google Sign-In failed:", error);
+        if (isErrorWithCode(error)) {
+            switch (error.code) {
+                case statusCodes.SIGN_IN_CANCELLED:
+                    // user cancelled the login flow
+                    console.log('Google Sign-In was cancelled by user (SIGN_IN_CANCELLED)');
+                    return null;
+                case statusCodes.IN_PROGRESS:
+                    // operation (e.g. sign in) is in progress already
+                    console.log('Google Sign-In is already in progress');
+                    return null;
+                case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+                    // play services not available or outdated
+                    console.warn('Play services not available or outdated');
+                    break;
+                default:
+                    // some other error happened
+                    console.warn('Google Sign-In error code:', error.code);
+            }
+        } else {
+            console.warn("Google Sign-In failed (non-code error):", error);
+        }
         throw error;
     }
 };

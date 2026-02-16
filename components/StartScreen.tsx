@@ -1,60 +1,101 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image, Animated, Easing } from 'react-native';
 import { ScreenProps } from '../types/types';
 import Mascot from './Mascot';
-import { Volume2, VolumeX, Cloud, Star, Heart, Languages } from 'lucide-react-native';
+import { Volume2, VolumeX, Cloud, Star, Heart, User as UserIcon, LogOut, FolderHeart } from 'lucide-react-native';
+import CalendarModal from './CalendarModal';
 
 const { width, height } = Dimensions.get('window');
 
-const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute, language = 'ko', toggleLanguage }) => {
+const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user }) => {
+    // ... animation refs ...
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+    const scaleAnim = useRef(new Animated.Value(0.9)).current;
+    const [calendarVisible, setCalendarVisible] = useState(false);
+
+    useEffect(() => {
+        Animated.parallel([
+            Animated.timing(fadeAnim, {
+                toValue: 1,
+                duration: 1000,
+                useNativeDriver: true,
+            }),
+            Animated.spring(scaleAnim, {
+                toValue: 1,
+                friction: 8,
+                tension: 40,
+                useNativeDriver: true,
+            }),
+        ]).start();
+    }, []);
+
+    const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || (language === 'ko' ? "박 사장님" : "User");
+    const avatarUrl = user?.user_metadata?.avatar_url || user?.user_metadata?.picture;
+
+    const handleOpenFavorites = () => {
+        setCalendarVisible(true);
+    };
+
+    const handleSelectDate = (dateString: string) => {
+        setCalendarVisible(false);
+        onNext(dateString);
+    };
+
     return (
         <View style={styles.container}>
-            {/* Background Floating Elements - Positioned absolutely */}
-            <View style={[styles.floating, { top: height * 0.1, left: width * 0.1 }]}>
-                <Cloud size={48} color="#B2EBF2" fill="#B2EBF2" />
-            </View>
-            <View style={[styles.floating, { top: height * 0.15, right: width * 0.1 }]}>
-                <Star size={36} color="#FFECB3" fill="#FFECB3" />
-            </View>
-            <View style={[styles.floating, { top: height * 0.25, left: width * 0.25 }]}>
-                <Heart size={30} color="#F8BBD0" fill="#F8BBD0" />
-            </View>
-            <View style={[styles.floating, { bottom: height * 0.3, left: width * 0.1 }]}>
-                <Cloud size={60} color="#C8E6C9" fill="#C8E6C9" />
-            </View>
-            <View style={[styles.floating, { bottom: height * 0.2, right: width * 0.1 }]}>
-                <Heart size={40} color="#D1C4E9" fill="#D1C4E9" />
-            </View>
-            <View style={[styles.floating, { bottom: height * 0.35, right: width * 0.2 }]}>
-                <Star size={30} color="#FFE082" fill="#FFE082" />
-            </View>
+            {/* 1. Centralized Control Island (Unified) */}
+            <View style={styles.islandContainer}>
+                <View style={styles.glassIsland}>
+                    {/* Left: User Info */}
+                    <View style={styles.userInfoContainer}>
+                        {avatarUrl ? (
+                            <Image source={{ uri: avatarUrl }} style={styles.userAvatar} />
+                        ) : (
+                            <View style={styles.defaultAvatar}>
+                                <UserIcon size={14} color="#8D6E63" />
+                            </View>
+                        )}
+                        <Text style={styles.islandUserName} numberOfLines={1} ellipsizeMode="tail">
+                            {userName}
+                        </Text>
+                    </View>
 
-            {/* Language Button */}
-            <View style={styles.langButtonContainer}>
-                <TouchableOpacity
-                    onPress={toggleLanguage}
-                    style={styles.iconButton}
-                >
-                    <Text style={styles.langText}>{language === 'ko' ? 'EN' : '한글'}</Text>
-                </TouchableOpacity>
-            </View>
+                    {/* Logout Button */}
+                    <TouchableOpacity onPress={onLogout} style={styles.iconButton}>
+                        <LogOut size={20} color="#8D6E63" />
+                    </TouchableOpacity>
 
-            {/* Mute Button */}
-            <View style={styles.muteButtonContainer}>
-                <TouchableOpacity
-                    onPress={toggleMute}
-                    style={styles.iconButton}
-                >
-                    {isMuted ? (
-                        <VolumeX color="gray" size={24} />
-                    ) : (
-                        <Volume2 color="#5D4037" size={24} />
-                    )}
-                </TouchableOpacity>
+                    {/* Archive Button - Added */}
+                    <TouchableOpacity onPress={handleOpenFavorites} style={styles.iconButton}>
+                        <FolderHeart size={20} color="#8D6E63" />
+                    </TouchableOpacity>
+
+                    <View style={styles.divider} />
+
+                    {/* Language Toggle */}
+                    <TouchableOpacity onPress={toggleLanguage} style={styles.iconButton}>
+                        <Text style={styles.langText}>{language === 'ko' ? 'EN' : '한글'}</Text>
+                    </TouchableOpacity>
+
+                    {/* Mute Toggle */}
+                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
+                        {isMuted ? (
+                            <VolumeX color="#8D6E63" size={20} />
+                        ) : (
+                            <Volume2 color="#5D4037" size={20} />
+                        )}
+                    </TouchableOpacity>
+                </View>
             </View>
 
             {/* Main Content */}
             <View style={styles.mainContent}>
+                <View style={styles.welcomeContainer}>
+                    <Text style={styles.welcomeText}>
+                        {language === 'ko' ? "오늘도 환영합니다!" : "Welcome back!"}
+                    </Text>
+                </View>
+
                 <Text style={styles.title}>
                     {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
                 </Text>
@@ -69,9 +110,9 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute, langu
                     </Text>
                 </View>
 
-                <Mascot onClick={onNext} style={styles.mascot} />
+                <Mascot onClick={() => onNext()} style={styles.mascot} />
 
-                <TouchableOpacity onPress={onNext} style={styles.startButton}>
+                <TouchableOpacity onPress={() => onNext()} style={styles.startButton}>
                     <Text style={styles.startButtonText}>
                         {language === 'ko' ? "터치하여 말씀 시작하기" : "Touch to Start"}
                     </Text>
@@ -84,6 +125,14 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute, langu
                     {language === 'ko' ? "이어폰 착용을 권장합니다" : "Earphones Recommended"}
                 </Text>
             </View>
+
+            {/* Calendar Modal */}
+            <CalendarModal
+                visible={calendarVisible}
+                onClose={() => setCalendarVisible(false)}
+                onSelectDate={handleSelectDate}
+                selectedDate={new Date().toISOString().split('T')[0]}
+            />
         </View>
     );
 };
@@ -99,92 +148,145 @@ const styles = StyleSheet.create({
         position: 'absolute',
         opacity: 0.6,
     },
-    langButtonContainer: {
+    islandContainer: {
         position: 'absolute',
-        top: 60,
-        right: 90, // Positioned to the left of mute button
-        zIndex: 100, // Ensure it's on top
-        elevation: 10,
-    },
-    muteButtonContainer: {
-        position: 'absolute',
-        top: 60,
-        right: 30,
+        top: 50, // Matches VerseScreen
+        width: '100%',
+        alignItems: 'center',
         zIndex: 50,
     },
-    iconButton: {
-        width: 48,
-        height: 48,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)', // Increased opacity
-        borderRadius: 16,
+    glassIsland: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: 'rgba(255, 255, 255, 0.75)',
+        borderRadius: 30, // Matches VerseScreen/DetailScreen pill shape
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.6)',
+        paddingVertical: 0, // SLIM: 0 vertical padding
+        paddingHorizontal: 24, // Matches VerseScreen
+        height: 44, // Matches VerseScreen
+        // paddingHorizontal increased to fit content nicely
+        minWidth: '85%', // Matches others
+        justifyContent: 'space-between',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 5,
+    },
+    userInfoContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginRight: 'auto', // Push others to right or just standard flex
+        // Actually VerseScreen uses space-between. 
+        // We can just let flex layout handle it.
+        // We have: [User] [Logout] | [Lang] [Mute]
+        // Let's group User+Logout? or User separate?
+    },
+    userAvatar: {
+        width: 24,
+        height: 24,
+        borderRadius: 12,
+        marginRight: 8,
+    },
+    defaultAvatar: {
+        width: 24,
+        height: 24,
+        borderRadius: 12,
+        backgroundColor: '#EFEBE9',
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 1.5,
-        borderColor: 'rgba(255, 255, 255, 0.8)',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 5,
-        elevation: 0, // Removed gray Android shadow
+        marginRight: 8,
+    },
+    islandUserName: {
+        fontSize: 14,
+        fontFamily: 'NanumGothic_700Bold',
+        color: '#5D4037',
+        marginRight: 12,
+        maxWidth: 100, // Limit width
+    },
+    iconButton: {
+        padding: 5, // Reduced padding
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    divider: {
+        width: 1,
+        height: 16, // Reduced height
+        backgroundColor: '#D7CCC8',
+        marginHorizontal: 4,
     },
     langText: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: '#5D4037',
+        fontSize: 13,
         fontFamily: 'NanumGothic_700Bold',
+        color: '#8D6E63',
     },
+
+    // ... Main Content styles ...
     mainContent: {
         alignItems: 'center',
-        zIndex: 20,
+        marginTop: 60, // Adjust for new header
+    },
+    welcomeContainer: {
+        marginBottom: 10,
+    },
+    welcomeText: {
+        fontSize: 18,
+        fontFamily: 'NanumGothic_700Bold',
+        color: '#795548',
     },
     title: {
-        fontSize: 40,
-        color: '#8D6E63',
+        fontSize: 32,
         fontFamily: 'Jua_400Regular',
-        marginBottom: 8,
+        color: '#5D4037', // Brown
+        marginBottom: 20,
         textShadowColor: 'rgba(0, 0, 0, 0.1)',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 1,
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 2,
     },
     dateBadge: {
         paddingHorizontal: 16,
         paddingVertical: 6,
-        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
         borderRadius: 20,
         marginBottom: 40,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.05,
-        shadowRadius: 2,
-        elevation: 1,
+        borderWidth: 1,
+        borderColor: '#FFF',
     },
     dateText: {
-        color: '#666',
-        fontSize: 18,
+        color: '#795548',
+        fontSize: 15,
         fontFamily: 'NanumGothic_700Bold',
     },
     mascot: {
-        marginBottom: 48,
+        width: width * 0.5,
+        height: width * 0.5,
+        marginBottom: 40,
     },
     startButton: {
-        marginTop: 10,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        paddingVertical: 16,
+        paddingHorizontal: 40,
+        borderRadius: 30,
+        elevation: 3,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
     },
     startButtonText: {
-        fontSize: 26,
-        color: '#444',
-        fontFamily: 'NanumGothic_800ExtraBold',
-        letterSpacing: -0.5,
+        fontSize: 18,
+        color: '#5D4037',
+        fontFamily: 'NanumGothic_700Bold',
     },
     footer: {
         position: 'absolute',
-        bottom: 60,
-        width: '100%',
-        alignItems: 'center',
+        bottom: 40,
     },
     footerText: {
-        color: 'rgba(100, 100, 100, 0.6)',
-        fontSize: 15,
-        fontWeight: 'bold',
+        color: '#AAA',
+        fontSize: 12,
+        fontFamily: 'GowunDodum_400Regular',
     },
 });
 

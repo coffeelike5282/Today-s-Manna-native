@@ -12,6 +12,7 @@ export interface MannaData {
   fullVerse: string;
   interpretation: string;
   mission: string;
+  date: string; // YYYY-MM-DD
 
   // English fields
   verseRefEn?: string;
@@ -21,12 +22,20 @@ export interface MannaData {
   missionEn?: string;
 }
 
+export type User = {
+  id: string;
+  email?: string;
+  user_metadata?: any;
+};
+
 export interface ScreenProps {
-  onNext: () => void;
+  onNext: (date?: string) => void;
   onBack?: () => void;
   data: MannaData;
   isMuted?: boolean;
   toggleMute?: () => void;
   language?: Language;
-  toggleLanguage?: () => void; // Optional, defaults to no-op in components
+  toggleLanguage?: () => void;
+  onLogout?: () => void;
+  user?: User | null;
 }

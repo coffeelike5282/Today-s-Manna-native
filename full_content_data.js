@@ -1,4 +1,4 @@
-export const MANNA_DATA: any[] = [
+const MANNA_DATA = [
     {
         "date": "2026-01-01",
         "reference": "창세기 1:1",

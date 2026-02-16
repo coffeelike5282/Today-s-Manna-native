@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { LogIn } from 'lucide-react-native';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions, ActivityIndicator, Alert } from 'react-native';
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { signInWithGoogle } from '../services/authService';
 import Mascot from './Mascot';
 
@@ -12,52 +11,50 @@ interface LoginScreenProps {
 }
 
 const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
+    const [loading, setLoading] = useState(false);
 
     const handleGoogleLogin = async () => {
+        setLoading(true);
         try {
             const user = await signInWithGoogle();
             if (user) {
                 onLoginSuccess(user);
+            } else {
+                console.log("Login cancelled or returned no user.");
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error("Login Error:", error);
-            // Handle error UI if needed
+            if (error?.code !== 'SIGN_IN_CANCELLED') {
+                // Alert.alert("로그인 오류", "로그인 중 문제가 발생했습니다.");
+            }
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <View style={styles.container}>
-            <LinearGradient
-                colors={['#E0F7FA', '#B2EBF2', '#E0F7FA']}
-                style={styles.gradient}
-            >
-                <View style={styles.content}>
-                    {/* Mascot / Logo Area */}
-                    <View style={styles.logoContainer}>
-                        <Mascot
-                            style={styles.mascot}
-                        />
-                        <Text style={styles.title}>오늘의 만나</Text>
-                        <Text style={styles.subtitle}>따뜻한 위로와 격려의 시간</Text>
-                    </View>
+            <View style={styles.content}>
+                <Text style={styles.title}>오늘의 만나</Text>
+                <Text style={styles.subtitle}>매일의 영적 양식</Text>
 
-                    {/* Login Button Area */}
-                    <View style={styles.buttonContainer}>
-                        <TouchableOpacity
-                            onPress={handleGoogleLogin}
-                            style={styles.loginButton}
-                            activeOpacity={0.8}
-                        >
-                            <LogIn color="white" size={24} style={styles.buttonIcon} />
-                            <Text style={styles.loginButtonText}>Google로 계속하기</Text>
-                        </TouchableOpacity>
-
-                        <Text style={styles.footerText}>
-                            로그인하여 오늘의 말씀을 보관하고 공유해보세요.
-                        </Text>
-                    </View>
+                <View style={styles.mascotContainer}>
+                    <Mascot />
                 </View>
-            </LinearGradient>
+
+                {loading ? (
+                    <ActivityIndicator size="large" color="#8D6E63" style={{ marginTop: 20 }} />
+                ) : (
+                    <GoogleSigninButton
+                        size={GoogleSigninButton.Size.Wide}
+                        color={GoogleSigninButton.Color.Light}
+                        onPress={handleGoogleLogin}
+                        style={{ width: 260, height: 60, marginTop: 40 }}
+                    />
+                )}
+
+                <Text style={styles.footerText}>Google 계정으로 시작하기</Text>
+            </View>
         </View>
     );
 };
@@ -65,72 +62,39 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    gradient: {
-        flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'transparent',
     },
     content: {
+        alignItems: 'center',
         width: '100%',
-        alignItems: 'center',
-        paddingHorizontal: 40,
-    },
-    logoContainer: {
-        alignItems: 'center',
-        marginBottom: 80,
-    },
-    mascot: {
-        width: width * 0.4,
-        height: width * 0.4,
-        marginBottom: 30,
+        paddingHorizontal: 20,
     },
     title: {
         fontSize: 42,
         fontFamily: 'Jua_400Regular',
         color: '#5D4037',
         marginBottom: 10,
+        textShadowColor: 'rgba(255, 255, 255, 0.5)',
+        textShadowOffset: { width: 0, height: 2 },
+        textShadowRadius: 4,
     },
     subtitle: {
         fontSize: 18,
-        fontFamily: 'GowunDodum_400Regular',
+        fontFamily: 'NanumGothic_400Regular',
         color: '#8D6E63',
-        letterSpacing: 1,
+        marginBottom: 50,
     },
-    buttonContainer: {
-        width: '100%',
-        alignItems: 'center',
-    },
-    loginButton: {
-        flexDirection: 'row',
-        backgroundColor: '#4285F4', // Google Blue
-        width: '100%',
-        height: 60,
-        borderRadius: 30,
-        alignItems: 'center',
-        justifyContent: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 6,
-    },
-    buttonIcon: {
-        marginRight: 12,
-    },
-    loginButtonText: {
-        color: 'white',
-        fontSize: 18,
-        fontWeight: 'bold',
-        fontFamily: 'GowunDodum_400Regular',
+    mascotContainer: {
+        marginBottom: 20,
     },
     footerText: {
         marginTop: 20,
         fontSize: 14,
-        color: '#888',
-        textAlign: 'center',
-        lineHeight: 20,
-    }
+        color: '#A1887F',
+        fontFamily: 'NanumGothic_400Regular',
+    },
 });
 
 export default LoginScreen;

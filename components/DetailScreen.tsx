@@ -1,87 +1,236 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Dimensions, Alert } from 'react-native';
 import { ScreenProps } from '../types/types';
-import { Sparkles, ClipboardCheck, Volume2, VolumeX } from 'lucide-react-native';
+import { Sparkles, ClipboardCheck, Volume2, VolumeX, LogOut, Share2, Heart, FolderHeart, ArrowLeft, Cloud, Star } from 'lucide-react-native';
+import * as Sharing from 'expo-sharing';
+import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../services/favoritesService';
+import CalendarModal from './CalendarModal';
 
 const { width, height } = Dimensions.get('window');
 
-const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { } }) => {
+const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute, onNext, language = 'ko', toggleLanguage = () => { }, onLogout, user }) => {
+
+    const [favorited, setFavorited] = useState(false);
+    const [loadingFavorite, setLoadingFavorite] = useState(false);
+    const [calendarVisible, setCalendarVisible] = useState(false);
+    const [favoriteDates, setFavoriteDates] = useState<string[]>([]); // Store favorite dates
 
     // Select data based on language (fallback to Korean if English missing)
     const interpretation = language === 'en' ? (data.interpretationEn || data.interpretation) : data.interpretation;
     const mission = language === 'en' ? (data.missionEn || data.mission) : data.mission;
+    const verseRef = language === 'en' ? (data.verseRefEn || data.verseRef) : data.verseRef;
+    const fullVerse = language === 'en' ? (data.fullVerseEn || data.fullVerse) : data.fullVerse;
+
+    useEffect(() => {
+        const checkStatus = async () => {
+            if (user && data.verseRef) {
+                // Use data.date instead of current system date
+                const status = await isFavorited(user.id, data.date);
+                setFavorited(status);
+
+                // Fetch all favorite dates for calendar dots
+                const dates = await getFavoriteDates(user.id);
+                setFavoriteDates(dates);
+            }
+        };
+        checkStatus();
+    }, [user, data, favorited]); // Add favorited dependency to refresh list
+
+    const handleOpenFavorites = () => {
+        setCalendarVisible(true);
+    };
+
+    const handleSelectDate = (dateString: string) => {
+        onNext(dateString);
+    };
+
+    const handleShare = async () => {
+        const { Share } = require('react-native');
+
+        const header = language === 'ko' ? '[오늘의 만나]' : "[Today's Manna]";
+        const interpTitle = language === 'ko' ? '오늘의 해석' : "Today's Message";
+        const missionTitle = language === 'ko' ? '오늘의 미션' : "Today's Mission";
+
+        let shareMessage = `${header}\n\n"${fullVerse}"\n- ${verseRef}\n\n`;
+
+        if (interpretation) {
+            shareMessage += `[${interpTitle}]\n${interpretation}\n\n`;
+        }
+
+        if (mission) {
+            shareMessage += `[${missionTitle}]\n${mission}\n\n`;
+        }
+
+        shareMessage += language === 'ko' ? "매일 새로운 말씀, '오늘의 만나'" : "Daily Manna, 'Today's Manna'";
+
+        try {
+            await Share.share({
+                message: shareMessage,
+            });
+        } catch (error) {
+            console.log("Share error:", error);
+        }
+    };
+
+    const handleToggleFavorite = async () => {
+        if (!user) return;
+        setLoadingFavorite(true);
+        // Use data.date instead of system date
+        const dateStr = data.date;
+
+        try {
+            if (favorited) {
+                await removeFavorite(user.id, dateStr);
+                setFavorited(false);
+            } else {
+                await addFavorite(
+                    user.id,
+                    dateStr,
+                    data.verseRef,
+                    data.fullVerse,
+                    data.interpretation,
+                    data.mission,
+                    data.verseRefEn,
+                    data.fullVerseEn,
+                    data.interpretationEn,
+                    data.missionEn
+                );
+                setFavorited(true);
+            }
+        } catch (error) {
+            Alert.alert("Error", "Favorite update failed");
+        } finally {
+            setLoadingFavorite(false);
+        }
+    };
 
     return (
         <View style={styles.container}>
-            {/* Header / Background Overlay */}
-            <View style={styles.backgroundOverlay}>
-                <View style={styles.header}>
-                    <View style={styles.headerRow}>
-                        <TouchableOpacity onPress={toggleLanguage} style={styles.headerIconBox}>
-                            <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#8D6E63' }}>
-                                {language === 'ko' ? 'EN' : '한글'}
-                            </Text>
-                        </TouchableOpacity>
-                        <Text style={styles.headerTitle}>
-                            {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
-                        </Text>
-                        <TouchableOpacity onPress={toggleMute} style={styles.muteButton}>
-                            {isMuted ? <VolumeX color="gray" size={20} /> : <Volume2 color="#5D4037" size={20} />}
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </View>
 
-            {/* Content Sheet */}
-            <View style={styles.sheet}>
-                {/* Drag Handle simulation */}
-                <TouchableOpacity style={styles.dragHandleContainer} onPress={onBack}>
-                    <View style={styles.dragHandle} />
-                </TouchableOpacity>
 
-                <View style={styles.sheetContent}>
-                    {/* Interpretation Section */}
-                    <View style={styles.section}>
-                        <View style={styles.sectionHeader}>
-                            <Sparkles color="#8D6E63" size={20} />
-                            <Text style={styles.sectionTitle}>
-                                {language === 'ko' ? "오늘의 해석" : "Today's Message"}
-                            </Text>
-                        </View>
-                        <View style={styles.interpretationBox}>
-                            <ScrollView showsVerticalScrollIndicator={true}>
-                                <Text style={styles.interpretationText}>
-                                    {interpretation}
-                                </Text>
-                            </ScrollView>
-                        </View>
-                    </View>
+            {/* 1. Centralized Control Island (Top Layer) */}
+            <View style={styles.islandContainer}>
+                <View style={styles.glassIsland}>
+                    {/* Back Button */}
+                    <TouchableOpacity onPress={onBack} style={styles.iconButton}>
+                        <ArrowLeft size={20} color="#8D6E63" />
+                    </TouchableOpacity>
 
-                    {/* Mission Section */}
-                    <View style={styles.missionSection}>
-                        <View style={styles.sectionHeader}>
-                            <ClipboardCheck color="#8D6E63" size={20} />
-                            <Text style={styles.sectionTitle}>
-                                {language === 'ko' ? "오늘의 미션" : "Today's Mission"}
-                            </Text>
-                        </View>
-                        <View style={styles.missionCard}>
-                            <Text style={styles.missionText}>
-                                {mission}
-                            </Text>
-                        </View>
-                    </View>
-                </View>
+                    <View style={styles.divider} />
 
-                {/* Complete Button */}
-                <View style={styles.footer}>
-                    <TouchableOpacity onPress={onBack} style={styles.completeButton}>
-                        <Text style={styles.completeButtonText}>
-                            {language === 'ko' ? "미션 완료!" : "Mission Complete!"}
-                        </Text>
+                    {/* Favorite Button */}
+                    <TouchableOpacity
+                        onPress={handleToggleFavorite}
+                        style={styles.iconButton}
+                        disabled={loadingFavorite}
+                    >
+                        <Heart
+                            size={20}
+                            color={favorited ? "#FF5252" : "#8D6E63"}
+                            fill={favorited ? "#FF5252" : "transparent"}
+                        />
+                    </TouchableOpacity>
+
+                    {/* Favorites List Button */}
+                    <TouchableOpacity onPress={handleOpenFavorites} style={styles.iconButton}>
+                        <FolderHeart size={20} color="#8D6E63" />
+                    </TouchableOpacity>
+
+                    {/* Share Button */}
+                    <TouchableOpacity onPress={handleShare} style={styles.iconButton}>
+                        <Share2 size={20} color="#8D6E63" />
+                    </TouchableOpacity>
+
+                    <View style={styles.divider} />
+
+                    {/* Language Toggle */}
+                    <TouchableOpacity onPress={toggleLanguage} style={styles.iconButton}>
+                        <Text style={styles.langText}>{language === 'ko' ? 'EN' : '한글'}</Text>
+                    </TouchableOpacity>
+
+                    {/* Mute Toggle */}
+                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
+                        {isMuted ? (
+                            <VolumeX color="#8D6E63" size={20} />
+                        ) : (
+                            <Volume2 color="#5D4037" size={20} />
+                        )}
                     </TouchableOpacity>
                 </View>
             </View>
+
+            {/* Main Content (Scrollable) */}
+            <ScrollView style={styles.scrollContent} contentContainerStyle={{ paddingBottom: 100 }}>
+                {/* 2. Content Sheet (White Paper Style) */}
+                <View style={[styles.sheet, { marginTop: 120 }]}>
+                    <View style={{ flex: 1, width: '100%', alignItems: 'center', paddingBottom: 80 }}>
+                        {/* Header Date Badge */}
+                        <View style={[styles.headerDateBadge, { marginBottom: 20 }]}>
+                            <Text style={styles.headerDateText}>
+                                {new Date(data.date).toLocaleDateString(language === 'ko' ? 'ko-KR' : 'en-US', {
+                                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                                })}
+                            </Text>
+                        </View>
+
+                        {/* Verse Reference */}
+                        <View style={styles.titleSection}>
+                            <Text style={styles.verseRef}>{verseRef}</Text>
+                        </View>
+
+                        <View style={styles.dividerHorizontal} />
+
+                        {/* Interpretation Section */}
+                        <View style={styles.section}>
+                            <View style={styles.sectionHeader}>
+                                <Sparkles size={20} color="#FFD54F" style={{ marginRight: 8 }} />
+                                <Text style={styles.sectionTitle}>
+                                    {language === 'ko' ? "오늘의 해설" : "Today's Interpretation"}
+                                </Text>
+                            </View>
+                            <Text style={styles.sectionContent}>
+                                {interpretation}
+                            </Text>
+                        </View>
+
+                        <View style={styles.dividerHorizontal} />
+
+                        {/* Mission Section */}
+                        {/* Only show mission if it exists */}
+                        {mission ? (
+                            <View style={styles.section}>
+                                <View style={styles.sectionHeader}>
+                                    <ClipboardCheck size={20} color="#81C784" style={{ marginRight: 8 }} />
+                                    <Text style={styles.sectionTitle}>
+                                        {language === 'ko' ? "오늘의 미션" : "Today's Mission"}
+                                    </Text>
+                                </View>
+                                <Text style={styles.sectionContent}>
+                                    {mission}
+                                </Text>
+                            </View>
+                        ) : null}
+                    </View>
+
+                    {/* Footer Quote */}
+                    <View style={styles.footerQuote}>
+                        <Text style={styles.footerText}>
+                            {language === 'ko'
+                                ? "말씀이 삶이 되는 하루 보내세요 🌿"
+                                : "Let the Word become life today 🌿"}
+                        </Text>
+                    </View>
+                </View>
+            </ScrollView>
+
+            {/* Calendar Modal */}
+            <CalendarModal
+                visible={calendarVisible}
+                onClose={() => setCalendarVisible(false)}
+                onSelectDate={handleSelectDate}
+                selectedDate={new Date().toISOString().split('T')[0]}
+                favoriteDates={favoriteDates} // Pass favorite dates
+            />
         </View>
     );
 };
@@ -91,164 +240,134 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'transparent',
     },
-    backgroundOverlay: {
-        height: height * 0.2,
-        backgroundColor: 'rgba(255, 255, 255, 0.4)',
-        paddingTop: 60,
+    floating: {
+        position: 'absolute',
     },
-    header: {
-        paddingHorizontal: 24,
+    islandContainer: {
+        position: 'absolute',
+        top: 50, // Safe Area Top
+        width: '100%',
+        alignItems: 'center',
+        zIndex: 50,
     },
-    headerRow: {
+    glassIsland: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center', // Centered title
-        width: '100%',
-        position: 'relative',
-    },
-    headerIconBox: {
-        position: 'absolute',
-        left: 0,
-        width: 44,
-        height: 44,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-        borderRadius: 16,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 1.5,
-        borderColor: 'rgba(255, 255, 255, 0.8)',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 5,
-        elevation: 0,
-        zIndex: 100,
-    },
-    headerTitle: {
-        fontSize: 26,
-        fontFamily: 'Jua_400Regular',
-        color: '#333',
-    },
-    muteButton: {
-        position: 'absolute',
-        right: 0,
-        width: 40,
-        height: 40,
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        borderRadius: 14,
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'rgba(255, 255, 255, 0.95)', // Increased opacity
+        borderRadius: 30,
+        paddingVertical: 0,
+        paddingHorizontal: 20,
+        height: 44, // Reduced height to match VerseScreen
         borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.5)',
+        borderColor: '#D7CCC8',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.08,
-        shadowRadius: 3,
-        elevation: 0,
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 5,
+        justifyContent: 'space-between',
+        minWidth: '92%',
+    },
+    iconButton: {
+        padding: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    divider: {
+        width: 1,
+        height: 16,
+        backgroundColor: '#D7CCC8',
+        marginHorizontal: 4,
+    },
+    langText: {
+        fontSize: 13,
+        fontFamily: 'NanumGothic_700Bold',
+        color: '#8D6E63',
+    },
+    scrollContent: {
+        flexGrow: 1,
     },
     sheet: {
-        flex: 1,
-        backgroundColor: '#FFF9C4', // manna-yellow tint
-        borderTopLeftRadius: 50,
-        borderTopRightRadius: 50,
-        marginTop: -30,
-        paddingTop: 10,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: -10 },
-        shadowOpacity: 0.1,
-        shadowRadius: 20,
+        backgroundColor: '#FFFEFA', // Match VerseCard background
+        borderRadius: 24, // Consistent radius
+        padding: 30,
+        paddingTop: 40,
+        minHeight: height * 0.7 + 40, // Adjust height logic
+        width: '90%', // Add side margins (90% width)
+        alignSelf: 'center', // Center horizontally
+        shadowColor: '#5D4037',
+        shadowOffset: { width: 0, height: 8 },
+        shadowOpacity: 0.15,
+        shadowRadius: 16,
         elevation: 10,
-        borderTopWidth: 4,
-        borderColor: 'rgba(255, 255, 255, 0.5)',
-    },
-    dragHandleContainer: {
         alignItems: 'center',
-        width: '100%',
-        paddingVertical: 10,
+        paddingBottom: 150,
     },
-    dragHandle: {
-        width: 48,
-        height: 6,
-        backgroundColor: 'rgba(141, 110, 99, 0.2)',
-        borderRadius: 3,
+    headerDateBadge: {
+        paddingHorizontal: 16,
+        paddingVertical: 6,
+        backgroundColor: 'rgba(255,255,255,0.4)',
+        borderRadius: 16,
+        marginBottom: 20,
+        alignSelf: 'center',
     },
-    sheetContent: {
-        flex: 1,
-        paddingHorizontal: 30,
-        paddingTop: 10,
+    headerDateText: {
+        fontSize: 14,
+        color: '#5D4037', // Brown
+        fontFamily: 'NanumGothic_700Bold',
+    },
+    titleSection: {
+        marginBottom: 20,
+        alignItems: 'center',
+    },
+    verseRef: {
+        fontSize: 22,
+        fontFamily: 'Jua_400Regular',
+        color: '#4E342E', // Darker brown
+        textAlign: 'center',
+        marginBottom: 8,
+    },
+    dividerHorizontal: {
+        width: 40,
+        height: 2,
+        backgroundColor: '#D7CCC8',
+        marginBottom: 24,
+        opacity: 0.5,
     },
     section: {
-        height: '45%',
-        marginBottom: 24,
+        marginBottom: 32,
+        width: '100%',
     },
     sectionHeader: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 8,
         marginBottom: 12,
     },
     sectionTitle: {
-        fontSize: 22,
-        fontFamily: 'Jua_400Regular',
-        color: '#8D6E63',
-    },
-    interpretationBox: {
-        flex: 1,
-        backgroundColor: '#E0F2F1', // interpretation-mint
-        borderRadius: 24,
-        padding: 20,
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.4)',
-    },
-    interpretationText: {
         fontSize: 18,
-        lineHeight: 28,
-        color: '#444',
-        fontFamily: 'GowunDodum_400Regular',
-    },
-    missionSection: {
-        flex: 1,
-        marginBottom: 20,
-    },
-    missionCard: {
-        flex: 1,
-        backgroundColor: '#FFF0F3', // mission-pink
-        borderRadius: 24,
-        padding: 24,
-        borderWidth: 2,
-        borderStyle: 'dashed',
-        borderColor: 'rgba(141, 110, 99, 0.2)',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    missionText: {
-        fontSize: 24,
-        textAlign: 'center',
-        color: '#689F38',
         fontFamily: 'NanumGothic_800ExtraBold',
+        color: '#5D4037',
     },
-    footer: {
-        paddingHorizontal: 24,
-        paddingBottom: 40,
-        paddingTop: 10,
+    sectionContent: {
+        fontSize: 18, // Increased font size
+        fontFamily: 'GowunDodum_400Regular',
+        color: '#4E342E',
+        lineHeight: 30, // Increased line height for readability
     },
-    completeButton: {
+    footerQuote: {
+        position: 'absolute', // Force to bottom
+        bottom: 30,
+        padding: 20,
+        borderTopWidth: 1,
+        borderTopColor: 'rgba(141, 110, 99, 0.1)',
         width: '100%',
-        height: 64,
-        backgroundColor: '#FF5252',
-        borderRadius: 32,
         alignItems: 'center',
-        justifyContent: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
-        shadowRadius: 5,
-        elevation: 6,
     },
-    completeButtonText: {
-        color: 'white',
-        fontSize: 24,
-        fontFamily: 'Jua_400Regular',
+    footerText: {
+        fontSize: 14,
+        fontFamily: 'NanumGothic_700Bold', // Bold
+        color: '#8D6E63',
+        fontStyle: 'italic',
     },
 });
 

@@ -23,6 +23,7 @@ interface RawManna {
 
 const mapRawToManna = (rawData: RawManna): MannaData => {
     return {
+        date: rawData.date,
         verseRef: rawData.reference,
         verseText: rawData.verse.replace(/<br>/g, '\n'),
         fullVerse: rawData.verse.replace(/<br>/g, ' '),
@@ -38,18 +39,14 @@ const mapRawToManna = (rawData: RawManna): MannaData => {
     };
 };
 
-export const getDailyManna = async (date: Date = new Date()): Promise<MannaData | null> => {
+export const getDailyManna = async (dateInput: Date | string = new Date()): Promise<MannaData | null> => {
+    const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput;
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     const dateString = `${year}-${month}-${day}`;
 
     // 1. Try Gist (Remote) - Handle JS file content
-    // TEMPORARY: Commented out to test local English data
-    // 1. Try Gist (Remote) - Handle JS file content
-    // TEMPORARY: User Gist does not have English data yet. 
-    // We force LOCAL data usage to show the English data we just added locally.
-    /*
     try {
         const response = await fetch(GITHUB_GIST_URL);
         if (response.ok) {
@@ -60,27 +57,22 @@ export const getDailyManna = async (date: Date = new Date()): Promise<MannaData 
 
             if (jsonStart !== -1 && jsonEnd !== -1) {
                 const jsonString = text.substring(jsonStart, jsonEnd);
-                const json = JSON.parse(jsonString); // Parse the extracted JSON string
+                const remoteDataArray = JSON.parse(jsonString); // Parse the extracted JSON string
+
+                const remoteData = (remoteDataArray as RawManna[]).find((d: RawManna) => d.date === dateString);
 
                 if (remoteData) {
                     console.log("Using Remote Gist Data (Parsed from JS)");
                     const mappedData = mapRawToManna(remoteData);
-                    // Check if English data exists in remote
-                    if (!mappedData.verseTextEn) {
-                        console.warn("Remote data found but MISSING English fields. Falling back to LOCAL data for testing.");
-                        // Force fallback by throwing error or returning null? 
-                        // Better to just let it fall through or handle it here.
-                        // For now, let's just Log it clearly.
-                    } else {
-                        return mappedData;
-                    }
+                    return mappedData;
+                } else {
+                    console.log(`No remote data found for date: ${dateString}. Falling back to local.`);
                 }
             }
         }
     } catch (e) {
         console.log("Gist fetch/parse failed, using local fallback.", e);
     }
-    */
 
     // 2. Fallback (Local)
     console.log(`Attempting to load local data for date: ${dateString}`);
@@ -88,8 +80,6 @@ export const getDailyManna = async (date: Date = new Date()): Promise<MannaData 
 
     if (!localData) {
         console.error(`No data found for date: ${dateString}`);
-        // Fallback to the first entry if today's data is missing (for testing purposes)
-        // return mapRawToManna(MANNA_DATA[0]); 
         return null;
     }
     console.log("Local data found:", localData.reference);
