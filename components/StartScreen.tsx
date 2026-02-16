@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image, Animated, Easing } from 'react-native';
 import { ScreenProps } from '../types/types';
+import { getDailyManna, getUserFavorites } from '../services/mannaService';
 import Mascot from './Mascot';
 import { Volume2, VolumeX, Cloud, Star, Heart, User as UserIcon, LogOut, FolderHeart } from 'lucide-react-native';
 import CalendarModal from './CalendarModal';
@@ -12,6 +13,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
     const fadeAnim = useRef(new Animated.Value(0)).current;
     const scaleAnim = useRef(new Animated.Value(0.9)).current;
     const [calendarVisible, setCalendarVisible] = useState(false);
+    const [favoriteDates, setFavoriteDates] = useState<string[]>([]);
 
     useEffect(() => {
         Animated.parallel([
@@ -28,6 +30,20 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
             }),
         ]).start();
     }, []);
+
+    // Fetch favorites when user logs in or screen mounts
+    useEffect(() => {
+        const fetchFavorites = async () => {
+            if (user?.id) {
+                const dates = await getUserFavorites(user.id);
+                setFavoriteDates(dates);
+            } else {
+                setFavoriteDates([]);
+            }
+        };
+        fetchFavorites();
+    }, [user, calendarVisible]); // Refresh when calendar opens too
+
 
     const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || (language === 'ko' ? "박 사장님" : "User");
     const avatarUrl = user?.user_metadata?.avatar_url || user?.user_metadata?.picture;
@@ -112,6 +128,9 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
 
                 <Mascot onClick={() => onNext()} style={styles.mascot} />
 
+                {/* Explicit spacer to prevent overlapping */}
+                <View style={styles.spacer} />
+
                 <TouchableOpacity onPress={() => onNext()} style={styles.startButton}>
                     <Text style={styles.startButtonText}>
                         {language === 'ko' ? "터치하여 말씀 시작하기" : "Touch to Start"}
@@ -119,12 +138,6 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 </TouchableOpacity>
             </View>
 
-            {/* Footer */}
-            <View style={styles.footer}>
-                <Text style={styles.footerText}>
-                    {language === 'ko' ? "이어폰 착용을 권장합니다" : "Earphones Recommended"}
-                </Text>
-            </View>
 
             {/* Calendar Modal */}
             <CalendarModal
@@ -132,6 +145,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 onClose={() => setCalendarVisible(false)}
                 onSelectDate={handleSelectDate}
                 selectedDate={new Date().toISOString().split('T')[0]}
+                favoriteDates={favoriteDates}
             />
         </View>
     );
@@ -141,7 +155,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center', // Restore centering for balance
         backgroundColor: 'transparent',
     },
     floating: {
@@ -158,20 +172,19 @@ const styles = StyleSheet.create({
     glassIsland: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 0.75)',
-        borderRadius: 30, // Matches VerseScreen/DetailScreen pill shape
+        backgroundColor: 'rgba(255, 255, 255, 0.95)', // Increased opacity to match others
+        borderRadius: 30,
         borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.6)',
-        paddingVertical: 0, // SLIM: 0 vertical padding
-        paddingHorizontal: 24, // Matches VerseScreen
-        height: 44, // Matches VerseScreen
-        // paddingHorizontal increased to fit content nicely
-        minWidth: '85%', // Matches others
+        borderColor: '#D7CCC8', // Standardized border color
+        paddingVertical: 0,
+        paddingHorizontal: 20, // Adjusted to match others
+        height: 44,
+        minWidth: '92%', // Matches others
         justifyContent: 'space-between',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
-        shadowRadius: 8,
+        shadowRadius: 4, // Matches others
         elevation: 5,
     },
     userInfoContainer: {
@@ -225,10 +238,10 @@ const styles = StyleSheet.create({
     // ... Main Content styles ...
     mainContent: {
         alignItems: 'center',
-        marginTop: 60, // Adjust for new header
+        marginTop: 60, // Nudge down from the island header
     },
     welcomeContainer: {
-        marginBottom: 10,
+        marginBottom: 15, // Slightly more space
     },
     welcomeText: {
         fontSize: 18,
@@ -236,10 +249,10 @@ const styles = StyleSheet.create({
         color: '#795548',
     },
     title: {
-        fontSize: 32,
+        fontSize: 36, // Slightly reduced for better balance
         fontFamily: 'Jua_400Regular',
-        color: '#5D4037', // Brown
-        marginBottom: 20,
+        color: '#5D4037',
+        marginBottom: 15,
         textShadowColor: 'rgba(0, 0, 0, 0.1)',
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 2,
@@ -259,9 +272,12 @@ const styles = StyleSheet.create({
         fontFamily: 'NanumGothic_700Bold',
     },
     mascot: {
-        width: width * 0.5,
-        height: width * 0.5,
-        marginBottom: 40,
+        width: width * 0.52,
+        height: width * 0.52,
+        // marginBottom removed in favor of explicit spacer
+    },
+    spacer: {
+        height: 60, // Explicit gap
     },
     startButton: {
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
@@ -275,18 +291,9 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
     },
     startButtonText: {
-        fontSize: 18,
+        fontSize: 20, // Refined for a more sophisticated look
         color: '#5D4037',
-        fontFamily: 'NanumGothic_700Bold',
-    },
-    footer: {
-        position: 'absolute',
-        bottom: 40,
-    },
-    footerText: {
-        color: '#AAA',
-        fontSize: 12,
-        fontFamily: 'GowunDodum_400Regular',
+        fontFamily: 'NanumGothic_800ExtraBold', // Bolder font
     },
 });
 

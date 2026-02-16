@@ -1,8 +1,9 @@
 import 'react-native-url-polyfill/auto';
 import { createClient } from '@supabase/supabase-js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Constants from 'expo-constants';
 import { GoogleSignin, statusCodes, isErrorWithCode } from '@react-native-google-signin/google-signin';
+import * as WebBrowser from 'expo-web-browser';
+import type { User } from '../types/types';
 
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
@@ -13,7 +14,6 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 // Configure Google Sign-In
 const webClientId = '545497224947-013dv70g675p2151849o0dkqoartdfdv.apps.googleusercontent.com';
-console.log('[DEBUG] Configuring Google Sign-In with HARDCODED WebClientId:', webClientId);
 GoogleSignin.configure({
     webClientId: webClientId,
     offlineAccess: true,
@@ -29,9 +29,28 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     },
 });
 
-import { User } from '../types/types';
-
 export type AuthStateCallback = (user: User | null) => void;
+
+/**
+ * Initialize Auth and check for stale sessions
+ */
+export const initializeAuth = async () => {
+    try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        if (error) {
+            if (error.message.includes('refresh_token_not_found') || error.message.includes('Refresh Token Not Found')) {
+                console.warn('Stale session detected, clearing storage...');
+                await supabase.auth.signOut();
+                await AsyncStorage.removeItem('supabase.auth.token'); // Force clear
+            }
+            throw error;
+        }
+        return session?.user ?? null;
+    } catch (error) {
+        console.warn('Auth initialization failed:', error);
+        return null;
+    }
+};
 
 /**
  * Subscribe to authentication state changes
@@ -44,18 +63,127 @@ export const subscribeToAuthChanges = (callback: AuthStateCallback) => {
     return () => subscription.unsubscribe();
 };
 
+// Kakao Logout URL
+const KAKAO_LOGOUT_URL = 'https://kauth.kakao.com/oauth/logout';
+
+/**
+ * Perform a full Kakao logout to clear browser session
+ */
+const logoutFromKakao = async () => {
+    try {
+        const apiKey = process.env.EXPO_PUBLIC_KAKAO_REST_API_KEY;
+        if (!apiKey) {
+            console.warn('Kakao REST API Key is missing. Skipping browser logout.');
+            return;
+        }
+
+        const redirectUrl = 'https://coffeelike5282.github.io/Today-s-Manna-native/logout.html';
+        const logoutUrl = `${KAKAO_LOGOUT_URL}?client_id=${apiKey}&logout_redirect_uri=${redirectUrl}`;
+
+        await WebBrowser.openAuthSessionAsync(logoutUrl, redirectUrl);
+    } catch (error) {
+        console.error('Failed to logout from Kakao browser session:', error);
+    }
+};
+
 /**
  * Sign out the current user
  */
 export const logout = async () => {
     try {
-        await GoogleSignin.signOut(); // Clear Google Session
-        await supabase.auth.signOut(); // Clear Supabase Session
-        console.log("User signed out successfully (Google & Supabase)");
+        const { data: session } = await supabase.auth.getSession();
+        const isKakao = session.session?.user?.app_metadata?.provider === 'kakao';
+
+        await GoogleSignin.signOut();
+        await supabase.auth.signOut();
+
+        if (isKakao) {
+            await logoutFromKakao();
+        }
     } catch (error) {
         console.warn("Logout failed:", error);
         throw error;
     }
+};
+
+// Helper to extract params from URL hash or query
+const extractParamsFromUrl = (url: string) => {
+    const params: { [key: string]: string } = {};
+    const queryString = url.split('#')[1] || url.split('?')[1];
+    if (!queryString) return params;
+
+    queryString.split('&').forEach(param => {
+        const [key, value] = param.split('=');
+        if (key && value) {
+            params[key] = decodeURIComponent(value);
+        }
+    });
+    return params;
+};
+
+/**
+ * Sign In with Kakao
+ */
+export const signInWithKakao = async () => {
+    try {
+        const redirectUrl = 'todaysmanna://auth/callback';
+
+        const { data, error } = await supabase.auth.signInWithOAuth({
+            provider: 'kakao',
+            options: {
+                redirectTo: redirectUrl,
+                skipBrowserRedirect: true,
+                scopes: 'profile_nickname profile_image account_email',
+            },
+        });
+
+        if (error) throw error;
+        if (!data?.url) throw new Error('No OAuth URL returned');
+
+        const result = await WebBrowser.openAuthSessionAsync(data.url, redirectUrl);
+
+        if (result.type === 'success' && result.url) {
+            const params = extractParamsFromUrl(result.url);
+            const { access_token, refresh_token } = params;
+
+            if (access_token && refresh_token) {
+                const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
+                    access_token,
+                    refresh_token,
+                });
+                if (sessionError) throw sessionError;
+                return sessionData.user;
+            }
+        }
+        return null;
+    } catch (error) {
+        console.error('Kakao login failed:', error);
+        throw error;
+    }
+};
+
+/**
+ * Sign In with Email
+ */
+export const signInWithEmail = async (email: string, password: string) => {
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+    });
+    if (error) throw error;
+    return data.user;
+};
+
+/**
+ * Sign Up with Email
+ */
+export const signUpWithEmail = async (email: string, password: string) => {
+    const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+    });
+    if (error) throw error;
+    return data.user;
 };
 
 /**
@@ -63,7 +191,6 @@ export const logout = async () => {
  */
 export const signInWithGoogle = async () => {
     try {
-        console.log('[DEBUG-RUNTIME] Signing in. Env ClientID:', process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID);
         await GoogleSignin.hasPlayServices();
         const userInfo = await GoogleSignin.signIn();
 
@@ -79,27 +206,19 @@ export const signInWithGoogle = async () => {
             if (error) throw error;
             return data.user;
         } else {
-            // User cancelled the sign-in flow
-            console.log('Google Sign-In was cancelled by user (userInfo.type !== success)');
             return null;
         }
     } catch (error) {
         if (isErrorWithCode(error)) {
             switch (error.code) {
                 case statusCodes.SIGN_IN_CANCELLED:
-                    // user cancelled the login flow
-                    console.log('Google Sign-In was cancelled by user (SIGN_IN_CANCELLED)');
                     return null;
                 case statusCodes.IN_PROGRESS:
-                    // operation (e.g. sign in) is in progress already
-                    console.log('Google Sign-In is already in progress');
                     return null;
                 case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
-                    // play services not available or outdated
                     console.warn('Play services not available or outdated');
                     break;
                 default:
-                    // some other error happened
                     console.warn('Google Sign-In error code:', error.code);
             }
         } else {

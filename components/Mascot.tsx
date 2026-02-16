@@ -32,7 +32,10 @@ const Mascot: React.FC<MascotProps> = ({ onClick, style, ...props }) => {
             onPress={onClick}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
-            style={[styles.container, style]}
+            style={(state) => [
+                styles.container,
+                typeof style === 'function' ? style(state) : style
+            ]}
             {...props}
         >
             <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>

@@ -1,8 +1,4 @@
-export enum ScreenState {
-  START = 'START',
-  VERSE = 'VERSE',
-  DETAIL = 'DETAIL',
-}
+export type ScreenState = 'START' | 'VERSE' | 'DETAIL';
 
 export type Language = 'ko' | 'en';
 
@@ -22,11 +18,11 @@ export interface MannaData {
   missionEn?: string;
 }
 
-export type User = {
+export interface User {
   id: string;
   email?: string;
   user_metadata?: any;
-};
+}
 
 export interface ScreenProps {
   onNext: (date?: string) => void;

@@ -1,9 +1,11 @@
-import { MannaData } from '../types/types';
+import type { MannaData } from '../types/types';
 // @ts-ignore
 import { MANNA_DATA } from '../data/mannaData';
+// const MANNA_DATA: any[] = [];
 
-// User's Gist URL for content_data.js
-const GITHUB_GIST_URL = "https://gist.githubusercontent.com/coffeelike5282/c7cf8073dbd29b6d6fa66450d438803a/raw/content_data.js";
+import { supabase } from './authService';
+
+const GIST_URL = 'https://gist.githubusercontent.com/coffeelike5282/c7cf8073dbd29b6d6fa66450d438803a/raw/content_data.js';
 
 interface RawManna {
     date: string;
@@ -13,75 +15,86 @@ interface RawManna {
     meaning: string;
     mission_title: string;
     mission: string;
-
-    // Optional English fields
-    reference_en?: string;
-    verse_en?: string;
-    meaning_en?: string;
-    mission_en?: string;
+    reference_en: string;
+    verse_en: string;
+    meaning_title_en: string;
+    meaning_en: string;
+    mission_title_en: string;
+    mission_en: string;
 }
 
-const mapRawToManna = (rawData: RawManna): MannaData => {
-    return {
-        date: rawData.date,
-        verseRef: rawData.reference,
-        verseText: rawData.verse.replace(/<br>/g, '\n'),
-        fullVerse: rawData.verse.replace(/<br>/g, ' '),
-        interpretation: rawData.meaning.replace(/<br>/g, '\n'),
-        mission: rawData.mission,
+const BR_REGEX = new RegExp('<br>', 'g');
 
-        // English fields mapping
-        verseRefEn: rawData.reference_en,
-        verseTextEn: rawData.verse_en?.replace(/<br>/g, '\n'),
-        fullVerseEn: rawData.verse_en?.replace(/<br>/g, ' '),
-        interpretationEn: rawData.meaning_en?.replace(/<br>/g, '\n'),
-        missionEn: rawData.mission_en
+const mapRawToManna = (raw: RawManna): MannaData => {
+    return {
+        date: raw.date,
+        verseRef: raw.reference,
+        verseText: raw.verse.replace(BR_REGEX, '\n'),
+        fullVerse: raw.verse.replace(BR_REGEX, ' '), // fallback
+        interpretation: raw.meaning.replace(BR_REGEX, '\n'),
+        mission: raw.mission,
+        // English fields
+        verseRefEn: raw.reference_en,
+        verseTextEn: raw.verse_en?.replace(BR_REGEX, '\n'),
+        fullVerseEn: raw.verse_en?.replace(BR_REGEX, ' '),
+        interpretationEn: raw.meaning_en?.replace(BR_REGEX, '\n'),
+        missionEn: raw.mission_en,
     };
 };
 
-export const getDailyManna = async (dateInput: Date | string = new Date()): Promise<MannaData | null> => {
-    const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput;
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    const dateString = `${year}-${month}-${day}`;
-
-    // 1. Try Gist (Remote) - Handle JS file content
+/**
+ * Fetch data from Gist (JavaScript file containing JSON variable)
+ */
+const fetchRemoteManna = async (): Promise<RawManna[] | null> => {
     try {
-        const response = await fetch(GITHUB_GIST_URL);
-        if (response.ok) {
-            const text = await response.text();
-            // Extract JSON array from JS "const MANNA_DATA = [...]"
-            const jsonStart = text.indexOf('[');
-            const jsonEnd = text.lastIndexOf(']') + 1;
+        const response = await fetch(GIST_URL);
+        const text = await response.text();
 
-            if (jsonStart !== -1 && jsonEnd !== -1) {
-                const jsonString = text.substring(jsonStart, jsonEnd);
-                const remoteDataArray = JSON.parse(jsonString); // Parse the extracted JSON string
-
-                const remoteData = (remoteDataArray as RawManna[]).find((d: RawManna) => d.date === dateString);
-
-                if (remoteData) {
-                    console.log("Using Remote Gist Data (Parsed from JS)");
-                    const mappedData = mapRawToManna(remoteData);
-                    return mappedData;
-                } else {
-                    console.log(`No remote data found for date: ${dateString}. Falling back to local.`);
-                }
-            }
+        // Extract JSON from "const content_data = [...];"
+        const jsonMatch = text.match(/const\s+content_data\s*=\s*(\[[\s\S]*\]);/);
+        if (jsonMatch && jsonMatch[1]) {
+            return JSON.parse(jsonMatch[1]);
         }
-    } catch (e) {
-        console.log("Gist fetch/parse failed, using local fallback.", e);
-    }
-
-    // 2. Fallback (Local)
-    console.log(`Attempting to load local data for date: ${dateString}`);
-    const localData = (MANNA_DATA as RawManna[]).find((d: RawManna) => d.date === dateString);
-
-    if (!localData) {
-        console.error(`No data found for date: ${dateString}`);
+        return null;
+    } catch (error) {
+        console.warn("Failed to fetch remote manna:", error);
         return null;
     }
-    console.log("Local data found:", localData.reference);
-    return mapRawToManna(localData);
+};
+
+/**
+ * Get daily manna based on date
+ */
+export const getDailyManna = async (dateInput: Date | string = new Date()): Promise<MannaData> => {
+    const targetDate = typeof dateInput === 'string' ? dateInput : dateInput.toISOString().split('T')[0];
+
+    // 1. Try Remote First
+    const remoteDataList = await fetchRemoteManna();
+    if (remoteDataList) {
+        const remoteData = remoteDataList.find(d => d.date === targetDate);
+        if (remoteData) {
+            console.log("Remote data found:", remoteData.reference);
+            return mapRawToManna(remoteData);
+        }
+    }
+
+    // 2. Fallback to Local
+    const localData = MANNA_DATA.find(d => d.date === targetDate) || MANNA_DATA[0];
+    console.log("Local data found:", localData.verseRef);
+    return localData;
+};
+
+export const getUserFavorites = async (userId: string): Promise<string[]> => {
+    try {
+        const { data, error } = await supabase
+            .from('favorites')
+            .select('date')
+            .eq('user_id', userId);
+
+        if (error) throw error;
+        return data.map(item => item.date);
+    } catch (error) {
+        console.error('Failed to fetch user favorites:', error);
+        return [];
+    }
 };
