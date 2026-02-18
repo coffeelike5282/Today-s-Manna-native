@@ -77,7 +77,7 @@ const logoutFromKakao = async () => {
             return;
         }
 
-        const redirectUrl = 'https://coffeelike5282.github.io/Today-s-Manna-native/logout.html';
+        const redirectUrl = 'https://coffeelike5282.github.io/Today-s-Manna-native/docs/logout.html';
         const logoutUrl = `${KAKAO_LOGOUT_URL}?client_id=${apiKey}&logout_redirect_uri=${redirectUrl}`;
 
         await WebBrowser.openAuthSessionAsync(logoutUrl, redirectUrl);
@@ -134,6 +134,7 @@ export const signInWithKakao = async () => {
                 redirectTo: redirectUrl,
                 skipBrowserRedirect: true,
                 scopes: 'profile_nickname profile_image account_email',
+                queryParams: { prompt: 'login' },
             },
         });
 
