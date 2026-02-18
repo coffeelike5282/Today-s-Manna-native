@@ -9,6 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Linking from 'expo-linking';
 
 import StartScreen from './components/StartScreen';
+import * as Localization from 'expo-localization';
 import VerseScreen from './components/VerseScreen';
 import DetailScreen from './components/DetailScreen';
 import { INITIAL_DATA } from './constants/constants';
@@ -71,6 +72,18 @@ export default function App() {
             }
         };
         loadData();
+
+        // 🌐 Automatic Language Detection
+        const detectedLocales = Localization.getLocales();
+        if (detectedLocales && detectedLocales.length > 0) {
+            const systemLanguage = detectedLocales[0].languageCode;
+            console.log('[DEBUG-LANGUAGE] Detected System Language:', systemLanguage);
+            if (systemLanguage === 'en') {
+                setLanguage('en');
+            } else {
+                setLanguage('ko');
+            }
+        }
 
         const authUnsubscribe = subscribeToAuthChanges((authUser) => {
             console.log("Auth State Changed:", authUser ? authUser.id : "Logged Out");
