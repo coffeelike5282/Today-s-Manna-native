@@ -4,16 +4,20 @@ import { ScreenProps } from '../types/types';
 import { Volume2, VolumeX, Cloud, Star, ChevronUp, LogOut, Share2, Heart, FolderHeart } from 'lucide-react-native';
 import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../services/favoritesService';
 import CalendarModal from './CalendarModal';
-import { getLocalDateString } from '../utils/dateUtils';
+import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
+import ComingSoonTooltip from './ComingSoonTooltip';
 
 const { width, height } = Dimensions.get('window');
 
 const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user }) => {
+    // Check if we are in dev mode
+    const isDebug = __DEV__;
 
     const [favorited, setFavorited] = useState(false);
     const [loadingFavorite, setLoadingFavorite] = useState(false);
     const [calendarVisible, setCalendarVisible] = useState(false);
     const [favoriteDates, setFavoriteDates] = useState<string[]>([]); // Store favorite dates
+    const [tooltipVisible, setTooltipVisible] = useState(false);
 
     useEffect(() => {
         const checkStatus = async () => {
@@ -134,6 +138,16 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
 
     return (
         <View style={styles.container}>
+            {/* Debug Source Indicator */}
+            {isDebug && data.source && (
+                <View style={[
+                    styles.debugIndicator,
+                    { backgroundColor: data.source === 'DB' ? '#4CAF50' : '#FF9800' }
+                ]}>
+                    <Text style={styles.debugIndicatorText}>{data.source}</Text>
+                </View>
+            )}
+
             {/* 1. Centralized Control Island (Top Layer) */}
             <View style={styles.islandContainer}>
                 <View style={styles.glassIsland}>
@@ -175,12 +189,17 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                     </TouchableOpacity>
 
                     {/* Mute Toggle */}
-                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
+                    <TouchableOpacity onPress={() => setTooltipVisible(true)} style={styles.iconButton}>
                         {isMuted ? (
                             <VolumeX color="#8D6E63" size={20} />
                         ) : (
                             <Volume2 color="#5D4037" size={20} />
                         )}
+                        <ComingSoonTooltip
+                            visible={tooltipVisible}
+                            onHide={() => setTooltipVisible(false)}
+                            message={language === 'ko' ? "지원 예정입니다" : "Coming Soon"}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -198,9 +217,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
 
                     <View style={styles.headerDateBadge}>
                         <Text style={styles.headerDateText}>
-                            {new Date(data.date).toLocaleDateString(language === 'ko' ? 'ko-KR' : 'en-US', {
-                                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-                            })}
+                            {formatDisplayDate(data.date, language, true)}
                         </Text>
                     </View>
 
@@ -234,7 +251,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 visible={calendarVisible}
                 onClose={() => setCalendarVisible(false)}
                 onSelectDate={handleSelectDate}
-                selectedDate={new Date().toISOString().split('T')[0]}
+                selectedDate={data.date || getLocalDateString()}
                 favoriteDates={favoriteDates} // Pass favorite dates
             />
         </View>
@@ -395,6 +412,22 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 16,
         fontFamily: 'Jua_400Regular',
+    },
+    debugIndicator: {
+        position: 'absolute',
+        top: 60,
+        right: 20,
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        borderRadius: 8,
+        zIndex: 100,
+        opacity: 0.8,
+    },
+    debugIndicatorText: {
+        color: 'white',
+        fontSize: 10,
+        fontWeight: 'bold',
+        fontFamily: 'NanumGothic_700Bold',
     },
 });
 

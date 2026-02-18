@@ -25,6 +25,15 @@ interface CalendarModalProps {
 }
 
 const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelectDate, selectedDate, favoriteDates = [] }) => {
+    const [currentMonth, setCurrentMonth] = React.useState(selectedDate);
+
+    // Sync currentMonth when modal becomes visible or selectedDate changes
+    React.useEffect(() => {
+        if (visible) {
+            setCurrentMonth(selectedDate);
+        }
+    }, [visible, selectedDate]);
+
     // Generate marked dates
     const markedDates: any = {
         // Selected Date (Circle background, no dot by default)
@@ -60,7 +69,18 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
                 <View style={styles.modalContainer}>
                     {/* Header */}
                     <View style={styles.header}>
-                        <Text style={styles.headerTitle}>지난 말씀 보기</Text>
+                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                            <Text style={styles.headerTitle}>지난 말씀 보기</Text>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    // Shift view to today's month instead of selecting
+                                    setCurrentMonth(getLocalDateString());
+                                }}
+                                style={styles.todayButton}
+                            >
+                                <Text style={styles.todayButtonText}>오늘</Text>
+                            </TouchableOpacity>
+                        </View>
                         <TouchableOpacity onPress={onClose} style={styles.closeButton}>
                             <X size={24} color="#5D4037" />
                         </TouchableOpacity>
@@ -68,12 +88,16 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
 
                     {/* Calendar */}
                     <Calendar
-                        current={selectedDate}
+                        key={visible ? `calendar-${currentMonth}` : 'hidden'}
+                        current={currentMonth}
                         minDate={'2026-01-01'}
                         maxDate={'2026-12-31'}
                         onDayPress={(day: any) => {
                             onSelectDate(day.dateString);
                             onClose();
+                        }}
+                        onMonthChange={(month: any) => {
+                            setCurrentMonth(month.dateString);
                         }}
                         markedDates={markedDates}
                         theme={{
@@ -131,6 +155,18 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: 'Jua_400Regular',
         color: '#5D4037',
+    },
+    todayButton: {
+        marginLeft: 10,
+        backgroundColor: '#8D6E63',
+        paddingHorizontal: 12,
+        paddingVertical: 4,
+        borderRadius: 12,
+    },
+    todayButtonText: {
+        color: '#FFF',
+        fontSize: 12,
+        fontFamily: 'NanumGothic_700Bold',
     },
     closeButton: {
         padding: 5,

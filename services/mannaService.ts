@@ -1,9 +1,8 @@
 import type { MannaData } from '../types/types';
 // @ts-ignore
 import { MANNA_DATA } from '../data/mannaData';
-// const MANNA_DATA: any[] = [];
-
 import { supabase } from './authService';
+import { getLocalDateString } from '../utils/dateUtils';
 
 const GIST_URL = 'https://gist.githubusercontent.com/coffeelike5282/c7cf8073dbd29b6d6fa66450d438803a/raw/content_data.js';
 
@@ -25,63 +24,92 @@ interface RawManna {
 
 const BR_REGEX = new RegExp('<br>', 'g');
 
-const mapRawToManna = (raw: RawManna): MannaData => {
+const mapRawToManna = (raw: any, source: 'DB' | 'Offline' = 'DB'): MannaData => {
+    // Supabase column names: verse_text, verse_ref, full_verse, interpretation, mission,
+    // verse_text_en, verse_ref_en, full_verse_en, interpretation_en, mission_en, date
     return {
-        date: raw.date,
-        verseRef: raw.reference,
-        verseText: raw.verse.replace(BR_REGEX, '\n'),
-        fullVerse: raw.verse.replace(BR_REGEX, ' '), // fallback
-        interpretation: raw.meaning.replace(BR_REGEX, '\n'),
-        mission: raw.mission,
-        // English fields
-        verseRefEn: raw.reference_en,
-        verseTextEn: raw.verse_en?.replace(BR_REGEX, '\n'),
-        fullVerseEn: raw.verse_en?.replace(BR_REGEX, ' '),
-        interpretationEn: raw.meaning_en?.replace(BR_REGEX, '\n'),
-        missionEn: raw.mission_en,
+        date: raw.date || raw.day || getLocalDateString(),
+        // Korean
+        verseRef: raw.verse_ref || raw.reference || raw.verseRef || "말씀 참조",
+        verseText: (raw.verse_text || raw.verse || raw.verseText || "오늘의 말씀이 준비 중입니다.").replace(BR_REGEX, '\n'),
+        fullVerse: (raw.full_verse || raw.verse || raw.verse_text || "").replace(BR_REGEX, ' '),
+        interpretation: (raw.interpretation || raw.meaning || raw.meaning_title || "").replace(BR_REGEX, '\n'),
+        mission: raw.mission || raw.daily_mission || "",
+        // English
+        verseRefEn: raw.verse_ref_en || raw.reference_en || raw.verseRefEn || "",
+        verseTextEn: (raw.verse_text_en || raw.verse_en || raw.verseTextEn || "").replace(BR_REGEX, '\n'),
+        fullVerseEn: (raw.full_verse_en || raw.verse_en || raw.verse_text_en || "").replace(BR_REGEX, ' '),
+        interpretationEn: (raw.interpretation_en || raw.meaning_en || raw.interpretationEn || "").replace(BR_REGEX, '\n'),
+        missionEn: raw.mission_en || raw.missionEn || "",
+        source: source
     };
 };
 
 /**
- * Fetch data from Gist (JavaScript file containing JSON variable)
+ * Fetch data from Supabase 'manna_verse' table
  */
-const fetchRemoteManna = async (): Promise<RawManna[] | null> => {
+const fetchMannaFromSupabase = async (targetDate: string): Promise<RawManna | null> => {
     try {
-        const response = await fetch(GIST_URL);
-        const text = await response.text();
+        const { data, error } = await supabase
+            .from('manna_verses')
+            .select('*')
+            .eq('date', targetDate)
+            .single();
 
-        // Extract JSON from "const content_data = [...];"
-        const jsonMatch = text.match(/const\s+content_data\s*=\s*(\[[\s\S]*\]);/);
-        if (jsonMatch && jsonMatch[1]) {
-            return JSON.parse(jsonMatch[1]);
+        if (error) {
+            console.warn("Supabase fetch error for date", targetDate, ":", error.message);
+            return null;
         }
-        return null;
+        if (data) {
+            console.log("[DEBUG-DB] Raw Supabase Data for", targetDate, ":", JSON.stringify(data));
+        }
+        return data as any;
     } catch (error) {
-        console.warn("Failed to fetch remote manna:", error);
+        console.warn("Failed to fetch manna from Supabase:", error);
         return null;
     }
 };
 
+
 /**
  * Get daily manna based on date
  */
-export const getDailyManna = async (dateInput: Date | string = new Date()): Promise<MannaData> => {
-    const targetDate = typeof dateInput === 'string' ? dateInput : dateInput.toISOString().split('T')[0];
+export const getDailyManna = async (dateInput?: Date | string): Promise<MannaData> => {
+    const targetDate = typeof dateInput === 'string'
+        ? dateInput
+        : (dateInput instanceof Date
+            ? dateInput.toISOString().split('T')[0]
+            : getLocalDateString());
 
-    // 1. Try Remote First
-    const remoteDataList = await fetchRemoteManna();
-    if (remoteDataList) {
-        const remoteData = remoteDataList.find(d => d.date === targetDate);
-        if (remoteData) {
-            console.log("Remote data found:", remoteData.reference);
-            return mapRawToManna(remoteData);
+    // 1. Try Supabase First ('manna_verse' table)
+    const remoteData = await fetchMannaFromSupabase(targetDate);
+    if (remoteData) {
+        const mapped = mapRawToManna(remoteData, 'DB');
+        // If critical fields are still placeholders, consider falling back or logging warning
+        if (mapped.verseRef !== "말씀 참조" || !remoteData) {
+            console.log("Supabase data found and mapped for:", mapped.verseRef);
+            return mapped;
         }
+        console.log("Supabase data missing critical fields, falling back to local.");
     }
 
     // 2. Fallback to Local
-    const localData = MANNA_DATA.find(d => d.date === targetDate) || MANNA_DATA[0];
-    console.log("Local data found:", localData.verseRef);
-    return localData;
+    const foundLocal = (MANNA_DATA || []).find(d => d.date === targetDate);
+    if (foundLocal) {
+        console.log("Local data found for:", foundLocal.verseRef);
+        return {
+            ...foundLocal,
+            source: 'Offline'
+        };
+    }
+
+    // Default Fallback: Use Jan 1st content but set corrected date
+    console.log("No data found for", targetDate, ", falling back to placeholder with current date.");
+    return {
+        ...MANNA_DATA[0],
+        date: targetDate,
+        source: 'Offline'
+    };
 };
 
 export const getUserFavorites = async (userId: string): Promise<string[]> => {

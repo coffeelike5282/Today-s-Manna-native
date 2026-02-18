@@ -1,7 +1,8 @@
 import { MannaData } from '../types/types';
+import { getLocalDateString } from '../utils/dateUtils';
 
 export const INITIAL_DATA: MannaData = {
-  date: "2026-01-01",
+  date: getLocalDateString(), // Dynamically set to today's date on startup
   verseRef: "로마서 8:28",
   verseText: "하나님을 사랑하는 자\n곧 그의 뜻대로\n부르심을 입은\n자들에게는\n모든 것이 합력하여\n선을 이루느니라",
   fullVerse: "우리가 알거니와 하나님을 사랑하는 자 곧 그의 뜻대로 부르심을 입은 자들에게는 모든 것이 합력하여 선을 이루느니라.",

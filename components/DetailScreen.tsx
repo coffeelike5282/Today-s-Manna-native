@@ -5,6 +5,7 @@ import { Sparkles, ClipboardCheck, Volume2, VolumeX, LogOut, Share2, Heart, Fold
 import * as Sharing from 'expo-sharing';
 import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../services/favoritesService';
 import CalendarModal from './CalendarModal';
+import ComingSoonTooltip from './ComingSoonTooltip';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,6 +15,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
     const [loadingFavorite, setLoadingFavorite] = useState(false);
     const [calendarVisible, setCalendarVisible] = useState(false);
     const [favoriteDates, setFavoriteDates] = useState<string[]>([]); // Store favorite dates
+    const [tooltipVisible, setTooltipVisible] = useState(false);
 
     // Select data based on language (fallback to Korean if English missing)
     const interpretation = language === 'en' ? (data.interpretationEn || data.interpretation) : data.interpretation;
@@ -149,12 +151,17 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                     </TouchableOpacity>
 
                     {/* Mute Toggle */}
-                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
+                    <TouchableOpacity onPress={() => setTooltipVisible(true)} style={styles.iconButton}>
                         {isMuted ? (
                             <VolumeX color="#8D6E63" size={20} />
                         ) : (
                             <Volume2 color="#5D4037" size={20} />
                         )}
+                        <ComingSoonTooltip
+                            visible={tooltipVisible}
+                            onHide={() => setTooltipVisible(false)}
+                            message={language === 'ko' ? "지원 예정입니다" : "Coming Soon"}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>

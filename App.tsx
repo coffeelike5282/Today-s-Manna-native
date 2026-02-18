@@ -79,7 +79,7 @@ export default function App() {
 
         // Initialize Audio
         const initAudio = async () => {
-            // Disabled for safety
+            // Disabled for safety as per Park President's request
             try {
                 // Audio not auto-loaded to prevent crash
                 // await audioService.loadSound(require('./assets/bgm.wav'), isMuted);
@@ -122,8 +122,9 @@ export default function App() {
         if (dateStr && typeof dateStr === 'string') {
             setLoading(true);
             try {
-                const targetDate = new Date(dateStr);
-                const data = await getDailyManna(targetDate);
+                // DON'T use new Date(dateStr) here, as it can shift due to timezone
+                // getDailyManna already handles strings correctly.
+                const data = await getDailyManna(dateStr);
 
                 if (data) {
                     setMannaData(data);
@@ -135,9 +136,10 @@ export default function App() {
                         [{ text: "알겠습니다!", style: "default" }]
                     );
                 }
-            } catch (e) {
-                console.warn("Failed to fetch Manna for date:", e);
-                Alert.alert("오류 발생", "말씀을 불러오는 중 문제가 발생했습니다.");
+            } catch (e: any) {
+                console.error("[DEBUG-CRITICAL] handleNext fetch error:", e);
+                console.error("Stack trace:", e?.stack);
+                Alert.alert("말씀을 불러올 수 없습니다", "박 사장님, 통신 상태나 데이터에 잠시 문제가 생긴 것 같습니다. 다시 한 번 시도 부탁드립니다! (충성!🫡)");
             } finally {
                 setLoading(false);
             }

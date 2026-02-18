@@ -5,6 +5,8 @@ import { getDailyManna, getUserFavorites } from '../services/mannaService';
 import Mascot from './Mascot';
 import { Volume2, VolumeX, Cloud, Star, Heart, User as UserIcon, LogOut, FolderHeart } from 'lucide-react-native';
 import CalendarModal from './CalendarModal';
+import { formatDisplayDate } from '../utils/dateUtils';
+import ComingSoonTooltip from './ComingSoonTooltip';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,6 +16,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
     const scaleAnim = useRef(new Animated.Value(0.9)).current;
     const [calendarVisible, setCalendarVisible] = useState(false);
     const [favoriteDates, setFavoriteDates] = useState<string[]>([]);
+    const [tooltipVisible, setTooltipVisible] = useState(false);
 
     useEffect(() => {
         Animated.parallel([
@@ -94,12 +97,17 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                     </TouchableOpacity>
 
                     {/* Mute Toggle */}
-                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
+                    <TouchableOpacity onPress={() => setTooltipVisible(true)} style={styles.iconButton}>
                         {isMuted ? (
                             <VolumeX color="#8D6E63" size={20} />
                         ) : (
                             <Volume2 color="#5D4037" size={20} />
                         )}
+                        <ComingSoonTooltip
+                            visible={tooltipVisible}
+                            onHide={() => setTooltipVisible(false)}
+                            message={language === 'ko' ? "지원 예정입니다" : "Coming Soon"}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -118,11 +126,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
 
                 <View style={styles.dateBadge}>
                     <Text style={styles.dateText}>
-                        {new Date().toLocaleDateString(language === 'ko' ? 'ko-KR' : 'en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                        })}
+                        {formatDisplayDate(data.date, language, true)}
                     </Text>
                 </View>
 
@@ -280,20 +284,22 @@ const styles = StyleSheet.create({
         height: 60, // Explicit gap
     },
     startButton: {
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        paddingVertical: 16,
+        backgroundColor: 'rgba(78, 52, 46, 0.95)',
+        paddingVertical: 14,
         paddingHorizontal: 40,
         borderRadius: 30,
-        elevation: 3,
+        elevation: 8,
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+        borderWidth: 1,
+        borderColor: 'rgba(255,255,255,0.2)',
     },
     startButtonText: {
-        fontSize: 20, // Refined for a more sophisticated look
-        color: '#5D4037',
-        fontFamily: 'NanumGothic_800ExtraBold', // Bolder font
+        fontSize: 20,
+        color: 'white',
+        fontFamily: 'Jua_400Regular',
     },
 });
 

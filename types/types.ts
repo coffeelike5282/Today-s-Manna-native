@@ -16,6 +16,7 @@ export interface MannaData {
   fullVerseEn?: string;
   interpretationEn?: string;
   missionEn?: string;
+  source?: 'DB' | 'Offline';
 }
 
 export interface User {
