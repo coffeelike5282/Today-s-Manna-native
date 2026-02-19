@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "C:\\Users\\coffeelike\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe reverse tcp:8081 tcp:8081 && expo start",
-    "android": "C:\\Users\\coffeelike\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe reverse tcp:8081 tcp:8081 && expo run:android",
+    "start": "C:\\Users\\coffeelike\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe reverse tcp:8081 tcp:8081 && .\\fix_emulator_time.bat && expo start",
+    "android": "C:\\Users\\coffeelike\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe reverse tcp:8081 tcp:8081 && .\\fix_emulator_time.bat && expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
   },
