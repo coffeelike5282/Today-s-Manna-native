@@ -256,7 +256,11 @@ export default function App() {
                     <BackgroundDecor />
                     <View style={styles.screenContainer}>
                         {!user ? (
-                            <LoginScreen onLoginSuccess={handleLoginSuccess} />
+                            <LoginScreen
+                                onLoginSuccess={handleLoginSuccess}
+                                language={language}
+                                toggleLanguage={toggleLanguage}
+                            />
                         ) : (
                             renderContent()
                         )}
