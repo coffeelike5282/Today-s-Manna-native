@@ -94,20 +94,17 @@ export default function App() {
         const initAudio = async () => {
             // Disabled for safety as per Park President's request
             try {
-                // Audio not auto-loaded to prevent crash
-                // await audioService.loadSound(require('./assets/bgm.wav'), isMuted);
+                await audioService.loadSound(require('./assets/bgm.wav'), isMuted);
             } catch (e) {
                 console.error(e);
             }
         };
 
-        // Disabled auto-init to fix crash
-        // setTimeout(() => { initAudio(); }, 1000); 
+        setTimeout(() => { initAudio(); }, 1000);
 
         // AppState Handler for Audio
         const handleAppStateChange = (nextAppState: AppStateStatus) => {
-            // Disabled background audio handler for safety
-            // audioService.handleAppStateChange(nextAppState);
+            audioService.handleAppStateChange(nextAppState);
             appState.current = nextAppState;
         };
         const appStateSubscription = AppState.addEventListener('change', handleAppStateChange);

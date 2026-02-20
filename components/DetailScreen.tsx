@@ -151,17 +151,12 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                     </TouchableOpacity>
 
                     {/* Mute Toggle */}
-                    <TouchableOpacity onPress={() => setTooltipVisible(true)} style={styles.iconButton}>
+                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
                         {isMuted ? (
                             <VolumeX color="#8D6E63" size={20} />
                         ) : (
                             <Volume2 color="#5D4037" size={20} />
                         )}
-                        <ComingSoonTooltip
-                            visible={tooltipVisible}
-                            onHide={() => setTooltipVisible(false)}
-                            message={language === 'ko' ? "지원 예정입니다" : "Coming Soon"}
-                        />
                     </TouchableOpacity>
                 </View>
             </View>
