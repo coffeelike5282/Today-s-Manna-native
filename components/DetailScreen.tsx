@@ -6,6 +6,10 @@ import * as Sharing from 'expo-sharing';
 import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../services/favoritesService';
 import CalendarModal from './CalendarModal';
 import ComingSoonTooltip from './ComingSoonTooltip';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import PrayerResolutionCard from './PrayerResolutionCard';
+import { getRandomPrayerResolution } from '../data/prayerResolutions';
+import { getResolutionCompletions } from '../services/resolutionService';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,7 +19,13 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
     const [loadingFavorite, setLoadingFavorite] = useState(false);
     const [calendarVisible, setCalendarVisible] = useState(false);
     const [favoriteDates, setFavoriteDates] = useState<string[]>([]); // Store favorite dates
+    const [resolutionDates, setResolutionDates] = useState<string[]>([]); // Store resolution dates
     const [tooltipVisible, setTooltipVisible] = useState(false);
+    const [isCompleted, setIsCompleted] = useState(false);
+
+    const prayerData = getRandomPrayerResolution(data.date);
+    const prayerText = language === 'ko' ? prayerData.ko.prayer : prayerData.en.prayer;
+    const resolutionText = language === 'ko' ? prayerData.ko.resolution : prayerData.en.resolution;
 
     // Select data based on language (fallback to Korean if English missing)
     const interpretation = language === 'en' ? (data.interpretationEn || data.interpretation) : data.interpretation;
@@ -30,13 +40,22 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 const status = await isFavorited(user.id, data.date);
                 setFavorited(status);
 
+                // Check resolution completion
+                const completionKey = `RESOLUTION_COMPLETE_${data.date}`;
+                const completed = await AsyncStorage.getItem(completionKey);
+                setIsCompleted(!!completed);
+
                 // Fetch all favorite dates for calendar dots
                 const dates = await getFavoriteDates(user.id);
                 setFavoriteDates(dates);
+
+                // Fetch all resolution dates for calendar dots
+                const resDates = await getResolutionCompletions();
+                setResolutionDates(resDates);
             }
         };
         checkStatus();
-    }, [user, data, favorited]); // Add favorited dependency to refresh list
+    }, [user, data, favorited, isCompleted]); // Trigger refresh on favorite or completion change
 
     const handleOpenFavorites = () => {
         setCalendarVisible(true);
@@ -106,6 +125,12 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
         }
     };
 
+    const handleCompleteResolution = async () => {
+        const completionKey = `RESOLUTION_COMPLETE_${data.date}`;
+        await AsyncStorage.setItem(completionKey, 'true');
+        setIsCompleted(true);
+    };
+
     return (
         <View style={styles.container}>
 
@@ -162,10 +187,13 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
             </View>
 
             {/* Main Content (Scrollable) */}
-            <ScrollView style={styles.scrollContent} contentContainerStyle={{ paddingBottom: 100 }}>
+            <ScrollView
+                style={styles.scrollContent}
+                contentContainerStyle={{ paddingBottom: 100 }}
+            >
                 {/* 2. Content Sheet (White Paper Style) */}
                 <View style={[styles.sheet, { marginTop: 120 }]}>
-                    <View style={{ flex: 1, width: '100%', alignItems: 'center', paddingBottom: 80 }}>
+                    <View style={{ flex: 1, width: '100%', alignItems: 'center', paddingBottom: 20 }}>
                         {/* Header Date Badge */}
                         <View style={[styles.headerDateBadge, { marginBottom: 20 }]}>
                             <Text style={styles.headerDateText}>
@@ -214,6 +242,15 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                         ) : null}
                     </View>
 
+                    {/* 3. Prayer and Resolution Section */}
+                    <PrayerResolutionCard
+                        prayer={prayerText}
+                        resolution={resolutionText}
+                        isCompleted={isCompleted}
+                        onComplete={handleCompleteResolution}
+                        language={language}
+                    />
+
                     {/* Footer Quote */}
                     <View style={styles.footerQuote}>
                         <Text style={styles.footerText}>
@@ -232,6 +269,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 onSelectDate={handleSelectDate}
                 selectedDate={new Date().toISOString().split('T')[0]}
                 favoriteDates={favoriteDates} // Pass favorite dates
+                resolutionDates={resolutionDates} // Pass resolution dates
             />
         </View>
     );
@@ -303,7 +341,7 @@ const styles = StyleSheet.create({
         shadowRadius: 16,
         elevation: 10,
         alignItems: 'center',
-        paddingBottom: 150,
+        paddingBottom: 60, // Reduced since footer is now flow-based
     },
     headerDateBadge: {
         paddingHorizontal: 16,
@@ -337,7 +375,7 @@ const styles = StyleSheet.create({
         opacity: 0.5,
     },
     section: {
-        marginBottom: 32,
+        marginBottom: 24,
         width: '100%',
     },
     sectionHeader: {
@@ -357,8 +395,7 @@ const styles = StyleSheet.create({
         lineHeight: 30, // Increased line height for readability
     },
     footerQuote: {
-        position: 'absolute', // Force to bottom
-        bottom: 30,
+        marginTop: 40,
         padding: 20,
         borderTopWidth: 1,
         borderTopColor: 'rgba(141, 110, 99, 0.1)',

@@ -21,10 +21,11 @@ interface CalendarModalProps {
     onClose: () => void;
     onSelectDate: (dateString: string) => void;
     selectedDate: string;
-    favoriteDates?: string[]; // New prop for dots
+    favoriteDates?: string[]; // Red dots
+    resolutionDates?: string[]; // Green dots
 }
 
-const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelectDate, selectedDate, favoriteDates = [] }) => {
+const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelectDate, selectedDate, favoriteDates = [], resolutionDates = [] }) => {
     const [currentMonth, setCurrentMonth] = React.useState(selectedDate);
 
     // Sync currentMonth when modal becomes visible or selectedDate changes
@@ -42,20 +43,24 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
 
     // Add dots for favorites (Red Color #FF0000)
     favoriteDates.forEach(date => {
-        if (markedDates[date]) {
-            // Merge with existing (e.g. selected)
-            markedDates[date] = {
-                ...markedDates[date],
-                marked: true,
-                dotColor: '#FF0000'
-            };
-        } else {
-            // New mark (Just the red dot)
-            markedDates[date] = {
-                marked: true,
-                dotColor: '#FF0000'
-            };
-        }
+        if (!markedDates[date]) markedDates[date] = {};
+
+        const existingDots = markedDates[date].dots || [];
+        markedDates[date] = {
+            ...markedDates[date],
+            dots: [...existingDots, { key: 'favorite', color: '#FF5252' }]
+        };
+    });
+
+    // Add dots for resolution completions (Green Color #4CAF50)
+    resolutionDates.forEach(date => {
+        if (!markedDates[date]) markedDates[date] = {};
+
+        const existingDots = markedDates[date].dots || [];
+        markedDates[date] = {
+            ...markedDates[date],
+            dots: [...existingDots, { key: 'resolution', color: '#4CAF50' }]
+        };
     });
 
     return (
@@ -100,6 +105,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
                             setCurrentMonth(month.dateString);
                         }}
                         markedDates={markedDates}
+                        markingType={'multi-dot'}
                         theme={{
                             backgroundColor: '#ffffff',
                             calendarBackground: '#ffffff',

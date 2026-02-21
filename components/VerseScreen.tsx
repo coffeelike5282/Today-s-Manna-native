@@ -6,6 +6,7 @@ import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../s
 import CalendarModal from './CalendarModal';
 import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
 import ComingSoonTooltip from './ComingSoonTooltip';
+import { getResolutionCompletions } from '../services/resolutionService';
 
 const { width, height } = Dimensions.get('window');
 
@@ -17,6 +18,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
     const [loadingFavorite, setLoadingFavorite] = useState(false);
     const [calendarVisible, setCalendarVisible] = useState(false);
     const [favoriteDates, setFavoriteDates] = useState<string[]>([]); // Store favorite dates
+    const [resolutionDates, setResolutionDates] = useState<string[]>([]); // Store resolution dates
     const [tooltipVisible, setTooltipVisible] = useState(false);
 
     useEffect(() => {
@@ -29,6 +31,10 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 // Fetch all favorite dates for calendar dots
                 const dates = await getFavoriteDates(user.id);
                 setFavoriteDates(dates);
+
+                // Fetch all resolution dates for calendar dots
+                const resDates = await getResolutionCompletions();
+                setResolutionDates(resDates);
             }
         };
         checkStatus();
@@ -248,6 +254,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 onSelectDate={handleSelectDate}
                 selectedDate={data.date || getLocalDateString()}
                 favoriteDates={favoriteDates} // Pass favorite dates
+                resolutionDates={resolutionDates} // Pass resolution dates
             />
         </View>
     );
