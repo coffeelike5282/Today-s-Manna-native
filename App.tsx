@@ -92,11 +92,10 @@ export default function App() {
 
         // Initialize Audio
         const initAudio = async () => {
-            // Disabled for safety as per Park President's request
             try {
                 await audioService.loadSound(require('./assets/bgm.wav'), isMuted);
             } catch (e) {
-                console.error(e);
+                console.error('[App] Failed to init audio:', e);
             }
         };
 

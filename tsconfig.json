@@ -2,5 +2,23 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    ".expo",
+    "android",
+    "ios",
+    "dist",
+    ".git",
+    "bundle_*.js",
+    "bundle_*.hbc",
+    "android_bundle.*",
+    "logcat*.txt",
+    "*.csv",
+    "build_error*.log",
+    "gradle_build.log",
+    "db_sample*.json",
+    "debug_*.txt",
+    "require_*.txt"
+  ]
 }

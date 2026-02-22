@@ -54,7 +54,7 @@ class AudioService {
             console.log('[AudioService] Sound loaded successfully.');
 
         } catch (error) {
-            console.error('[AudioService] Failed to load sound:', error);
+            console.warn('[AudioService] Failed to load sound (likely timeout due to file size):', error);
             this.isLoaded = false;
             this.sound = null;
         }

@@ -18,6 +18,7 @@
       "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
+      "jsEngine": "jsc",
       "versionCode": 6,
       "package": "io.github.coffeelike5282.newmanna",
       "adaptiveIcon": {
@@ -34,9 +35,15 @@
     },
     "plugins": [
       "expo-font",
-      "@react-native-google-signin/google-signin",
       "expo-web-browser",
-      "expo-localization"
+      "expo-localization",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "말씀 카드를 갤러리에 저장하기 위해 사진 접근 권한이 필요합니다.",
+          "savePhotosPermission": "말씀 카드를 갤러리에 저장하기 위해 사진 저장 권한이 필요합니다."
+        }
+      ]
     ]
   }
 }

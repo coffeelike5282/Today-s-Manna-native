@@ -3,7 +3,8 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions, ActivityIn
 import { signInWithGoogle, signInWithKakao, signInWithEmail, signUpWithEmail } from '../services/authService';
 import type { User } from '../types/types';
 import Mascot from './Mascot';
-import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 const { width } = Dimensions.get('window');
 

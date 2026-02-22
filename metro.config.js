@@ -1,6 +1,24 @@
-const { getDefaultConfig } = require("expo/metro-config");
-const { withNativeWind } = require("nativewind/metro");
+const { getDefaultConfig } = require('expo/metro-config');
 
+/** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
-module.exports = withNativeWind(config, { input: "./global.css" });
+const defaultBlockList = config.resolver.blockList || [];
+config.resolver.blockList = [
+    ...defaultBlockList,
+    /bundle_.*\.js$/,
+    /android_bundle\.js$/,
+    /.*\.backup$/,
+    /.*\.hbc$/,
+    /.*\.txt$/,
+    /.*\.log$/,
+];
+
+config.transformer.getTransformOptions = async () => ({
+    transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
+    },
+});
+
+module.exports = config;

@@ -1,0 +1,28 @@
+{
+    "search.exclude": {
+        "node_modules": true,
+        "**/node_modules": true,
+        ".expo": true,
+        "android": true,
+        "ios": true,
+        "dist": true,
+        "bundle_*.js": true,
+        "bundle_*.hbc": true,
+        "android_bundle.*": true,
+        "logcat*.txt": true,
+        "*.csv": true,
+        "build_error*.log": true,
+        "gradle_build.log": true,
+        "db_sample*.json": true,
+        "debug_*.txt": true,
+        "require_*.txt": true
+    },
+    "files.watcherExclude": {
+        "node_modules/**": true,
+        "**/node_modules/**": true,
+        ".expo/**": true,
+        "android/**": true,
+        "ios/**": true,
+        "dist/**": true
+    }
+}
