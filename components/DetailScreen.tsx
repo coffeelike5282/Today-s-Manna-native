@@ -5,6 +5,7 @@ import { Sparkles, ClipboardCheck, Volume2, VolumeX, LogOut, Share2, Heart, Fold
 import * as Sharing from 'expo-sharing';
 import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../services/favoritesService';
 import CalendarModal from './CalendarModal';
+import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
 import ComingSoonTooltip from './ComingSoonTooltip';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import PrayerResolutionCard from './PrayerResolutionCard';
@@ -143,6 +144,23 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                         <ArrowLeft size={20} color="#8D6E63" />
                     </TouchableOpacity>
 
+                    {/* Logout Button - Added visibility consistency */}
+                    <TouchableOpacity
+                        onPress={() => {
+                            Alert.alert(
+                                language === 'ko' ? "로그아웃" : "Logout",
+                                language === 'ko' ? "정말 로그아웃 하시겠습니까?" : "Are you sure you want to logout?",
+                                [
+                                    { text: language === 'ko' ? "아니오" : "No", style: "cancel" },
+                                    { text: language === 'ko' ? "네" : "Yes", onPress: onLogout }
+                                ]
+                            );
+                        }}
+                        style={styles.iconButton}
+                    >
+                        <LogOut size={20} color="#8D6E63" />
+                    </TouchableOpacity>
+
                     <View style={styles.divider} />
 
                     {/* Favorite Button */}
@@ -197,9 +215,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                         {/* Header Date Badge */}
                         <View style={[styles.headerDateBadge, { marginBottom: 20 }]}>
                             <Text style={styles.headerDateText}>
-                                {new Date(data.date).toLocaleDateString(language === 'ko' ? 'ko-KR' : 'en-US', {
-                                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-                                })}
+                                {formatDisplayDate(data.date, language, true)}
                             </Text>
                         </View>
 
@@ -267,7 +283,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 visible={calendarVisible}
                 onClose={() => setCalendarVisible(false)}
                 onSelectDate={handleSelectDate}
-                selectedDate={new Date().toISOString().split('T')[0]}
+                selectedDate={getLocalDateString()}
                 favoriteDates={favoriteDates} // Pass favorite dates
                 resolutionDates={resolutionDates} // Pass resolution dates
             />

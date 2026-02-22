@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
         borderRadius: 2,
     },
     verseText: {
+        width: '100%',
         fontSize: 42,
         fontFamily: 'GowunDodum_400Regular',
         color: '#3E2723',

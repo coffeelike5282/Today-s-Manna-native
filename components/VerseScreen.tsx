@@ -7,6 +7,10 @@ import CalendarModal from './CalendarModal';
 import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
 import ComingSoonTooltip from './ComingSoonTooltip';
 import { getResolutionCompletions } from '../services/resolutionService';
+import ShareActionSheet from './ShareActionSheet';
+import VerseCard from './VerseCard';
+import ViewShot from 'react-native-view-shot';
+import { shareImage, saveImageToGallery, shareText } from '../services/shareService';
 
 const { width, height } = Dimensions.get('window');
 
@@ -20,6 +24,8 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
     const [favoriteDates, setFavoriteDates] = useState<string[]>([]); // Store favorite dates
     const [resolutionDates, setResolutionDates] = useState<string[]>([]); // Store resolution dates
     const [tooltipVisible, setTooltipVisible] = useState(false);
+    const [shareModalVisible, setShareModalVisible] = useState(false);
+    const viewShotRef = React.useRef<ViewShot>(null);
 
     useEffect(() => {
         const checkStatus = async () => {
@@ -80,36 +86,41 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
         }
     };
 
-    const handleShare = async () => {
-        const { Share } = require('react-native');
-        const verseRef = language === 'en' ? (data.verseRefEn || data.verseRef) : data.verseRef;
-        const fullVerse = language === 'en' ? (data.fullVerseEn || data.fullVerse) : data.fullVerse;
-        const interpretation = language === 'en' ? (data.interpretationEn || data.interpretation) : data.interpretation;
-        const mission = language === 'en' ? (data.missionEn || data.mission) : data.mission;
+    const handleSharePress = () => {
+        setShareModalVisible(true);
+    };
 
-        const header = language === 'ko' ? '[오늘의 만나]' : "[Today's Manna]";
-        const interpTitle = language === 'ko' ? '오늘의 해석' : "Today's Message";
-        const missionTitle = language === 'ko' ? '오늘의 미션' : "Today's Mission";
-
-        let shareMessage = `${header}\n\n"${fullVerse}"\n- ${verseRef}\n\n`;
-
-        if (interpretation) {
-            shareMessage += `[${interpTitle}]\n${interpretation}\n\n`;
-        } // Check if interpretation exists
-
-        if (mission) {
-            shareMessage += `[${missionTitle}]\n${mission}\n\n`;
-        }
-
-        shareMessage += language === 'ko' ? "매일 새로운 말씀, '오늘의 만나'" : "Daily Manna, 'Today's Manna'";
-
+    const handleShareImage = async () => {
         try {
-            await Share.share({
-                message: shareMessage,
-            });
+            if (viewShotRef.current && viewShotRef.current.capture) {
+                const uri = await viewShotRef.current.capture();
+                await shareImage(uri);
+            }
         } catch (error) {
-            console.log("Share error:", error);
+            console.error("Capture and share error:", error);
+            Alert.alert("공유 실패", "이미지를 생성하는 중 문제가 발생했습니다.");
         }
+    };
+
+    const handleSaveImage = async () => {
+        try {
+            if (viewShotRef.current && viewShotRef.current.capture) {
+                const uri = await viewShotRef.current.capture();
+                await saveImageToGallery(uri);
+            }
+        } catch (error) {
+            console.error("Capture and save error:", error);
+            Alert.alert("저장 실패", "이미지를 저장하는 중 문제가 발생했습니다.");
+        }
+    };
+
+    const handleShareText = async () => {
+        const verseRefToShare = language === 'en' ? (data.verseRefEn || data.verseRef) : data.verseRef;
+        const fullVerseToShare = language === 'en' ? (data.fullVerseEn || data.fullVerse) : data.fullVerse;
+        const interpretationToShare = language === 'en' ? (data.interpretationEn || data.interpretation) : data.interpretation;
+        const missionToShare = language === 'en' ? (data.missionEn || data.mission) : data.mission;
+
+        await shareText(verseRefToShare, fullVerseToShare, interpretationToShare, missionToShare, language);
     };
 
     // Verify English data availability
@@ -158,7 +169,19 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
             <View style={styles.islandContainer}>
                 <View style={styles.glassIsland}>
                     {/* Logout Button */}
-                    <TouchableOpacity onPress={onLogout} style={styles.iconButton}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            Alert.alert(
+                                language === 'ko' ? "로그아웃" : "Logout",
+                                language === 'ko' ? "정말 로그아웃 하시겠습니까?" : "Are you sure you want to logout?",
+                                [
+                                    { text: language === 'ko' ? "아니오" : "No", style: "cancel" },
+                                    { text: language === 'ko' ? "네" : "Yes", onPress: onLogout }
+                                ]
+                            );
+                        }}
+                        style={styles.iconButton}
+                    >
                         <LogOut size={20} color="#8D6E63" />
                     </TouchableOpacity>
 
@@ -182,8 +205,8 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                         <FolderHeart size={20} color="#8D6E63" />
                     </TouchableOpacity>
 
-                    {/* Share Button - Moved from bottom */}
-                    <TouchableOpacity onPress={handleShare} style={styles.iconButton}>
+                    {/* Share Button - Open Action Sheet */}
+                    <TouchableOpacity onPress={handleSharePress} style={styles.iconButton}>
                         <Share2 size={20} color="#8D6E63" />
                     </TouchableOpacity>
 
@@ -256,6 +279,27 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 favoriteDates={favoriteDates} // Pass favorite dates
                 resolutionDates={resolutionDates} // Pass resolution dates
             />
+
+            {/* Share Action Sheet */}
+            <ShareActionSheet
+                visible={shareModalVisible}
+                onClose={() => setShareModalVisible(false)}
+                onShareImage={handleShareImage}
+                onSaveImage={handleSaveImage}
+                onShareText={handleShareText}
+            />
+
+            {/* Off-screen ViewShot for VerseCard */}
+            <View style={{ position: 'absolute', left: -9999, top: -9999 }}>
+                <ViewShot ref={viewShotRef} options={{ format: 'png', quality: 1.0 }}>
+                    <VerseCard
+                        verseRef={language === 'en' ? (data.verseRefEn || data.verseRef) : data.verseRef}
+                        verseText={language === 'en' ? (data.verseTextEn || data.verseText) : data.verseText}
+                        date={data.date}
+                        language={language}
+                    />
+                </ViewShot>
+            </View>
         </View>
     );
 };
@@ -374,6 +418,7 @@ const styles = StyleSheet.create({
         opacity: 0.5,
     },
     verseText: {
+        width: '100%',
         fontSize: 20,
         fontFamily: 'GowunDodum_400Regular',
         color: '#3E2723',
@@ -381,6 +426,7 @@ const styles = StyleSheet.create({
         lineHeight: 34,
     },
     secondaryText: {
+        width: '100%',
         marginTop: 20,
         fontSize: 16,
         fontFamily: 'GowunDodum_400Regular',

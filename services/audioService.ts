@@ -5,6 +5,8 @@ class AudioService {
     private sound: Audio.Sound | null = null;
     private isMuted: boolean = false;
     private isLoaded: boolean = false;
+    private isLoading: boolean = false; // 중복 로딩 방지용 락(Lock) 락! 락! 🫡
+    private currentSource: any = null; // 오디오 엔진 사망 시 부활용 소스 🫡
 
     constructor() {
         this.setupAudioMode();
@@ -14,7 +16,7 @@ class AudioService {
         try {
             await Audio.setAudioModeAsync({
                 allowsRecordingIOS: false,
-                staysActiveInBackground: false,
+                staysActiveInBackground: true, // OS 강제 중단 방지, 앱이 직접 제어
                 interruptionModeIOS: InterruptionModeIOS.DuckOthers,
                 playsInSilentModeIOS: true,
                 shouldDuckAndroid: true,
@@ -27,7 +29,14 @@ class AudioService {
     }
 
     async loadSound(source: any, initialMuteState: boolean = false) {
+        if (this.isLoading) {
+            console.log('[AudioService] Already loading, skipping duplicate request.');
+            return;
+        }
+
+        this.isLoading = true;
         this.isMuted = initialMuteState;
+        this.currentSource = source;
 
         try {
             if (this.sound) {
@@ -54,9 +63,11 @@ class AudioService {
             console.log('[AudioService] Sound loaded successfully.');
 
         } catch (error) {
-            console.warn('[AudioService] Failed to load sound (likely timeout due to file size):', error);
+            console.warn('[AudioService] Failed to load sound:', error);
             this.isLoaded = false;
             this.sound = null;
+        } finally {
+            this.isLoading = false; // 작업 끝나면 락 해제! 🫡
         }
     }
 
@@ -86,23 +97,28 @@ class AudioService {
     }
 
     async toggleMute(shouldBeMuted: boolean) {
+        // 이미 그 상태면 브릿지 건드리지 말고 통과! 🫡
+        if (this.isMuted === shouldBeMuted && this.isLoaded) {
+            return;
+        }
+
         this.isMuted = shouldBeMuted;
 
-        if (!this.sound) return;
+        if (!this.sound || !this.isLoaded || this.isLoading) return;
 
         try {
-            if (this.isMuted) {
-                await this.sound.setStatusAsync({ shouldPlay: false, volume: 0.0 });
-            } else {
-                await this.sound.setStatusAsync({ shouldPlay: true, volume: 1.0 });
-            }
+            await this.sound.setStatusAsync({
+                shouldPlay: !this.isMuted,
+                volume: this.isMuted ? 0.0 : 1.0
+            });
         } catch (error) {
             console.error('[AudioService] Failed to toggle mute:', error);
+            this.recoverAudio();
         }
     }
 
     async pause() {
-        if (this.sound) {
+        if (this.sound && this.isLoaded && !this.isLoading) {
             try {
                 const status = await this.sound.getStatusAsync();
                 if (status.isLoaded && status.isPlaying) {
@@ -115,23 +131,42 @@ class AudioService {
     }
 
     async resume() {
-        if (this.isMuted || !this.sound) return;
+        if (this.isMuted || this.isLoading) return;
+
+        if (!this.sound || !this.isLoaded) {
+            console.log('[AudioService] Engine is dead! Resurrecting on resume()... 🚑');
+            return this.recoverAudio();
+        }
 
         try {
             const status = await this.sound.getStatusAsync();
-            if (status.isLoaded && !status.isPlaying) {
-                await this.sound.playAsync();
+            if (status.isLoaded) {
+                if (!status.isPlaying) {
+                    await this.sound.playAsync();
+                }
+            } else {
+                console.log('[AudioService] Engine turned unloaded! Resurrecting... 🚑');
+                this.recoverAudio();
             }
         } catch (error) {
-            console.error('[AudioService] Failed to resume:', error);
+            console.error('[AudioService] Failed to resume, attempting recovery:', error);
+            this.recoverAudio();
+        }
+    }
+
+    async recoverAudio() {
+        if (this.currentSource && !this.isLoading) {
+            console.log('[AudioService] Recovering dead audio engine... 🚑');
+            await this.loadSound(this.currentSource, this.isMuted);
         }
     }
 
     async handleAppStateChange(nextAppState: AppStateStatus) {
         if (nextAppState === 'active') {
-            this.resume();
-        } else if (nextAppState.match(/inactive|background/)) {
-            this.pause();
+            await this.resume();
+        } else if (nextAppState === 'background') {
+            // 모달(Modal) 창이 뜰 때 발생하는 'inactive' 상태를 무시합니다! 🫡
+            await this.pause();
         }
     }
 

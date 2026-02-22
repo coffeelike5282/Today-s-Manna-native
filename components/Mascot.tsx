@@ -32,13 +32,14 @@ const Mascot: React.FC<MascotProps> = ({ onClick, style, ...props }) => {
             onPress={onClick}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
+            android_ripple={{ color: 'transparent' }}
             style={(state) => [
                 styles.container,
                 typeof style === 'function' ? style(state) : style
             ]}
             {...props}
         >
-            <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+            <Animated.View style={[{ transform: [{ scale: scaleAnim }] }, { backgroundColor: 'transparent' }]}>
                 {/* Body */}
                 <View style={styles.body}>
                     {/* Eyes */}
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        // Make sure container doesn't have background
+        backgroundColor: 'transparent',
     },
     body: {
         width: 192,

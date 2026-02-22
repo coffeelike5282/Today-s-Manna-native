@@ -52,6 +52,7 @@ export default function App() {
 
     // Initialize Audio Service
     const appState = useRef(AppState.currentState);
+    const isAudioInitialized = useRef(false); // 2중 안전 장치! 🫡
 
     useEffect(() => {
         // [DEBUG] Monitor deep links
@@ -92,10 +93,14 @@ export default function App() {
 
         // Initialize Audio
         const initAudio = async () => {
+            if (isAudioInitialized.current) return; // 이미 했으면 퇴장! 🫡
+            isAudioInitialized.current = true;
+
             try {
-                await audioService.loadSound(require('./assets/bgm.wav'), isMuted);
+                await audioService.loadSound(require('./assets/bgm.mp3'), isMuted);
             } catch (e) {
                 console.error('[App] Failed to init audio:', e);
+                isAudioInitialized.current = false; // 실패하면 다시 시도할 수 있게 해제
             }
         };
 
@@ -116,6 +121,14 @@ export default function App() {
         };
     }, []); // Run once on mount
 
+    // 🚀 [6차, 8차 핫픽스 종합] 화면/데이터 전환 시 오디오 심폐소생술 (Ping) 🫡
+    // 화면을 그리거나 새로운 날짜 데이터를 불러올 때 CPU 집중으로 오디오가 끊기는 것을 방지!
+    useEffect(() => {
+        if (!isMuted) {
+            audioService.resume();
+        }
+    }, [screen, mannaData?.date]);
+
     const toggleMute = async () => {
         const newMutedState = !isMuted;
         setIsMuted(newMutedState);
@@ -123,10 +136,6 @@ export default function App() {
     };
 
     const handleNext = async (dateStr?: string) => {
-        // Ensure audio is playing if not muted
-        if (!isMuted) {
-            audioService.resume();
-        }
 
         if (dateStr && typeof dateStr === 'string') {
             setLoading(true);

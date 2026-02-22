@@ -78,7 +78,7 @@ export const getDailyManna = async (dateInput?: Date | string): Promise<MannaDat
     const targetDate = typeof dateInput === 'string'
         ? dateInput
         : (dateInput instanceof Date
-            ? dateInput.toISOString().split('T')[0]
+            ? getLocalDateString(dateInput)
             : getLocalDateString());
 
     // 1. Try Supabase First ('manna_verse' table)

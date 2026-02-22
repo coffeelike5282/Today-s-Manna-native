@@ -70,7 +70,8 @@
 
 ### 2. 실행 절차 (Execution Steps)
 
-1. **에뮬레이터 구동**: `emulator -avd [DeviceName]`
+1. **에뮬레이터 구동 (한국 시간 강제 적용)**: `emulator -avd [DeviceName] -timezone Asia/Seoul`
+    *※ 박 사장님 엄명: 테스트 시간 일관성을 위해 에뮬레이터 구동 시 무조건 시스템 시간 및 로케일을 한국 시간(KST)으로 세팅할 것.*
 2. **포트 포워딩 (제일 중요!)**:
 
     ```bash

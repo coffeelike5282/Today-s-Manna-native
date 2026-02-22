@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image, Animated, Easing } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image, Animated, Easing, Alert } from 'react-native';
 import { ScreenProps } from '../types/types';
 import { getDailyManna, getUserFavorites } from '../services/mannaService';
 import Mascot from './Mascot';
 import { Volume2, VolumeX, Cloud, Star, Heart, User as UserIcon, LogOut, FolderHeart } from 'lucide-react-native';
 import CalendarModal from './CalendarModal';
-import { formatDisplayDate } from '../utils/dateUtils';
+import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
 import ComingSoonTooltip from './ComingSoonTooltip';
 
 const { width, height } = Dimensions.get('window');
@@ -80,7 +80,19 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                     </View>
 
                     {/* Logout Button */}
-                    <TouchableOpacity onPress={onLogout} style={styles.iconButton}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            Alert.alert(
+                                language === 'ko' ? "로그아웃" : "Logout",
+                                language === 'ko' ? "정말 로그아웃 하시겠습니까?" : "Are you sure you want to logout?",
+                                [
+                                    { text: language === 'ko' ? "아니오" : "No", style: "cancel" },
+                                    { text: language === 'ko' ? "네" : "Yes", onPress: onLogout }
+                                ]
+                            );
+                        }}
+                        style={styles.iconButton}
+                    >
                         <LogOut size={20} color="#8D6E63" />
                     </TouchableOpacity>
 
@@ -143,7 +155,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 visible={calendarVisible}
                 onClose={() => setCalendarVisible(false)}
                 onSelectDate={handleSelectDate}
-                selectedDate={new Date().toISOString().split('T')[0]}
+                selectedDate={getLocalDateString()}
                 favoriteDates={favoriteDates}
             />
         </View>
