@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin, statusCodes, isErrorWithCode } from '@react-native-google-signin/google-signin';
 import * as WebBrowser from 'expo-web-browser';
+import { login as kakaoLogin, loginWithKakaoAccount, getProfile as getKakaoProfile } from '@react-native-seoul/kakao-login';
 import type { User } from '../types/types';
 
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
@@ -122,43 +123,83 @@ const extractParamsFromUrl = (url: string) => {
 };
 
 /**
- * Sign In with Kakao
+ * Sign In with Kakao (Native SDK - Quick Login)
  */
 export const signInWithKakao = async () => {
     try {
-        const redirectUrl = 'todaysmanna://auth/callback';
+        const token = await kakaoLogin();
 
-        const { data, error } = await supabase.auth.signInWithOAuth({
-            provider: 'kakao',
-            options: {
-                redirectTo: redirectUrl,
-                skipBrowserRedirect: true,
-                scopes: 'profile_nickname profile_image account_email',
-                queryParams: { prompt: 'login' },
-            },
-        });
+        if (token && token.idToken) {
+            const { data, error } = await supabase.auth.signInWithIdToken({
+                provider: 'kakao',
+                token: token.idToken,
+            });
 
-        if (error) throw error;
-        if (!data?.url) throw new Error('No OAuth URL returned');
+            if (error) throw error;
 
-        const result = await WebBrowser.openAuthSessionAsync(data.url, redirectUrl);
-
-        if (result.type === 'success' && result.url) {
-            const params = extractParamsFromUrl(result.url);
-            const { access_token, refresh_token } = params;
-
-            if (access_token && refresh_token) {
-                const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
-                    access_token,
-                    refresh_token,
-                });
-                if (sessionError) throw sessionError;
-                return sessionData.user;
+            // 추가: 카카오 최신 프로필 정보 동기화
+            try {
+                const profile = await getKakaoProfile();
+                if (profile && data.user) {
+                    await supabase.auth.updateUser({
+                        data: {
+                            full_name: profile.nickname,
+                            avatar_url: profile.profileImageUrl,
+                            picture: profile.profileImageUrl
+                        }
+                    });
+                }
+            } catch (pError) {
+                console.warn('Failed to sync Kakao profile:', pError);
             }
+
+            return data.user;
         }
-        return null;
+
+        throw new Error('No ID token returned from Kakao SDK');
     } catch (error) {
-        console.error('Kakao login failed:', error);
+        console.error('Kakao native login failed:', error);
+        throw error;
+    }
+};
+
+/**
+ * Sign In with Kakao Account (Web View - Allows different account)
+ */
+export const signInWithKakaoAccount = async () => {
+    try {
+        const token = await loginWithKakaoAccount();
+
+        if (token && token.idToken) {
+            const { data, error } = await supabase.auth.signInWithIdToken({
+                provider: 'kakao',
+                token: token.idToken,
+            });
+
+            if (error) throw error;
+
+            // 추가: 카카오 최신 프로필 정보 동기화 (웹 로그인용)
+            try {
+                const profile = await getKakaoProfile();
+                if (profile && data.user) {
+                    await supabase.auth.updateUser({
+                        data: {
+                            full_name: profile.nickname,
+                            avatar_url: profile.profileImageUrl,
+                            picture: profile.profileImageUrl
+                        }
+                    });
+                }
+            } catch (pError) {
+                console.warn('Failed to sync Kakao profile:', pError);
+            }
+
+            return data.user;
+        }
+
+        throw new Error('No ID token returned from Kakao SDK (Web Account)');
+    } catch (error) {
+        console.error('Kakao account web login failed:', error);
         throw error;
     }
 };

@@ -49,7 +49,12 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
 
 
     const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || (language === 'ko' ? "박 사장님" : "User");
-    const avatarUrl = user?.user_metadata?.avatar_url || user?.user_metadata?.picture;
+
+    let avatarUrl = user?.user_metadata?.avatar_url || user?.user_metadata?.picture;
+    // Android cleartext traffic workaround: 카카오 등에서 http로 주는 이미지를 https로 강제 변환
+    if (avatarUrl && typeof avatarUrl === 'string' && avatarUrl.startsWith('http://')) {
+        avatarUrl = avatarUrl.replace('http://', 'https://');
+    }
 
     const handleOpenFavorites = () => {
         setCalendarVisible(true);
@@ -217,10 +222,12 @@ const styles = StyleSheet.create({
         width: 24,
         height: 24,
         borderRadius: 12,
-        backgroundColor: '#EFEBE9',
+        backgroundColor: 'rgba(141, 110, 99, 0.15)', // Lighter brown variant
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 8,
+        borderWidth: 1,
+        borderColor: 'rgba(141, 110, 99, 0.3)',
     },
     islandUserName: {
         fontSize: 14,

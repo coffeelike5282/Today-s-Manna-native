@@ -1,4 +1,10 @@
 {
+    "java.import.exclusions": [
+        "**/node_modules/**",
+        "**/.expo/**",
+        "**/android/build/**",
+        "**/ios/**"
+    ],
     "search.exclude": {
         "node_modules": true,
         "**/node_modules": true,

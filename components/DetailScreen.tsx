@@ -11,6 +11,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import PrayerResolutionCard from './PrayerResolutionCard';
 import { getRandomPrayerResolution } from '../data/prayerResolutions';
 import { getResolutionCompletions } from '../services/resolutionService';
+import ShareActionSheet from './ShareActionSheet';
+import VerseCard from './VerseCard';
+import ViewShot from 'react-native-view-shot';
+import { shareImage, saveImageToGallery, shareText } from '../services/shareService';
 
 const { width, height } = Dimensions.get('window');
 
@@ -23,6 +27,8 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
     const [resolutionDates, setResolutionDates] = useState<string[]>([]); // Store resolution dates
     const [tooltipVisible, setTooltipVisible] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
+    const [shareModalVisible, setShareModalVisible] = useState(false);
+    const viewShotRef = React.useRef<ViewShot>(null);
 
     const prayerData = getRandomPrayerResolution(data.date);
     const prayerText = language === 'ko' ? prayerData.ko.prayer : prayerData.en.prayer;
@@ -66,32 +72,36 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
         onNext(dateString);
     };
 
-    const handleShare = async () => {
-        const { Share } = require('react-native');
+    const handleSharePress = () => {
+        setShareModalVisible(true);
+    };
 
-        const header = language === 'ko' ? '[오늘의 만나]' : "[Today's Manna]";
-        const interpTitle = language === 'ko' ? '오늘의 해석' : "Today's Message";
-        const missionTitle = language === 'ko' ? '오늘의 미션' : "Today's Mission";
-
-        let shareMessage = `${header}\n\n"${fullVerse}"\n- ${verseRef}\n\n`;
-
-        if (interpretation) {
-            shareMessage += `[${interpTitle}]\n${interpretation}\n\n`;
-        }
-
-        if (mission) {
-            shareMessage += `[${missionTitle}]\n${mission}\n\n`;
-        }
-
-        shareMessage += language === 'ko' ? "매일 새로운 말씀, '오늘의 만나'" : "Daily Manna, 'Today's Manna'";
-
+    const handleShareImage = async () => {
         try {
-            await Share.share({
-                message: shareMessage,
-            });
+            if (viewShotRef.current && viewShotRef.current.capture) {
+                const uri = await viewShotRef.current.capture();
+                await shareImage(uri);
+            }
         } catch (error) {
-            console.log("Share error:", error);
+            console.error("Capture and share error:", error);
+            Alert.alert("공유 실패", "이미지를 생성하는 중 문제가 발생했습니다.");
         }
+    };
+
+    const handleSaveImage = async () => {
+        try {
+            if (viewShotRef.current && viewShotRef.current.capture) {
+                const uri = await viewShotRef.current.capture();
+                await saveImageToGallery(uri);
+            }
+        } catch (error) {
+            console.error("Capture and save error:", error);
+            Alert.alert("저장 실패", "이미지를 저장하는 중 문제가 발생했습니다.");
+        }
+    };
+
+    const handleShareText = async () => {
+        await shareText(verseRef, fullVerse, interpretation, mission, language);
     };
 
     const handleToggleFavorite = async () => {
@@ -182,7 +192,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                     </TouchableOpacity>
 
                     {/* Share Button */}
-                    <TouchableOpacity onPress={handleShare} style={styles.iconButton}>
+                    <TouchableOpacity onPress={handleSharePress} style={styles.iconButton}>
                         <Share2 size={20} color="#8D6E63" />
                     </TouchableOpacity>
 
@@ -287,6 +297,29 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 favoriteDates={favoriteDates} // Pass favorite dates
                 resolutionDates={resolutionDates} // Pass resolution dates
             />
+
+            {/* Share Action Sheet */}
+            <ShareActionSheet
+                visible={shareModalVisible}
+                onClose={() => setShareModalVisible(false)}
+                onShareImage={handleShareImage}
+                onSaveImage={handleSaveImage}
+                onShareText={handleShareText}
+            />
+
+            {/* Off-screen ViewShot for VerseCard */}
+            <View style={{ position: 'absolute', left: -9999, top: -9999 }}>
+                <ViewShot ref={viewShotRef} options={{ format: 'png', quality: 1.0 }}>
+                    <VerseCard
+                        verseRef={verseRef}
+                        verseText={language === 'en' ? (data.verseTextEn || data.verseText) : data.verseText}
+                        date={data.date}
+                        language={language}
+                        explanation={interpretation}
+                        mission={mission}
+                    />
+                </ViewShot>
+            </View>
         </View>
     );
 };

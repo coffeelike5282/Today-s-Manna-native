@@ -297,6 +297,8 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                         verseText={language === 'en' ? (data.verseTextEn || data.verseText) : data.verseText}
                         date={data.date}
                         language={language}
+                        explanation={language === 'en' ? (data.interpretationEn || data.interpretation) : data.interpretation}
+                        mission={language === 'en' ? (data.missionEn || data.mission) : data.mission}
                     />
                 </ViewShot>
             </View>

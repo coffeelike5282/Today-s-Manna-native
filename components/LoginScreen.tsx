@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions, ActivityIndicator, Alert, TextInput, ScrollView } from 'react-native';
-import { signInWithGoogle, signInWithKakao, signInWithEmail, signUpWithEmail } from '../services/authService';
+import { signInWithGoogle, signInWithKakao, signInWithKakaoAccount, signInWithEmail, signUpWithEmail } from '../services/authService';
 import type { User } from '../types/types';
 import Mascot from './Mascot';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -62,15 +62,37 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess, language = 'k
         }
     };
 
-    const handleKakaoLogin = async () => {
+    const handleKakaoLoginPress = () => {
+        Alert.alert(
+            language === 'ko' ? "카카오 로그인 방식 선택" : "Select Kakao Login Method",
+            language === 'ko' ? "원하시는 로그인 방식을 선택해주세요." : "Please select your login method.",
+            [
+                {
+                    text: language === 'ko' ? "카카오톡으로 빠른 로그인" : "Quick Login with KakaoTalk",
+                    onPress: () => handleKakaoLogin(false)
+                },
+                {
+                    text: language === 'ko' ? "다른 카카오 계정으로 로그인" : "Login with other Kakao Account",
+                    onPress: () => handleKakaoLogin(true)
+                },
+                {
+                    text: language === 'ko' ? "취소" : "Cancel",
+                    style: "cancel"
+                }
+            ]
+        );
+    };
+
+    const handleKakaoLogin = async (useOtherAccount: boolean = false) => {
         setLoading(true);
         try {
-            const user = await signInWithKakao();
+            const user = useOtherAccount ? await signInWithKakaoAccount() : await signInWithKakao();
             if (user) onLoginSuccess(user);
             else Alert.alert(t.notification, t.kakaoCancel);
-        } catch (error) {
+        } catch (error: any) {
             console.error("Kakao Login Error:", error);
-            Alert.alert(t.authError, t.kakaoError);
+            const errMsg = error?.message || '알 수 없는 오류';
+            Alert.alert(t.authError, `${t.kakaoError}\n\n상세: ${errMsg}`);
         } finally {
             setLoading(false);
         }
@@ -162,7 +184,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess, language = 'k
                                 <Text style={styles.googleButtonText}>{t.googleLogin}</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.kakaoButton} onPress={handleKakaoLogin}>
+                            <TouchableOpacity style={styles.kakaoButton} onPress={handleKakaoLoginPress}>
                                 <Ionicons name="chatbubble-ellipses" size={20} color="#000000" style={{ marginRight: 10 }} />
                                 <Text style={styles.kakaoButtonText}>{t.kakaoLogin}</Text>
                             </TouchableOpacity>
