@@ -269,6 +269,10 @@ export default function App() {
                         ) : (
                             renderContent()
                         )}
+                        {/* 🏷️ Version Display: Bottom Right Corner */}
+                        <View style={styles.versionContainer} pointerEvents="none">
+                            <Text style={styles.versionText}>v2.0.0.1</Text>
+                        </View>
                     </View>
                 </LinearGradient>
             </View>
@@ -281,4 +285,16 @@ const styles = StyleSheet.create({
     loadingContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' },
     gradient: { flex: 1 },
     screenContainer: { flex: 1, overflow: 'hidden' },
+    versionContainer: {
+        position: 'absolute',
+        bottom: 10,
+        right: 15,
+        opacity: 0.4,
+        zIndex: 999,
+    },
+    versionText: {
+        fontSize: 10,
+        fontFamily: 'NanumGothic_400Regular',
+        color: '#5D4037',
+    },
 });
