@@ -38,7 +38,11 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
     // Generate marked dates
     const markedDates: any = {
         // Selected Date (Circle background, no dot by default)
-        [selectedDate]: { selected: true, selectedColor: '#8D6E63' }
+        [selectedDate]: {
+            selected: true,
+            selectedColor: '#8D6E63',
+            textColor: '#FFFFFF'
+        }
     };
 
     // Add dots for favorites (Red Color #FF0000)
@@ -112,10 +116,10 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
                             textSectionTitleColor: '#b6c1cd',
                             selectedDayBackgroundColor: '#8D6E63',
                             selectedDayTextColor: '#ffffff',
-                            todayTextColor: '#8D6E63',
+                            todayTextColor: '#FF5252', // Coral Pink
                             dayTextColor: '#2d4150',
                             textDisabledColor: '#d9e1e8',
-                            dotColor: '#FF0000', // Default red
+                            dotColor: '#FF5252',
                             selectedDotColor: '#ffffff',
                             arrowColor: '#8D6E63',
                             monthTextColor: '#5D4037',
@@ -123,12 +127,24 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
                             textDayFontFamily: 'NanumGothic_700Bold',
                             textMonthFontFamily: 'Jua_400Regular',
                             textDayHeaderFontFamily: 'NanumGothic_700Bold',
-                            textDayFontWeight: '300',
+                            textDayFontWeight: 'bold',
                             textMonthFontWeight: 'bold',
-                            textDayHeaderFontWeight: '300',
+                            textDayHeaderFontWeight: 'bold',
                             textDayFontSize: 16,
                             textMonthFontSize: 20,
-                            textDayHeaderFontSize: 14
+                            textDayHeaderFontSize: 14,
+                            // @ts-ignore - Internal stylesheet override for precision styling
+                            'stylesheet.day.basic': {
+                                today: {
+                                    backgroundColor: '#FFF0F3',
+                                    borderRadius: 18,
+                                },
+                                todayText: {
+                                    color: '#FF5252',
+                                    fontWeight: 'bold',
+                                    fontSize: 18, // Make it slightly larger as well
+                                }
+                            }
                         }}
                     />
                 </View>

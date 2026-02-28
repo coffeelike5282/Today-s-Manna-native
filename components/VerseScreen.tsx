@@ -6,7 +6,7 @@ import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../s
 import CalendarModal from './CalendarModal';
 import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
 import ComingSoonTooltip from './ComingSoonTooltip';
-import { getResolutionCompletions } from '../services/resolutionService';
+import { getResolutionDates } from '../services/resolutionService';
 import ShareActionSheet from './ShareActionSheet';
 import VerseCard from './VerseCard';
 import ViewShot from 'react-native-view-shot';
@@ -39,7 +39,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 setFavoriteDates(dates);
 
                 // Fetch all resolution dates for calendar dots
-                const resDates = await getResolutionCompletions();
+                const resDates = await getResolutionDates(user.id);
                 setResolutionDates(resDates);
             }
         };

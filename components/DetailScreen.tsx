@@ -7,10 +7,9 @@ import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../s
 import CalendarModal from './CalendarModal';
 import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
 import ComingSoonTooltip from './ComingSoonTooltip';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import PrayerResolutionCard from './PrayerResolutionCard';
 import { getRandomPrayerResolution } from '../data/prayerResolutions';
-import { getResolutionCompletions } from '../services/resolutionService';
+import { getResolutionDates, saveResolution, isResolutionCompleted } from '../services/resolutionService';
 import ShareActionSheet from './ShareActionSheet';
 import VerseCard from './VerseCard';
 import ViewShot from 'react-native-view-shot';
@@ -48,8 +47,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 setFavorited(status);
 
                 // Check resolution completion
-                const completionKey = `RESOLUTION_COMPLETE_${data.date}`;
-                const completed = await AsyncStorage.getItem(completionKey);
+                const completed = await isResolutionCompleted(user.id, data.date);
                 setIsCompleted(!!completed);
 
                 // Fetch all favorite dates for calendar dots
@@ -57,7 +55,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 setFavoriteDates(dates);
 
                 // Fetch all resolution dates for calendar dots
-                const resDates = await getResolutionCompletions();
+                const resDates = await getResolutionDates(user.id);
                 setResolutionDates(resDates);
             }
         };
@@ -137,8 +135,8 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
     };
 
     const handleCompleteResolution = async () => {
-        const completionKey = `RESOLUTION_COMPLETE_${data.date}`;
-        await AsyncStorage.setItem(completionKey, 'true');
+        if (!user) return;
+        await saveResolution(user.id, data.date);
         setIsCompleted(true);
     };
 
