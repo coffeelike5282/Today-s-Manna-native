@@ -35,4 +35,5 @@ export interface ScreenProps {
   toggleLanguage?: () => void;
   onLogout?: () => void;
   user?: User | null;
+  version?: string;
 }

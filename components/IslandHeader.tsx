@@ -9,21 +9,22 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 }
 
 interface IslandHeaderProps {
-    user: User | null;
+    user: User | null | undefined;
     canGoBack: boolean;
     onBack?: () => void;
-    favorited: boolean;
-    loadingFavorite: boolean;
-    onToggleFavorite: () => void;
-    onOpenCalendar: () => void;
-    onShare: () => void;
-    language: Language;
-    toggleLanguage: () => void;
-    isMuted: boolean;
-    toggleMute: () => void;
-    onLogout: () => void;
+    favorited?: boolean;
+    loadingFavorite?: boolean;
+    onToggleFavorite?: () => void;
+    onOpenCalendar?: () => void;
+    onShare?: () => void;
+    language?: 'ko' | 'en';
+    toggleLanguage?: () => void;
+    isMuted?: boolean;
+    toggleMute?: () => void;
+    onLogout?: () => void;
     canFavorite?: boolean; // Added
     canShare?: boolean; // Added
+    version?: string;
 }
 
 const IslandHeader: React.FC<IslandHeaderProps> = ({
@@ -41,7 +42,8 @@ const IslandHeader: React.FC<IslandHeaderProps> = ({
     toggleMute,
     onLogout,
     canFavorite = true, // Default to true
-    canShare = true // Default to true
+    canShare = true, // Default to true
+    version
 }) => {
     const [expanded, setExpanded] = useState(false);
 
@@ -55,6 +57,16 @@ const IslandHeader: React.FC<IslandHeaderProps> = ({
 
     return (
         <View style={styles.container}>
+            {expanded && (
+                <TouchableOpacity
+                    style={styles.backdrop}
+                    activeOpacity={1}
+                    onPress={() => {
+                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+                        setExpanded(false);
+                    }}
+                />
+            )}
             <View style={[styles.island, expanded && styles.islandExpanded]}>
                 {/* 1. Main Row (Fixed Order) */}
                 <View style={styles.mainRow}>
@@ -158,7 +170,7 @@ const IslandHeader: React.FC<IslandHeaderProps> = ({
                                         language === 'ko' ? "정말 로그아웃 하시겠습니까?" : "Are you sure you want to logout?",
                                         [
                                             { text: language === 'ko' ? "아니오" : "No", style: "cancel" },
-                                            { text: language === 'ko' ? "네" : "Yes", onPress: () => { setExpanded(false); onLogout(); } }
+                                            { text: language === 'ko' ? "네" : "Yes", onPress: () => { setExpanded(false); onLogout?.(); } }
                                         ]
                                     );
                                 }}
@@ -172,6 +184,13 @@ const IslandHeader: React.FC<IslandHeaderProps> = ({
                                 </Text>
                             </TouchableOpacity>
                         </View>
+
+                        {/* Version Info at the bottom of the menu */}
+                        {version && (
+                            <View style={styles.versionMenuFooter}>
+                                <Text style={styles.versionMenuText}>{version}</Text>
+                            </View>
+                        )}
                     </View>
                 )}
             </View>
@@ -204,6 +223,14 @@ const styles = StyleSheet.create({
     },
     islandExpanded: {
         borderRadius: 20,
+    },
+    backdrop: {
+        position: 'absolute',
+        top: -200, // Sufficiently high to cover status bar
+        left: -100,
+        right: -100,
+        height: 2000, // Sufficiently large to cover entire screen
+        backgroundColor: 'transparent',
     },
     mainRow: {
         flexDirection: 'row',
@@ -287,6 +314,20 @@ const styles = StyleSheet.create({
         fontFamily: 'NanumGothic_700Bold',
         color: '#8D6E63',
         textAlign: 'center',
+    },
+    versionMenuFooter: {
+        width: '100%',
+        alignItems: 'center',
+        paddingVertical: 4,
+        marginTop: 4,
+        borderTopWidth: 0.5,
+        borderTopColor: '#EFEBE9',
+    },
+    versionMenuText: {
+        fontSize: 9,
+        fontFamily: 'NanumGothic_400Regular',
+        color: '#BDBDBD',
+        opacity: 0.8,
     },
 });
 

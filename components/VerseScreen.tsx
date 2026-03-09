@@ -16,7 +16,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width, height } = Dimensions.get('window');
 
-const VerseScreen: React.FC<ScreenProps> = ({ onNext, onBack, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user }) => {
+const VerseScreen: React.FC<ScreenProps & { version?: string }> = ({ onNext, onBack, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user, version }) => {
     // Check if we are in dev mode
     const isDebug = __DEV__;
 
@@ -185,6 +185,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, onBack, data, isMuted, tog
                 isMuted={isMuted ?? false}
                 toggleMute={toggleMute ?? (() => { })}
                 onLogout={onLogout ?? (() => { })}
+                version={version}
             />
 
             {/* Main Content (Swipeable/Scrollable) */}
@@ -320,7 +321,7 @@ const styles = StyleSheet.create({
         color: '#8D6E63',
     },
     scrollContent: {
-        paddingTop: 105, // Adjusted for slimmer header (40px + 55px top)
+        paddingTop: 111, // Adjusted for symmetry (95px header bottom + 16px gap)
         paddingBottom: 40,
         // paddingHorizontal: 16 removed to match DetailScreen full width alignment
     },
