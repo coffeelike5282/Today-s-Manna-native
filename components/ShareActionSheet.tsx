@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import { Image as ImageIcon, Download, Type, X } from 'lucide-react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface ShareActionSheetProps {
     visible: boolean;
@@ -8,6 +9,7 @@ interface ShareActionSheetProps {
     onShareImage: () => void;
     onSaveImage: () => void;
     onShareText: () => void;
+    language?: 'ko' | 'en';
 }
 
 const { width, height } = Dimensions.get('window');
@@ -18,7 +20,10 @@ const ShareActionSheet: React.FC<ShareActionSheetProps> = ({
     onShareImage,
     onSaveImage,
     onShareText,
+    language = 'ko',
 }) => {
+    const insets = useSafeAreaInsets();
+
     return (
         <Modal
             visible={visible}
@@ -29,10 +34,12 @@ const ShareActionSheet: React.FC<ShareActionSheetProps> = ({
             <TouchableWithoutFeedback onPress={onClose}>
                 <View style={styles.overlay}>
                     <TouchableWithoutFeedback>
-                        <View style={styles.sheetContainer}>
+                        <View style={[styles.sheetContainer, { paddingBottom: insets.bottom + 20 }]}>
                             <View style={styles.dragHandle} />
 
-                            <Text style={styles.title}>말씀 공유하기</Text>
+                            <Text style={styles.title}>
+                                {language === 'ko' ? "말씀 공유하기" : "Share Manna"}
+                            </Text>
 
                             <View style={styles.optionsContainer}>
                                 <TouchableOpacity
@@ -45,7 +52,9 @@ const ShareActionSheet: React.FC<ShareActionSheetProps> = ({
                                     <View style={[styles.iconContainer, { backgroundColor: '#E8F5E9' }]}>
                                         <ImageIcon size={24} color="#4CAF50" />
                                     </View>
-                                    <Text style={styles.optionText}>이미지 공유</Text>
+                                    <Text style={styles.optionText}>
+                                        {language === 'ko' ? "이미지 공유" : "Share Image"}
+                                    </Text>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
@@ -58,7 +67,9 @@ const ShareActionSheet: React.FC<ShareActionSheetProps> = ({
                                     <View style={[styles.iconContainer, { backgroundColor: '#FFF3E0' }]}>
                                         <Download size={24} color="#FF9800" />
                                     </View>
-                                    <Text style={styles.optionText}>이미지 저장</Text>
+                                    <Text style={styles.optionText}>
+                                        {language === 'ko' ? "이미지 저장" : "Save Image"}
+                                    </Text>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
@@ -71,12 +82,16 @@ const ShareActionSheet: React.FC<ShareActionSheetProps> = ({
                                     <View style={[styles.iconContainer, { backgroundColor: '#E3F2FD' }]}>
                                         <Type size={24} color="#2196F3" />
                                     </View>
-                                    <Text style={styles.optionText}>텍스트 복사</Text>
+                                    <Text style={styles.optionText}>
+                                        {language === 'ko' ? "텍스트 복사" : "Copy Text"}
+                                    </Text>
                                 </TouchableOpacity>
                             </View>
 
                             <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
-                                <Text style={styles.cancelText}>취소</Text>
+                                <Text style={styles.cancelText}>
+                                    {language === 'ko' ? "취소" : "Cancel"}
+                                </Text>
                             </TouchableOpacity>
                         </View>
                     </TouchableWithoutFeedback>

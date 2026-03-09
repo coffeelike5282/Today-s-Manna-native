@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { View, Text, StatusBar, ActivityIndicator, TouchableOpacity, StyleSheet, Dimensions, Platform, AppState, AppStateStatus, Alert } from 'react-native';
+import { View, Text, StatusBar, ActivityIndicator, TouchableOpacity, StyleSheet, Dimensions, Platform, AppState, AppStateStatus, Alert, BackHandler } from 'react-native';
 import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from 'expo-av';
 import * as SplashScreen from 'expo-splash-screen'; // Integrated Splash Screen
 import { useFonts, Jua_400Regular } from '@expo-google-fonts/jua';
@@ -20,6 +20,7 @@ import { subscribeToAuthChanges, logout, initializeAuth } from './services/authS
 import { audioService } from './services/audioService';
 import ErrorBoundary from './components/ErrorBoundary';
 import BackgroundDecor from './components/BackgroundDecor';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -113,6 +114,17 @@ export default function App() {
         };
         const appStateSubscription = AppState.addEventListener('change', handleAppStateChange);
 
+        // 🛡️ Android Back Button Handler (Hardware Back Press)
+        const handleBackPress = () => {
+            // we use ref-like current state to avoid closure issues, but screen state is updated by setScreen
+            // In functional component useEffect with empty deps, we need to be careful.
+            // However, we can use a ref for screen or just rely on the fact that this listener
+            // will be recreated if we put 'screen' in deps.
+            // Let's use the current 'screen' values by adding it to deps or using a ref.
+            // For now, I'll add screen and user to the deps of a separate useEffect for BackHandler.
+            return false; // Default behavior
+        };
+
         return () => {
             subscription.remove();
             authUnsubscribe();
@@ -120,6 +132,34 @@ export default function App() {
             audioService.unloadSound();
         };
     }, []); // Run once on mount
+
+    // 🛡️ Android Back Button Handler (Separate Effect to track screen state)
+    useEffect(() => {
+        const backAction = () => {
+            if (screen === 'DETAIL') {
+                setScreen('VERSE');
+                return true; // Prevent default (exit app)
+            } else if (screen === 'VERSE') {
+                setScreen('START');
+                return true; // Prevent default
+            } else {
+                // screen === 'START' or login
+                Alert.alert(
+                    language === 'ko' ? "앱 종료" : "Exit App",
+                    language === 'ko' ? "정말 종료하시겠습니까?" : "Are you sure you want to exit?",
+                    [
+                        { text: language === 'ko' ? "취소" : "No", onPress: () => null, style: "cancel" },
+                        { text: language === 'ko' ? "종료" : "Yes", onPress: () => BackHandler.exitApp() }
+                    ]
+                );
+                return true; // Prevent default (immediate exit)
+            }
+        };
+
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+        return () => backHandler.remove();
+    }, [screen, language]); // Re-register when screen or language changes to have fresh state in closure
 
     // 🚀 [6차, 8차 핫픽스 종합] 화면/데이터 전환 시 오디오 심폐소생술 (Ping) 🫡
     // 화면을 그리거나 새로운 날짜 데이터를 불러올 때 CPU 집중으로 오디오가 끊기는 것을 방지!
@@ -222,6 +262,7 @@ export default function App() {
                 return (
                     <VerseScreen
                         onNext={handleNext}
+                        onBack={handleBack}
                         data={mannaData}
                         isMuted={isMuted}
                         toggleMute={toggleMute}
@@ -251,32 +292,34 @@ export default function App() {
     };
 
     return (
-        <ErrorBoundary>
-            <View style={styles.container} onLayout={onLayoutRootView}>
-                <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
-                <LinearGradient
-                    colors={['#E0F7FA', '#B2EBF2', '#E0F7FA']}
-                    style={styles.gradient}
-                >
-                    <BackgroundDecor />
-                    <View style={styles.screenContainer}>
-                        {!user ? (
-                            <LoginScreen
-                                onLoginSuccess={handleLoginSuccess}
-                                language={language}
-                                toggleLanguage={toggleLanguage}
-                            />
-                        ) : (
-                            renderContent()
-                        )}
-                        {/* 🏷️ Version Display: Bottom Right Corner */}
-                        <View style={styles.versionContainer} pointerEvents="none">
-                            <Text style={styles.versionText}>v2.0.0.1</Text>
+        <SafeAreaProvider>
+            <ErrorBoundary>
+                <View style={styles.container} onLayout={onLayoutRootView}>
+                    <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
+                    <LinearGradient
+                        colors={['#E0F7FA', '#B2EBF2', '#E0F7FA']}
+                        style={styles.gradient}
+                    >
+                        <BackgroundDecor />
+                        <View style={styles.screenContainer}>
+                            {!user ? (
+                                <LoginScreen
+                                    onLoginSuccess={handleLoginSuccess}
+                                    language={language}
+                                    toggleLanguage={toggleLanguage}
+                                />
+                            ) : (
+                                renderContent()
+                            )}
+                            {/* 🏷️ Version Display: Bottom Right Corner */}
+                            <View style={styles.versionContainer} pointerEvents="none">
+                                <Text style={styles.versionText}>v2.0.0.1</Text>
+                            </View>
                         </View>
-                    </View>
-                </LinearGradient>
-            </View>
-        </ErrorBoundary>
+                    </LinearGradient>
+                </View>
+            </ErrorBoundary>
+        </SafeAreaProvider>
     );
 }
 

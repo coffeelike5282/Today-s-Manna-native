@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Dimensions, Alert } from 'react-native';
 import { ScreenProps } from '../types/types';
-import { Sparkles, ClipboardCheck, Volume2, VolumeX, LogOut, Share2, Heart, FolderHeart, ArrowLeft, Cloud, Star } from 'lucide-react-native';
+import { Sparkles, ClipboardCheck, Volume2, VolumeX, LogOut, Share2, Heart, CalendarHeart, ArrowLeft, Cloud, Star, Settings } from 'lucide-react-native';
+import IslandHeader from './IslandHeader';
 import * as Sharing from 'expo-sharing';
 import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../services/favoritesService';
 import CalendarModal from './CalendarModal';
@@ -14,6 +15,7 @@ import ShareActionSheet from './ShareActionSheet';
 import VerseCard from './VerseCard';
 import ViewShot from 'react-native-view-shot';
 import { shareImage, saveImageToGallery, shareText } from '../services/shareService';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width, height } = Dimensions.get('window');
 
@@ -140,82 +142,31 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
         setIsCompleted(true);
     };
 
+    const insets = useSafeAreaInsets();
+
     return (
         <View style={styles.container}>
-
-
-            {/* 1. Centralized Control Island (Top Layer) */}
-            <View style={styles.islandContainer}>
-                <View style={styles.glassIsland}>
-                    {/* Back Button */}
-                    <TouchableOpacity onPress={onBack} style={styles.iconButton}>
-                        <ArrowLeft size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    {/* Logout Button - Added visibility consistency */}
-                    <TouchableOpacity
-                        onPress={() => {
-                            Alert.alert(
-                                language === 'ko' ? "로그아웃" : "Logout",
-                                language === 'ko' ? "정말 로그아웃 하시겠습니까?" : "Are you sure you want to logout?",
-                                [
-                                    { text: language === 'ko' ? "아니오" : "No", style: "cancel" },
-                                    { text: language === 'ko' ? "네" : "Yes", onPress: onLogout }
-                                ]
-                            );
-                        }}
-                        style={styles.iconButton}
-                    >
-                        <LogOut size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    <View style={styles.divider} />
-
-                    {/* Favorite Button */}
-                    <TouchableOpacity
-                        onPress={handleToggleFavorite}
-                        style={styles.iconButton}
-                        disabled={loadingFavorite}
-                    >
-                        <Heart
-                            size={20}
-                            color={favorited ? "#FF5252" : "#8D6E63"}
-                            fill={favorited ? "#FF5252" : "transparent"}
-                        />
-                    </TouchableOpacity>
-
-                    {/* Favorites List Button */}
-                    <TouchableOpacity onPress={handleOpenFavorites} style={styles.iconButton}>
-                        <FolderHeart size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    {/* Share Button */}
-                    <TouchableOpacity onPress={handleSharePress} style={styles.iconButton}>
-                        <Share2 size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    <View style={styles.divider} />
-
-                    {/* Language Toggle */}
-                    <TouchableOpacity onPress={toggleLanguage} style={styles.iconButton}>
-                        <Text style={styles.langText}>{language === 'ko' ? 'EN' : '한글'}</Text>
-                    </TouchableOpacity>
-
-                    {/* Mute Toggle */}
-                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
-                        {isMuted ? (
-                            <VolumeX color="#8D6E63" size={20} />
-                        ) : (
-                            <Volume2 color="#5D4037" size={20} />
-                        )}
-                    </TouchableOpacity>
-                </View>
-            </View>
+            {/* 1. Integrated Island Header (Dynamic) */}
+            <IslandHeader
+                user={user ?? null}
+                canGoBack={true}
+                onBack={onBack}
+                favorited={favorited}
+                loadingFavorite={loadingFavorite}
+                onToggleFavorite={handleToggleFavorite}
+                onOpenCalendar={handleOpenFavorites}
+                onShare={handleSharePress}
+                language={language}
+                toggleLanguage={toggleLanguage}
+                isMuted={isMuted ?? false}
+                toggleMute={toggleMute ?? (() => { })}
+                onLogout={onLogout ?? (() => { })}
+            />
 
             {/* Main Content (Scrollable) */}
             <ScrollView
                 style={styles.scrollContent}
-                contentContainerStyle={{ paddingBottom: 100 }}
+                contentContainerStyle={{ paddingBottom: insets.bottom + 60 }}
             >
                 {/* 2. Content Sheet (White Paper Style) */}
                 <View style={[styles.sheet, { marginTop: 120 }]}>
@@ -291,9 +242,10 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 visible={calendarVisible}
                 onClose={() => setCalendarVisible(false)}
                 onSelectDate={handleSelectDate}
-                selectedDate={getLocalDateString()}
+                selectedDate={data.date || getLocalDateString()}
                 favoriteDates={favoriteDates} // Pass favorite dates
                 resolutionDates={resolutionDates} // Pass resolution dates
+                language={language}
             />
 
             {/* Share Action Sheet */}
@@ -303,6 +255,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 onShareImage={handleShareImage}
                 onSaveImage={handleSaveImage}
                 onShareText={handleShareText}
+                language={language}
             />
 
             {/* Off-screen ViewShot for VerseCard */}
@@ -330,31 +283,6 @@ const styles = StyleSheet.create({
     floating: {
         position: 'absolute',
     },
-    islandContainer: {
-        position: 'absolute',
-        top: 50, // Safe Area Top
-        width: '100%',
-        alignItems: 'center',
-        zIndex: 50,
-    },
-    glassIsland: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 0.95)', // Increased opacity
-        borderRadius: 30,
-        paddingVertical: 0,
-        paddingHorizontal: 20,
-        height: 44, // Reduced height to match VerseScreen
-        borderWidth: 1,
-        borderColor: '#D7CCC8',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 5,
-        justifyContent: 'space-between',
-        minWidth: '92%',
-    },
     iconButton: {
         padding: 5,
         alignItems: 'center',
@@ -375,20 +303,20 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     sheet: {
-        backgroundColor: '#FFFEFA', // Match VerseCard background
-        borderRadius: 24, // Consistent radius
+        backgroundColor: '#FFFEFA',
+        borderRadius: 24,
         padding: 30,
         paddingTop: 40,
-        minHeight: height * 0.7 + 40, // Adjust height logic
-        width: '90%', // Add side margins (90% width)
-        alignSelf: 'center', // Center horizontally
+        minHeight: height * 0.7 + 40,
+        width: '90%',
+        alignSelf: 'center',
         shadowColor: '#5D4037',
         shadowOffset: { width: 0, height: 8 },
         shadowOpacity: 0.15,
         shadowRadius: 16,
         elevation: 10,
         alignItems: 'center',
-        paddingBottom: 60, // Reduced since footer is now flow-based
+        paddingBottom: 60,
     },
     headerDateBadge: {
         paddingHorizontal: 16,
@@ -400,7 +328,7 @@ const styles = StyleSheet.create({
     },
     headerDateText: {
         fontSize: 14,
-        color: '#5D4037', // Brown
+        color: '#5D4037',
         fontFamily: 'NanumGothic_700Bold',
     },
     titleSection: {
@@ -410,7 +338,7 @@ const styles = StyleSheet.create({
     verseRef: {
         fontSize: 22,
         fontFamily: 'Jua_400Regular',
-        color: '#4E342E', // Darker brown
+        color: '#4E342E',
         textAlign: 'center',
         marginBottom: 8,
     },
@@ -436,10 +364,10 @@ const styles = StyleSheet.create({
         color: '#5D4037',
     },
     sectionContent: {
-        fontSize: 18, // Increased font size
+        fontSize: 18,
         fontFamily: 'GowunDodum_400Regular',
         color: '#4E342E',
-        lineHeight: 30, // Increased line height for readability
+        lineHeight: 30,
     },
     footerQuote: {
         marginTop: 40,
@@ -451,7 +379,7 @@ const styles = StyleSheet.create({
     },
     footerText: {
         fontSize: 14,
-        fontFamily: 'NanumGothic_700Bold', // Bold
+        fontFamily: 'NanumGothic_700Bold',
         color: '#8D6E63',
         fontStyle: 'italic',
     },

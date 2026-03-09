@@ -3,8 +3,9 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image, Animated, 
 import { ScreenProps } from '../types/types';
 import { getDailyManna, getUserFavorites } from '../services/mannaService';
 import Mascot from './Mascot';
-import { Volume2, VolumeX, Cloud, Star, Heart, User as UserIcon, LogOut, FolderHeart } from 'lucide-react-native';
+import { Volume2, VolumeX, Cloud, Star, Heart, User as UserIcon, LogOut, CalendarHeart } from 'lucide-react-native';
 import CalendarModal from './CalendarModal';
+import IslandHeader from './IslandHeader';
 import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
 import ComingSoonTooltip from './ComingSoonTooltip';
 
@@ -67,62 +68,22 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
 
     return (
         <View style={styles.container}>
-            {/* 1. Centralized Control Island (Unified) */}
-            <View style={styles.islandContainer}>
-                <View style={styles.glassIsland}>
-                    {/* Left: User Info */}
-                    <View style={styles.userInfoContainer}>
-                        {avatarUrl ? (
-                            <Image source={{ uri: avatarUrl }} style={styles.userAvatar} />
-                        ) : (
-                            <View style={styles.defaultAvatar}>
-                                <UserIcon size={14} color="#8D6E63" />
-                            </View>
-                        )}
-                        <Text style={styles.islandUserName} numberOfLines={1} ellipsizeMode="tail">
-                            {userName}
-                        </Text>
-                    </View>
-
-                    {/* Logout Button */}
-                    <TouchableOpacity
-                        onPress={() => {
-                            Alert.alert(
-                                language === 'ko' ? "로그아웃" : "Logout",
-                                language === 'ko' ? "정말 로그아웃 하시겠습니까?" : "Are you sure you want to logout?",
-                                [
-                                    { text: language === 'ko' ? "아니오" : "No", style: "cancel" },
-                                    { text: language === 'ko' ? "네" : "Yes", onPress: onLogout }
-                                ]
-                            );
-                        }}
-                        style={styles.iconButton}
-                    >
-                        <LogOut size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    {/* Archive Button - Added */}
-                    <TouchableOpacity onPress={handleOpenFavorites} style={styles.iconButton}>
-                        <FolderHeart size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    <View style={styles.divider} />
-
-                    {/* Language Toggle */}
-                    <TouchableOpacity onPress={toggleLanguage} style={styles.iconButton}>
-                        <Text style={styles.langText}>{language === 'ko' ? 'EN' : '한글'}</Text>
-                    </TouchableOpacity>
-
-                    {/* Mute Toggle */}
-                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
-                        {isMuted ? (
-                            <VolumeX color="#8D6E63" size={20} />
-                        ) : (
-                            <Volume2 color="#5D4037" size={20} />
-                        )}
-                    </TouchableOpacity>
-                </View>
-            </View>
+            <IslandHeader
+                user={user ?? null}
+                language={language ?? 'ko'}
+                isMuted={isMuted ?? false}
+                toggleLanguage={toggleLanguage ?? (() => { })}
+                toggleMute={toggleMute ?? (() => { })}
+                onLogout={onLogout ?? (() => { })}
+                canGoBack={false}
+                canFavorite={false} // Added: disable favorite on start
+                canShare={false} // Added: disable share on start
+                onOpenCalendar={handleOpenFavorites}
+                onShare={() => { }}
+                favorited={false}
+                loadingFavorite={false}
+                onToggleFavorite={() => { }}
+            />
 
             {/* Main Content */}
             <View style={styles.mainContent}>
@@ -136,11 +97,13 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                     {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
                 </Text>
 
-                <View style={styles.dateBadge}>
-                    <Text style={styles.dateText}>
-                        {formatDisplayDate(data.date, language, true)}
-                    </Text>
-                </View>
+                <TouchableOpacity onPress={handleOpenFavorites} activeOpacity={0.7}>
+                    <View style={styles.dateBadge}>
+                        <Text style={styles.dateText}>
+                            {formatDisplayDate(data.date, language, true)}
+                        </Text>
+                    </View>
+                </TouchableOpacity>
 
                 <Mascot onClick={() => onNext()} style={styles.mascot} />
 
@@ -162,6 +125,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 onSelectDate={handleSelectDate}
                 selectedDate={getLocalDateString()}
                 favoriteDates={favoriteDates}
+                language={language}
             />
         </View>
     );
@@ -171,92 +135,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center', // Restore centering for balance
         backgroundColor: 'transparent',
+        paddingTop: 110, // Added padding for the header
     },
-    floating: {
-        position: 'absolute',
-        opacity: 0.6,
-    },
-    islandContainer: {
-        position: 'absolute',
-        top: 50, // Matches VerseScreen
-        width: '100%',
-        alignItems: 'center',
-        zIndex: 50,
-    },
-    glassIsland: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 0.95)', // Increased opacity to match others
-        borderRadius: 30,
-        borderWidth: 1,
-        borderColor: '#D7CCC8', // Standardized border color
-        paddingVertical: 0,
-        paddingHorizontal: 20, // Adjusted to match others
-        height: 44,
-        minWidth: '92%', // Matches others
-        justifyContent: 'space-between',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4, // Matches others
-        elevation: 5,
-    },
-    userInfoContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginRight: 'auto', // Push others to right or just standard flex
-        // Actually VerseScreen uses space-between. 
-        // We can just let flex layout handle it.
-        // We have: [User] [Logout] | [Lang] [Mute]
-        // Let's group User+Logout? or User separate?
-    },
-    userAvatar: {
-        width: 24,
-        height: 24,
-        borderRadius: 12,
-        marginRight: 8,
-    },
-    defaultAvatar: {
-        width: 24,
-        height: 24,
-        borderRadius: 12,
-        backgroundColor: 'rgba(141, 110, 99, 0.15)', // Lighter brown variant
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginRight: 8,
-        borderWidth: 1,
-        borderColor: 'rgba(141, 110, 99, 0.3)',
-    },
-    islandUserName: {
-        fontSize: 14,
-        fontFamily: 'NanumGothic_700Bold',
-        color: '#5D4037',
-        marginRight: 12,
-        maxWidth: 100, // Limit width
-    },
-    iconButton: {
-        padding: 5, // Reduced padding
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    divider: {
-        width: 1,
-        height: 16, // Reduced height
-        backgroundColor: '#D7CCC8',
-        marginHorizontal: 4,
-    },
-    langText: {
-        fontSize: 13,
-        fontFamily: 'NanumGothic_700Bold',
-        color: '#8D6E63',
-    },
-
-    // ... Main Content styles ...
     mainContent: {
         alignItems: 'center',
-        marginTop: 60, // Nudge down from the island header
+        flex: 1,
+        justifyContent: 'center',
     },
     welcomeContainer: {
         marginBottom: 15, // Slightly more space

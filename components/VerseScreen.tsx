@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Dimensions, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Dimensions, Alert, Platform } from 'react-native';
 import { ScreenProps } from '../types/types';
-import { Volume2, VolumeX, Cloud, Star, ChevronUp, LogOut, Share2, Heart, FolderHeart } from 'lucide-react-native';
+import { Volume2, VolumeX, Cloud, Star, ChevronUp, LogOut, Share2, Heart, CalendarHeart, Settings } from 'lucide-react-native';
+import IslandHeader from './IslandHeader';
 import { isFavorited, addFavorite, removeFavorite, getFavoriteDates } from '../services/favoritesService';
 import CalendarModal from './CalendarModal';
 import { formatDisplayDate, getLocalDateString } from '../utils/dateUtils';
@@ -11,10 +12,11 @@ import ShareActionSheet from './ShareActionSheet';
 import VerseCard from './VerseCard';
 import ViewShot from 'react-native-view-shot';
 import { shareImage, saveImageToGallery, shareText } from '../services/shareService';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width, height } = Dimensions.get('window');
 
-const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user }) => {
+const VerseScreen: React.FC<ScreenProps> = ({ onNext, onBack, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user }) => {
     // Check if we are in dev mode
     const isDebug = __DEV__;
 
@@ -153,8 +155,11 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
         }
     }
 
+    const insets = useSafeAreaInsets();
+
     return (
         <View style={styles.container}>
+            {/* ... keep original rest ... */}
             {/* Debug Source Indicator */}
             {isDebug && data.source && (
                 <View style={[
@@ -165,68 +170,22 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 </View>
             )}
 
-            {/* 1. Centralized Control Island (Top Layer) */}
-            <View style={styles.islandContainer}>
-                <View style={styles.glassIsland}>
-                    {/* Logout Button */}
-                    <TouchableOpacity
-                        onPress={() => {
-                            Alert.alert(
-                                language === 'ko' ? "로그아웃" : "Logout",
-                                language === 'ko' ? "정말 로그아웃 하시겠습니까?" : "Are you sure you want to logout?",
-                                [
-                                    { text: language === 'ko' ? "아니오" : "No", style: "cancel" },
-                                    { text: language === 'ko' ? "네" : "Yes", onPress: onLogout }
-                                ]
-                            );
-                        }}
-                        style={styles.iconButton}
-                    >
-                        <LogOut size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    <View style={styles.divider} />
-
-                    {/* Favorite Button */}
-                    <TouchableOpacity
-                        onPress={handleToggleFavorite}
-                        style={styles.iconButton}
-                        disabled={loadingFavorite}
-                    >
-                        <Heart
-                            size={20}
-                            color={favorited ? "#E57373" : "#8D6E63"}
-                            fill={favorited ? "#E57373" : "transparent"}
-                        />
-                    </TouchableOpacity>
-
-                    {/* Archive Button - Moved from bottom */}
-                    <TouchableOpacity onPress={handleOpenFavorites} style={styles.iconButton}>
-                        <FolderHeart size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    {/* Share Button - Open Action Sheet */}
-                    <TouchableOpacity onPress={handleSharePress} style={styles.iconButton}>
-                        <Share2 size={20} color="#8D6E63" />
-                    </TouchableOpacity>
-
-                    <View style={styles.divider} />
-
-                    {/* Language Toggle */}
-                    <TouchableOpacity onPress={toggleLanguage} style={styles.iconButton}>
-                        <Text style={styles.langText}>{language === 'ko' ? 'EN' : '한글'}</Text>
-                    </TouchableOpacity>
-
-                    {/* Mute Toggle */}
-                    <TouchableOpacity onPress={toggleMute} style={styles.iconButton}>
-                        {isMuted ? (
-                            <VolumeX color="#8D6E63" size={20} />
-                        ) : (
-                            <Volume2 color="#5D4037" size={20} />
-                        )}
-                    </TouchableOpacity>
-                </View>
-            </View>
+            {/* 1. Integrated Island Header (Dynamic) */}
+            <IslandHeader
+                user={user ?? null}
+                canGoBack={true} // Enabled to go back to StartScreen
+                onBack={onBack}
+                favorited={favorited}
+                loadingFavorite={loadingFavorite}
+                onToggleFavorite={handleToggleFavorite}
+                onOpenCalendar={handleOpenFavorites}
+                onShare={handleSharePress}
+                language={language as any}
+                toggleLanguage={toggleLanguage ?? (() => { })}
+                isMuted={isMuted ?? false}
+                toggleMute={toggleMute ?? (() => { })}
+                onLogout={onLogout ?? (() => { })}
+            />
 
             {/* Main Content (Swipeable/Scrollable) */}
             <ScrollView
@@ -239,11 +198,13 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                         {language === 'ko' ? "오늘의 만나" : "Today's Manna"}
                     </Text>
 
-                    <View style={styles.headerDateBadge}>
-                        <Text style={styles.headerDateText}>
-                            {formatDisplayDate(data.date, language, true)}
-                        </Text>
-                    </View>
+                    <TouchableOpacity onPress={handleOpenFavorites} activeOpacity={0.7}>
+                        <View style={styles.headerDateBadge}>
+                            <Text style={styles.headerDateText}>
+                                {formatDisplayDate(data.date, language, true)}
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
 
                     <View style={styles.verseCard}>
                         <Text style={styles.verseRef}>{primaryVerseRef}</Text>
@@ -263,7 +224,11 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
             </ScrollView>
 
             {/* Next Button (Bottom Center) */}
-            <TouchableOpacity onPress={() => onNext()} style={styles.nextButton} activeOpacity={0.8}>
+            <TouchableOpacity
+                onPress={() => onNext()}
+                style={[styles.nextButton, { bottom: insets.bottom + 20 }]}
+                activeOpacity={0.8}
+            >
                 <Text style={styles.nextButtonText}>
                     {language === 'ko' ? "해설 보러가기" : "Read Interpretation"}
                 </Text>
@@ -278,6 +243,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 selectedDate={data.date || getLocalDateString()}
                 favoriteDates={favoriteDates} // Pass favorite dates
                 resolutionDates={resolutionDates} // Pass resolution dates
+                language={language}
             />
 
             {/* Share Action Sheet */}
@@ -287,6 +253,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 onShareImage={handleShareImage}
                 onSaveImage={handleSaveImage}
                 onShareText={handleShareText}
+                language={language}
             />
 
             {/* Off-screen ViewShot for VerseCard */}
@@ -353,16 +320,15 @@ const styles = StyleSheet.create({
         color: '#8D6E63',
     },
     scrollContent: {
-        flexGrow: 1,
-        paddingBottom: 150,
-        paddingTop: 150, // Final adjustment: +40px as requested (110 -> 150)
+        paddingTop: 105, // Adjusted for slimmer header (40px + 55px top)
+        paddingBottom: 40,
+        // paddingHorizontal: 16 removed to match DetailScreen full width alignment
     },
     centerHeader: {
         alignItems: 'center',
         width: '100%',
-        paddingHorizontal: 20,
         paddingBottom: 20,
-        // marginTop removed
+        // paddingHorizontal removed to allow verseCard (90%) to match DetailScreen width
     },
     pageTitle: {
         fontSize: 28,
@@ -391,16 +357,17 @@ const styles = StyleSheet.create({
     verseCard: {
         backgroundColor: '#FFFEFA',
         borderRadius: 24,
-        padding: 32,
-        width: '100%',
+        padding: 30, // Matched with DetailScreen sheet padding
+        width: '90%',
+        alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: 520, // Increased further
+        minHeight: 520,
         shadowColor: '#5D4037',
         shadowOffset: { width: 0, height: 8 },
         shadowOpacity: 0.15,
         shadowRadius: 16,
-        elevation: 4,
+        elevation: 10, // Increased to match DetailScreen sheet elevation
         marginBottom: 20,
         borderWidth: 1,
         borderColor: 'rgba(141, 110, 99, 0.1)',

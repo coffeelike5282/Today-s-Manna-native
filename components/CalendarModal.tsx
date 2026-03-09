@@ -14,26 +14,38 @@ LocaleConfig.locales['ko'] = {
     dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
     today: '오늘'
 };
-LocaleConfig.defaultLocale = 'ko';
+
+// English Localization
+LocaleConfig.locales['en'] = {
+    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    today: 'Today'
+};
 
 interface CalendarModalProps {
     visible: boolean;
     onClose: () => void;
     onSelectDate: (dateString: string) => void;
     selectedDate: string;
+    language?: 'ko' | 'en';
     favoriteDates?: string[]; // Red dots
     resolutionDates?: string[]; // Green dots
 }
 
-const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelectDate, selectedDate, favoriteDates = [], resolutionDates = [] }) => {
+const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelectDate, selectedDate, language = 'ko', favoriteDates = [], resolutionDates = [] }) => {
     const [currentMonth, setCurrentMonth] = React.useState(selectedDate);
 
-    // Sync currentMonth when modal becomes visible or selectedDate changes
+    //Sync currentMonth when modal becomes visible or selectedDate changes
     React.useEffect(() => {
         if (visible) {
             setCurrentMonth(selectedDate);
         }
     }, [visible, selectedDate]);
+
+    // 언어 설정이 바뀔 때마다 즉시 로케일 적용 (렌더링 시점에 반영되도록)
+    LocaleConfig.defaultLocale = language;
 
     // Generate marked dates
     const markedDates: any = {
@@ -79,7 +91,9 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
                     {/* Header */}
                     <View style={styles.header}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Text style={styles.headerTitle}>지난 말씀 보기</Text>
+                            <Text style={styles.headerTitle}>
+                                {language === 'ko' ? "지난 말씀 보기" : "View Past Manna"}
+                            </Text>
                             <TouchableOpacity
                                 onPress={() => {
                                     // Shift view to today's month instead of selecting
@@ -87,7 +101,9 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
                                 }}
                                 style={styles.todayButton}
                             >
-                                <Text style={styles.todayButtonText}>오늘</Text>
+                                <Text style={styles.todayButtonText}>
+                                    {language === 'ko' ? "오늘" : "Today"}
+                                </Text>
                             </TouchableOpacity>
                         </View>
                         <TouchableOpacity onPress={onClose} style={styles.closeButton}>
@@ -97,7 +113,8 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ visible, onClose, onSelec
 
                     {/* Calendar */}
                     <Calendar
-                        key={visible ? `calendar-${currentMonth}` : 'hidden'}
+                        // force re-render when language or currentMonth changes to ensure locale applies
+                        key={`${language}-${visible ? `calendar-${currentMonth}` : 'hidden'}`}
                         current={currentMonth}
                         minDate={'2026-01-01'}
                         maxDate={'2026-12-31'}
