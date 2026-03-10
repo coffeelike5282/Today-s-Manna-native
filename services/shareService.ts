@@ -1,6 +1,23 @@
 import * as Sharing from 'expo-sharing';
 import * as MediaLibrary from 'expo-media-library';
+import * as FileSystem from 'expo-file-system';
 import { Share, Alert } from 'react-native';
+
+/**
+ * Generate a formatted filename for the shared image
+ * Format: TodaysManna_YYYYMMDD_HHMMSS_f.png (f = 0.1s digit)
+ */
+const getFormattedFilename = () => {
+    const now = new Date();
+    const date = now.getFullYear() +
+        String(now.getMonth() + 1).padStart(2, '0') +
+        String(now.getDate()).padStart(2, '0');
+    const time = String(now.getHours()).padStart(2, '0') +
+        String(now.getMinutes()).padStart(2, '0') +
+        String(now.getSeconds()).padStart(2, '0');
+    const ms = Math.floor(now.getMilliseconds() / 100);
+    return `TodaysManna_${date}_${time}_${ms}.png`;
+};
 
 /**
  * Handle sharing the captured image via OS share dialog (Instagram, Kakao, etc.)
@@ -13,7 +30,11 @@ export const shareImage = async (uri: string) => {
             return;
         }
 
-        await Sharing.shareAsync(uri, {
+        // Rename file before sharing for better UX
+        const newUri = FileSystem.cacheDirectory + getFormattedFilename();
+        await FileSystem.copyAsync({ from: uri, to: newUri });
+
+        await Sharing.shareAsync(newUri, {
             mimeType: 'image/png',
             dialogTitle: '말씀 카드 공유하기',
             UTI: 'public.png',
@@ -41,7 +62,11 @@ export const saveImageToGallery = async (uri: string) => {
             return;
         }
 
-        const asset = await MediaLibrary.createAssetAsync(uri);
+        // Rename file before saving for better album organization
+        const newUri = FileSystem.cacheDirectory + getFormattedFilename();
+        await FileSystem.copyAsync({ from: uri, to: newUri });
+
+        const asset = await MediaLibrary.createAssetAsync(newUri);
 
         // Use a customized album name
         await MediaLibrary.createAlbumAsync("Today's Manna", asset, false);

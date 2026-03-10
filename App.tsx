@@ -7,6 +7,7 @@ import { NanumGothic_400Regular, NanumGothic_700Bold, NanumGothic_800ExtraBold }
 import { GowunDodum_400Regular } from '@expo-google-fonts/gowun-dodum';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Linking from 'expo-linking';
+import Constants from 'expo-constants';
 
 import StartScreen from './components/StartScreen';
 import * as Localization from 'expo-localization';
@@ -24,6 +25,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
+
+const APP_VERSION = `v${Constants.expoConfig?.version || '2.0.0.3'}`;
 
 export default function App() {
     // ... (keep state)
@@ -256,7 +259,7 @@ export default function App() {
                         toggleLanguage={toggleLanguage}
                         onLogout={handleLogout}
                         user={user}
-                        version="v2.0.0.3"
+                        version={APP_VERSION}
                     />
                 );
             case 'VERSE':
@@ -271,7 +274,7 @@ export default function App() {
                         toggleLanguage={toggleLanguage}
                         onLogout={handleLogout}
                         user={user}
-                        version="v2.0.0.3"
+                        version={APP_VERSION}
                     />
                 );
             case 'DETAIL':
@@ -286,7 +289,7 @@ export default function App() {
                         toggleLanguage={toggleLanguage}
                         onLogout={handleLogout}
                         user={user}
-                        version="v2.0.0.1"
+                        version={APP_VERSION}
                     />
                 );
             default:
