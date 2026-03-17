@@ -3,7 +3,7 @@
     "name": "Today's Manna",
     "slug": "todays-manna",
     "scheme": "todaysmanna",
-    "version": "2.0.0.4",
+    "version": "2.0.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

@@ -26,7 +26,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
-const APP_VERSION = `v${Constants.expoConfig?.version || '2.0.0.4'}`;
+const APP_VERSION = `v${Constants.expoConfig?.version || '2.0.0.5'}`;
 
 export default function App() {
     // ... (keep state)
