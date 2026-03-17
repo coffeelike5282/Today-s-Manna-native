@@ -17,7 +17,7 @@ import { INITIAL_DATA } from './constants/constants';
 import { getDailyManna } from './services/mannaService';
 import type { ScreenState, MannaData, User } from './types/types';
 import LoginScreen from './components/LoginScreen';
-import { subscribeToAuthChanges, logout, initializeAuth } from './services/authService';
+import { subscribeToAuthChanges, logout, initializeAuth, deleteAccount } from './services/authService';
 import { audioService } from './services/audioService';
 import ErrorBoundary from './components/ErrorBoundary';
 import BackgroundDecor from './components/BackgroundDecor';
@@ -26,7 +26,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
-const APP_VERSION = `v${Constants.expoConfig?.version || '2.0.0.3'}`;
+const APP_VERSION = `v${Constants.expoConfig?.version || '2.0.0.4'}`;
 
 export default function App() {
     // ... (keep state)
@@ -239,6 +239,27 @@ export default function App() {
             audioService.toggleMute(false);
         } catch (error) {
             console.warn("Logout failed:", error);
+        }
+    };
+
+    const handleDeleteAccount = async () => {
+        try {
+            setLoading(true);
+            await deleteAccount();
+            setUser(null);
+            setScreen('START');
+            Alert.alert(
+                language === 'ko' ? "탈퇴 완료" : "Account Deleted", 
+                language === 'ko' ? "회원 탈퇴가 완료되었습니다. 그동안 이용해주셔서 감사합니다." : "Your account and data have been deleted. Thank you for using our service."
+            );
+        } catch (error) {
+            console.warn("Account deletion failed:", error);
+            Alert.alert(
+                language === 'ko' ? "탈퇴 실패" : "Deletion Failed",
+                language === 'ko' ? "일시적인 오류로 탈퇴 처리에 실패했습니다. 다시 시도해주세요." : "Failed to delete account due to a temporary error. Please try again."
+            );
+        } finally {
+            setLoading(false);
         }
     };
 

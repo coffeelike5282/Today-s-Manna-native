@@ -22,6 +22,7 @@ interface IslandHeaderProps {
     isMuted?: boolean;
     toggleMute?: () => void;
     onLogout?: () => void;
+    onDeleteAccount?: () => void; // Added
     canFavorite?: boolean; // Added
     canShare?: boolean; // Added
     version?: string;
@@ -41,6 +42,7 @@ const IslandHeader: React.FC<IslandHeaderProps> = ({
     isMuted,
     toggleMute,
     onLogout,
+    onDeleteAccount, // Added
     canFavorite = true, // Default to true
     canShare = true, // Default to true
     version
@@ -181,6 +183,32 @@ const IslandHeader: React.FC<IslandHeaderProps> = ({
                                 </View>
                                 <Text style={[styles.menuItemText, { color: '#E64A19' }]}>
                                     {language === 'ko' ? '로그아웃' : 'Logout'}
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+
+                        {/* Account Deletion (Smaller, at bottom) */}
+                        <View style={{ marginTop: 12, alignItems: 'flex-end', paddingRight: 10 }}>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    Alert.alert(
+                                        language === 'ko' ? "회원 탈퇴" : "Delete Account",
+                                        language === 'ko' 
+                                            ? "정말 탈퇴하시겠습니까? 저장된 즐겨찾기를 포함한 모든 데이터가 영구 삭제되며 복구할 수 없습니다." 
+                                            : "Are you sure? This will permanently delete all your data including favorites. This cannot be undone.",
+                                        [
+                                            { text: language === 'ko' ? "취소" : "Cancel", style: "cancel" },
+                                            { 
+                                                text: language === 'ko' ? "탈퇴하기" : "Delete", 
+                                                style: "destructive",
+                                                onPress: () => { setExpanded(false); onDeleteAccount?.(); } 
+                                            }
+                                        ]
+                                    );
+                                }}
+                            >
+                                <Text style={{ fontSize: 10, color: '#BDBDBD', textDecorationLine: 'underline' }}>
+                                    {language === 'ko' ? '회원 탈퇴' : 'Delete Account'}
                                 </Text>
                             </TouchableOpacity>
                         </View>

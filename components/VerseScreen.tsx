@@ -16,7 +16,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width, height } = Dimensions.get('window');
 
-const VerseScreen: React.FC<ScreenProps & { version?: string }> = ({ onNext, onBack, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user, version }) => {
+const VerseScreen: React.FC<ScreenProps & { version?: string }> = ({ onNext, onBack, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, onDeleteAccount, user, version }) => {
     // Check if we are in dev mode
     const isDebug = __DEV__;
 
@@ -185,6 +185,7 @@ const VerseScreen: React.FC<ScreenProps & { version?: string }> = ({ onNext, onB
                 isMuted={isMuted ?? false}
                 toggleMute={toggleMute ?? (() => { })}
                 onLogout={onLogout ?? (() => { })}
+                onDeleteAccount={onDeleteAccount}
                 version={version}
             />
 

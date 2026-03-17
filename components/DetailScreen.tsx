@@ -19,7 +19,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width, height } = Dimensions.get('window');
 
-const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute, onNext, language = 'ko', toggleLanguage = () => { }, onLogout, user, version }) => {
+const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute, onNext, language = 'ko', toggleLanguage = () => { }, onLogout, onDeleteAccount, user, version }) => {
 
     const [favorited, setFavorited] = useState(false);
     const [loadingFavorite, setLoadingFavorite] = useState(false);
@@ -161,6 +161,7 @@ const DetailScreen: React.FC<ScreenProps> = ({ onBack, data, isMuted, toggleMute
                 isMuted={isMuted ?? false}
                 toggleMute={toggleMute ?? (() => { })}
                 onLogout={onLogout ?? (() => { })}
+                onDeleteAccount={onDeleteAccount}
                 version={version}
             />
 

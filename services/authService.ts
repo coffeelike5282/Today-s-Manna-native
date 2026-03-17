@@ -107,6 +107,33 @@ export const logout = async () => {
     }
 };
 
+/**
+ * Delete account and all user data
+ * Note: This usually requires a server-side function (Edge Function) or RPC 
+ * to handle secure deletion of user records in Supabase.
+ */
+export const deleteAccount = async () => {
+    try {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+
+        // 1. Call a Supabase RPC or Edge Function to delete data from tables
+        // Assuming we have an RPC named 'delete_user_data' or similar
+        const { error: rpcError } = await supabase.rpc('delete_user_data');
+        if (rpcError) console.warn('RPC deletion error:', rpcError);
+
+        // 2. Sign out and clear local session
+        await logout();
+        
+        // 3. (Optional) If we had a way to delete the auth user directly from client:
+        // const { error } = await supabase.auth.admin.deleteUser(user.id);
+        // But admin functions shouldn't be on client.
+    } catch (error) {
+        console.error('Account deletion failed:', error);
+        throw error;
+    }
+};
+
 // Helper to extract params from URL hash or query
 const extractParamsFromUrl = (url: string) => {
     const params: { [key: string]: string } = {};

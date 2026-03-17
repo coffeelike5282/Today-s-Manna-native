@@ -3,7 +3,7 @@
     "name": "Today's Manna",
     "slug": "todays-manna",
     "scheme": "todaysmanna",
-    "version": "2.0.0.3",
+    "version": "2.0.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -19,7 +19,7 @@
     },
     "android": {
       "jsEngine": "jsc",
-      "versionCode": 9,
+      "versionCode": 10,
       "package": "io.github.coffeelike5282.newmanna",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",

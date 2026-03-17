@@ -34,6 +34,7 @@ export interface ScreenProps {
   language?: Language;
   toggleLanguage?: () => void;
   onLogout?: () => void;
+  onDeleteAccount?: () => void;
   user?: User | null;
   version?: string;
 }

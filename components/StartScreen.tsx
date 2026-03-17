@@ -11,7 +11,7 @@ import ComingSoonTooltip from './ComingSoonTooltip';
 
 const { width, height } = Dimensions.get('window');
 
-const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, user, version }) => {
+const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute, language = 'ko', toggleLanguage = () => { }, onLogout, onDeleteAccount, user, version }) => {
     // ... animation refs ...
     const fadeAnim = useRef(new Animated.Value(0)).current;
     const scaleAnim = useRef(new Animated.Value(0.9)).current;
@@ -75,6 +75,7 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute,
                 toggleLanguage={toggleLanguage}
                 toggleMute={toggleMute}
                 onLogout={onLogout}
+                onDeleteAccount={onDeleteAccount}
                 version={version}
                 canGoBack={false}
                 canFavorite={false} // Added: disable favorite on start
