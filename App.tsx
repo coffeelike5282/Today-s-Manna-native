@@ -279,6 +279,7 @@ export default function App() {
                         language={language}
                         toggleLanguage={toggleLanguage}
                         onLogout={handleLogout}
+                        onDeleteAccount={handleDeleteAccount}
                         user={user}
                         version={APP_VERSION}
                     />
@@ -294,6 +295,7 @@ export default function App() {
                         language={language}
                         toggleLanguage={toggleLanguage}
                         onLogout={handleLogout}
+                        onDeleteAccount={handleDeleteAccount}
                         user={user}
                         version={APP_VERSION}
                     />
@@ -309,6 +311,7 @@ export default function App() {
                         language={language}
                         toggleLanguage={toggleLanguage}
                         onLogout={handleLogout}
+                        onDeleteAccount={handleDeleteAccount}
                         user={user}
                         version={APP_VERSION}
                     />
