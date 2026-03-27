@@ -15,7 +15,6 @@ import com.facebook.react.defaults.DefaultReactNativeHost
 
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
-import com.kakao.sdk.common.KakaoSdk
 
 class MainApplication : Application(), ReactApplication {
 
@@ -47,7 +46,6 @@ class MainApplication : Application(), ReactApplication {
       ReleaseLevel.STABLE
     }
     loadReactNative(this)
-    KakaoSdk.init(this, "155f89bd18f1df80e8960328e5df1674")
     ApplicationLifecycleDispatcher.onApplicationCreate(this)
   }
 

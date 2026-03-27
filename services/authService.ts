@@ -3,7 +3,12 @@ import { createClient } from '@supabase/supabase-js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin, statusCodes, isErrorWithCode } from '@react-native-google-signin/google-signin';
 import * as WebBrowser from 'expo-web-browser';
-import { login as kakaoLogin, loginWithKakaoAccount, getProfile as getKakaoProfile } from '@react-native-seoul/kakao-login';
+import { 
+    login as kakaoLogin, 
+    logout as kakaoLogout, 
+    loginWithKakaoAccount, 
+    getProfile as getKakaoProfile 
+} from '@react-native-seoul/kakao-login';
 import type { User } from '../types/types';
 
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
@@ -72,15 +77,20 @@ const KAKAO_LOGOUT_URL = 'https://kauth.kakao.com/oauth/logout';
  */
 const logoutFromKakao = async () => {
     try {
+        // 1. SDK 수준의 로그아웃 먼저 수행 (토큰 무효화)
+        await kakaoLogout();
+        console.log('[DEBUG-AUTH] Kakao SDK Native Logout Success');
+
         const apiKey = process.env.EXPO_PUBLIC_KAKAO_REST_API_KEY;
         if (!apiKey) {
             console.warn('Kakao REST API Key is missing. Skipping browser logout.');
             return;
         }
 
-        const redirectUrl = 'https://coffeelike5282.github.io/Today-s-Manna-native/docs/logout.html';
+        const redirectUrl = 'https://coffeelike5282.github.io/Today-s-Manna-native/logout.html';
         const logoutUrl = `${KAKAO_LOGOUT_URL}?client_id=${apiKey}&logout_redirect_uri=${redirectUrl}`;
 
+        // 2. 브라우저 세션 로그아웃 (이 과정에서 KOE008이 발생한다면 콘솔 설정을 확인해야 합니다)
         await WebBrowser.openAuthSessionAsync(logoutUrl, redirectUrl);
     } catch (error) {
         console.error('Failed to logout from Kakao browser session:', error);

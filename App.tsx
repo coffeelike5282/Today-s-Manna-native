@@ -59,12 +59,6 @@ export default function App() {
     const isAudioInitialized = useRef(false); // 2중 안전 장치! 🫡
 
     useEffect(() => {
-        // [DEBUG] Monitor deep links
-        const handleDeepLink = (event: { url: string }) => {
-            console.log('[DEBUG-CRITICAL] Global Linking Event:', event.url);
-        };
-        const subscription = Linking.addEventListener('url', handleDeepLink);
-
         const loadData = async () => {
             try {
                 // Initialize Auth first to clear stale sessions

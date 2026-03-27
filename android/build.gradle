@@ -6,13 +6,16 @@ buildscript {
     mavenCentral()
   }
   ext {
-        // 🚀 박 사장님, 여기를 다시 2.1.20으로 고쳐야 전기가 들어옵니다!
+        // 🚀 박 사장님, Expo 54가 허락한 유일한 전설, 2.1.20으로 최종 승부합니다!
         kotlinVersion = "2.1.20" 
         
         //SdkVersion들도 36으로 되어있는지 슥 봐주세요!
         compileSdkVersion = 36
         targetSdkVersion = 36
         minSdkVersion = 24
+        
+        // 🚀 박 사장님, 무모한 최신병기보다는 검증된 2.19.0 정예병을 선택했습니다!
+        kakaoSdkVersion = "2.19.0"
     }
   dependencies {
     classpath 'com.google.gms:google-services:4.4.1'
@@ -27,7 +30,24 @@ allprojects {
     google()
     mavenCentral()
     maven { url 'https://www.jitpack.io' }
-    maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+  }
+
+  // 🚀 박 사장님, 전 부대의 모든 컴파일 병기(Task)를 자바 17로 전격 통일시켰습니다!
+  tasks.matching { it.name.contains("JavaCompile") }.configureEach {
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
+  }
+  
+  // 코틀린 대대의 규격을 자바와 동일하게 17로 강제 고정합니다. (툴체인 17 도입)
+  afterEvaluate {
+    if (project.extensions.findByName("kotlin") != null) {
+      project.extensions.findByName("kotlin").jvmToolchain(17)
+    }
+    tasks.matching { it.name.contains("Kotlin") }.configureEach {
+      if (it.hasProperty("kotlinOptions")) {
+        it.kotlinOptions.jvmTarget = "17"
+      }
+    }
   }
 }
 

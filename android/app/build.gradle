@@ -2,6 +2,14 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+afterEvaluate {
+    tasks.matching { it.name.contains("Kotlin") }.configureEach {
+        if (it.hasProperty("kotlinOptions")) {
+            it.kotlinOptions.jvmTarget = "17"
+        }
+    }
+}
+
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 
 /**
@@ -99,6 +107,14 @@ android {
     androidResources {
         ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~'
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 }
 
 // Apply static values from `gradle.properties` to the `android.packagingOptions`
@@ -119,9 +135,23 @@ android {
             android.packagingOptions[prop] += it
         }
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
+    // 🚀 박 사장님, 탈취한 4대 핵심 물자를 로컬 기지에서 즉시 소집합니다!
+    implementation(name: 'v2-user-2.19.0', ext: 'aar')
+    implementation(name: 'v2-auth-2.19.0', ext: 'aar')
+    implementation(name: 'v2-common-2.19.0', ext: 'aar')
+    implementation(name: 'v2-network-2.19.0', ext: 'aar')
+    implementation(name: 'v2-talk-2.19.0', ext: 'aar')
+    implementation(name: 'v2-story-2.17.0', ext: 'aar')
+
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
@@ -148,9 +178,13 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-
-    // 🚀 박 사장님, 카카오 로그인을 위해 네이티브 SDK를 직접 수혈합니다!
-    implementation "com.kakao.sdk:v2-all:2.20.1"
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+// 🚀 박 사장님, 앱 모듈에 '최후의 보급항'을 건설했습니다!
+repositories {
+    maven { 
+        url 'https://devrepo.kakao.com/nexus/content/groups/public/' 
+    }
+}

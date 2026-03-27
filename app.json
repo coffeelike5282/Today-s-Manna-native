@@ -33,7 +33,7 @@
           "action": "VIEW",
           "data": [
             {
-              "scheme": "kakao155f89bd18f1df80e8960328e5df1674",
+              "scheme": "kakaoe86cc48d710df0841edc6e3126d20601",
               "host": "oauth"
             }
           ],
@@ -62,8 +62,16 @@
       [
         "@react-native-seoul/kakao-login",
         {
-          "kakaoAppKey": "155f89bd18f1df80e8960328e5df1674",
+          "kakaoAppKey": "e86cc48d710df0841edc6e3126d20601",
           "overrideKakaoLink": true
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "2.1.20"
+          }
         }
       ]
     ]
