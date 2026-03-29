@@ -1,24 +1,34 @@
 const { getDefaultConfig } = require('expo/metro-config');
+const { mergeConfig } = require('@react-native/metro-config');
 
-/** @type {import('expo/metro-config').MetroConfig} */
-const config = getDefaultConfig(__dirname);
+/**
+ * Metro configuration
+ * https://reactnative.dev/docs/metro
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const expoConfig = getDefaultConfig(__dirname);
 
-const defaultBlockList = config.resolver.blockList || [];
-config.resolver.blockList = [
-    ...defaultBlockList,
-    /bundle_.*\.js$/,
-    /android_bundle\.js$/,
-    /.*\.backup$/,
-    /.*\.hbc$/,
-    /.*\.txt$/,
-    /.*\.log$/,
-];
-
-config.transformer.getTransformOptions = async () => ({
-    transform: {
-        experimentalImportSupport: false,
-        inlineRequires: true,
+const customConfig = {
+    resolver: {
+        blockList: [
+            ...(expoConfig.resolver.blockList || []),
+            /bundle_.*\.js$/,
+            /android_bundle\.js$/,
+            /.*\.backup$/,
+            /.*\.hbc$/,
+            /.*\.txt$/,
+            /.*\.log$/,
+        ],
     },
-});
+    transformer: {
+        getTransformOptions: async () => ({
+            transform: {
+                experimentalImportSupport: false,
+                inlineRequires: true,
+            },
+        }),
+    },
+};
 
-module.exports = config;
+module.exports = mergeConfig(expoConfig, customConfig);

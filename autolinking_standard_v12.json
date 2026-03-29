@@ -1,0 +1,117 @@
+{
+  root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native'[39m,
+  reactNativePath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native'[39m,
+  dependencies: [Object: null prototype] {
+    [32m'@react-native-async-storage/async-storage'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\@react-native-async-storage\\async-storage'[39m,
+      name: [32m'@react-native-async-storage/async-storage'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\@react-native-async-storage\\async-storage\\RNCAsyncStorage.podspec'[39m,
+          version: [32m'1.23.1'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    [32m'@react-native-google-signin/google-signin'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\@react-native-google-signin\\google-signin'[39m,
+      name: [32m'@react-native-google-signin/google-signin'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\@react-native-google-signin\\google-signin\\RNGoogleSignin.podspec'[39m,
+          version: [32m'16.1.1'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    [32m'@react-native-seoul/kakao-login'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\@react-native-seoul\\kakao-login'[39m,
+      name: [32m'@react-native-seoul/kakao-login'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\@react-native-seoul\\kakao-login\\kakao-login.podspec'[39m,
+          version: [32m'5.4.2'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    expo: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\expo'[39m,
+      name: [32m'expo'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\expo\\Expo.podspec'[39m,
+          version: [32m'54.0.33'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    [32m'react-native-reanimated'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-reanimated'[39m,
+      name: [32m'react-native-reanimated'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-reanimated\\RNReanimated.podspec'[39m,
+          version: [32m'4.1.6'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    [32m'react-native-safe-area-context'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-safe-area-context'[39m,
+      name: [32m'react-native-safe-area-context'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-safe-area-context\\react-native-safe-area-context.podspec'[39m,
+          version: [32m'5.6.2'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    [32m'react-native-svg'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-svg'[39m,
+      name: [32m'react-native-svg'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-svg\\RNSVG.podspec'[39m,
+          version: [32m'15.12.1'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    [32m'react-native-view-shot'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-view-shot'[39m,
+      name: [32m'react-native-view-shot'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-view-shot\\react-native-view-shot.podspec'[39m,
+          version: [32m'4.0.3'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    },
+    [32m'react-native-worklets'[39m: {
+      root: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-worklets'[39m,
+      name: [32m'react-native-worklets'[39m,
+      platforms: {
+        ios: {
+          podspecPath: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\node_modules\\react-native-worklets\\RNWorklets.podspec'[39m,
+          version: [32m'0.7.3'[39m,
+          configurations: [],
+          scriptPhases: []
+        }
+      }
+    }
+  },
+  project: {
+    ios: { sourceDir: [32m'E:\\AI\\Antigravity\\Today-s-Manna-native\\ios'[39m }
+  }
+}

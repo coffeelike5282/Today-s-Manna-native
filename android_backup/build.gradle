@@ -27,9 +27,23 @@ buildscript {
 
 allprojects {
   repositories {
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url(new File(["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim(), "../android"))
+    }
+    maven {
+        // Android JSC is installed from npm
+        url(new File(["node", "--print", "require.resolve('jsc-android/package.json')"].execute(null, rootDir).text.trim(), "../dist"))
+    }
+
     google()
     mavenCentral()
     maven { url 'https://www.jitpack.io' }
+    
+    /* 🚀 박 사장님, 카카오 부대의 비밀 기지(libs)를 전군에 공개합니다! */
+    flatDir {
+        dirs new File(rootProject.projectDir, '../node_modules/@react-native-seoul/kakao-login/android/libs')
+    }
   }
 
   // 🚀 박 사장님, 전 부대의 모든 컴파일 병기(Task)를 자바 17로 전격 통일시켰습니다!
