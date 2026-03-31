@@ -3,12 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GoogleSignin, statusCodes, isErrorWithCode } from '@react-native-google-signin/google-signin';
 import * as WebBrowser from 'expo-web-browser';
-import { 
-    login as kakaoLogin, 
-    logout as kakaoLogout, 
-    loginWithKakaoAccount, 
-    getProfile as getKakaoProfile 
-} from '@react-native-seoul/kakao-login';
+import * as Linking from 'expo-linking';
 import type { User } from '../types/types';
 
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
@@ -44,16 +39,28 @@ export const initializeAuth = async () => {
     try {
         const { data: { session }, error } = await supabase.auth.getSession();
         if (error) {
-            if (error.message.includes('refresh_token_not_found') || error.message.includes('Refresh Token Not Found')) {
-                console.warn('Stale session detected, clearing storage...');
-                await supabase.auth.signOut();
-                await AsyncStorage.removeItem('supabase.auth.token'); // Force clear
+            const msg = error.message.toLowerCase();
+            if (msg.includes('refresh_token_not_found') || msg.includes('refresh token not found')) {
+                console.warn('[DEBUG-AUTH] Stale session detected, forcing clear...');
+                
+                // 1. Sign out (try gracefully)
+                await supabase.auth.signOut().catch(() => {});
+                
+                // 2. Force clear all possible storage keys
+                const keys = await AsyncStorage.getAllKeys();
+                const supabaseKeys = keys.filter(key => key.includes('supabase') || key.startsWith('sb-'));
+                for (const key of supabaseKeys) {
+                    await AsyncStorage.removeItem(key);
+                }
+                
+                console.log('[DEBUG-AUTH] Storage cleared for keys:', supabaseKeys);
             }
             throw error;
         }
         return session?.user ?? null;
-    } catch (error) {
-        console.warn('Auth initialization failed:', error);
+    } catch (error: any) {
+        console.warn('[DEBUG-AUTH] Auth initialization failed:', error?.message || error);
+        // If it's a critical auth error, return null to force login
         return null;
     }
 };
@@ -77,10 +84,6 @@ const KAKAO_LOGOUT_URL = 'https://kauth.kakao.com/oauth/logout';
  */
 const logoutFromKakao = async () => {
     try {
-        // 1. SDK 수준의 로그아웃 먼저 수행 (토큰 무효화)
-        await kakaoLogout();
-        console.log('[DEBUG-AUTH] Kakao SDK Native Logout Success');
-
         const apiKey = process.env.EXPO_PUBLIC_KAKAO_REST_API_KEY;
         if (!apiKey) {
             console.warn('Kakao REST API Key is missing. Skipping browser logout.');
@@ -90,7 +93,6 @@ const logoutFromKakao = async () => {
         const redirectUrl = 'https://coffeelike5282.github.io/Today-s-Manna-native/logout.html';
         const logoutUrl = `${KAKAO_LOGOUT_URL}?client_id=${apiKey}&logout_redirect_uri=${redirectUrl}`;
 
-        // 2. 브라우저 세션 로그아웃 (이 과정에서 KOE008이 발생한다면 콘솔 설정을 확인해야 합니다)
         await WebBrowser.openAuthSessionAsync(logoutUrl, redirectUrl);
     } catch (error) {
         console.error('Failed to logout from Kakao browser session:', error);
@@ -159,86 +161,69 @@ const extractParamsFromUrl = (url: string) => {
     return params;
 };
 
+let loginInProgress = false;
+
 /**
- * Sign In with Kakao (Native SDK - Quick Login)
+ * Sign In with Kakao (Supabase OAuth via WebBrowser)
+ * 이 방식은 큰형님께서 설정하신 Supabase Redirect URI를 활용하여 무한 로딩을 해결합니다.
  */
 export const signInWithKakao = async () => {
+    if (loginInProgress) return;
+
     try {
-        const token = await kakaoLogin();
+        loginInProgress = true;
+        console.log('[DEBUG-AUTH] Starting Supabase Kakao OAuth flow...');
 
-        if (token && token.idToken) {
-            const { data, error } = await supabase.auth.signInWithIdToken({
-                provider: 'kakao',
-                token: token.idToken,
-            });
-
-            if (error) throw error;
-
-            // 추가: 카카오 최신 프로필 정보 동기화
-            try {
-                const profile = await getKakaoProfile();
-                if (profile && data.user) {
-                    await supabase.auth.updateUser({
-                        data: {
-                            full_name: profile.nickname,
-                            avatar_url: profile.profileImageUrl,
-                            picture: profile.profileImageUrl
-                        }
-                    });
-                }
-            } catch (pError) {
-                console.warn('Failed to sync Kakao profile:', pError);
+        // 1. Supabase OAuth 로그인 URL 생성
+        const { data, error } = await supabase.auth.signInWithOAuth({
+            provider: 'kakao',
+            options: {
+                redirectTo: Linking.createURL('login-callback'),
+                skipBrowserRedirect: true,
             }
+        });
 
-            return data.user;
+        if (error) throw error;
+        if (!data?.url) throw new Error('No OAuth URL returned from Supabase');
+
+        // 2. 브라우저 세션 오픈
+        const result = await WebBrowser.openAuthSessionAsync(data.url, Linking.createURL('login-callback'));
+
+        if (result.type === 'success' && result.url) {
+            console.log('[DEBUG-AUTH] Browser redirect success, parsing tokens...');
+            
+            // 3. 리다이렉트 URL에서 세션 정보(access_token, refresh_token) 추출
+            const params = extractParamsFromUrl(result.url);
+            const { access_token, refresh_token } = params;
+
+            if (access_token && refresh_token) {
+                const { data: { user }, error: authError } = await supabase.auth.setSession({
+                    access_token,
+                    refresh_token,
+                });
+
+                if (authError) throw authError;
+                console.log('[DEBUG-AUTH] Supabase session established for:', user?.id);
+                return user;
+            }
         }
-
-        throw new Error('No ID token returned from Kakao SDK');
-    } catch (error) {
-        console.error('Kakao native login failed:', error);
+        
+        return null;
+    } catch (error: any) {
+        console.error('[DEBUG-AUTH] Kakao OAuth failed:', error?.message || error);
         throw error;
+    } finally {
+        loginInProgress = false;
     }
 };
 
 /**
- * Sign In with Kakao Account (Web View - Allows different account)
+ * Sign In with Kakao Account (Supabase OAuth와 동일하게 처리)
  */
 export const signInWithKakaoAccount = async () => {
-    try {
-        const token = await loginWithKakaoAccount();
-
-        if (token && token.idToken) {
-            const { data, error } = await supabase.auth.signInWithIdToken({
-                provider: 'kakao',
-                token: token.idToken,
-            });
-
-            if (error) throw error;
-
-            // 추가: 카카오 최신 프로필 정보 동기화 (웹 로그인용)
-            try {
-                const profile = await getKakaoProfile();
-                if (profile && data.user) {
-                    await supabase.auth.updateUser({
-                        data: {
-                            full_name: profile.nickname,
-                            avatar_url: profile.profileImageUrl,
-                            picture: profile.profileImageUrl
-                        }
-                    });
-                }
-            } catch (pError) {
-                console.warn('Failed to sync Kakao profile:', pError);
-            }
-
-            return data.user;
-        }
-
-        throw new Error('No ID token returned from Kakao SDK (Web Account)');
-    } catch (error) {
-        console.error('Kakao account web login failed:', error);
-        throw error;
-    }
+    // 계정 선택 옵션이 필요할 경우 prompt 파라미터를 추가할 수 있으나, 
+    // 기본적으로 signInWithKakao와 동일하게 처리합니다.
+    return signInWithKakao();
 };
 
 /**

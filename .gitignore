@@ -39,8 +39,30 @@ yarn-error.*
 
 # generated native folders
 /ios
-/android
+
+# Android Native (Tracking build scripts but not secrets)
+android/secrets.properties
+android/app/release.keystore
+android/app/*.keystore
+android/app/*.jks
+android/local.properties
+android/.gradle/
+android/.kotlin/
+android/app/build/
+android/build/
 
 # Gradle
 .gradle/
 .gradle_cache/
+
+# Build logs and temporary files
+*.log
+android/*.txt
+ERROR_LOG.txt
+build_error_detailed.log
+build_log.txt
+build_log_utf8.txt
+expo_log.txt
+
+# Backups
+android_backup/
