@@ -336,6 +336,11 @@ export default function App() {
                                 renderContent()
                             )}
                         </View>
+                        <View style={styles.footer}>
+                            <Text style={styles.versionText}>
+                                © 2026 Antigravity. All Rights Reserved. • {APP_VERSION}
+                            </Text>
+                        </View>
                     </LinearGradient>
                 </View>
             </ErrorBoundary>
@@ -348,9 +353,17 @@ const styles = StyleSheet.create({
     loadingContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' },
     gradient: { flex: 1 },
     screenContainer: { flex: 1, overflow: 'hidden' },
+    footer: {
+        width: '100%',
+        paddingVertical: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'transparent',
+    },
     versionText: {
-        fontSize: 10,
+        fontSize: 11,
         fontFamily: 'NanumGothic_400Regular',
         color: '#5D4037',
+        opacity: 0.6,
     },
 });
