@@ -2,8 +2,9 @@ name: Supabase Keep-Alive
 
 on:
   schedule:
-    # 3일마다 1회 실행 (매 3일째 00:00 UTC / 09:00 KST)
-    - cron: '0 0 */3 * *'
+    # 12시간마다 1회 실행 (00:00 UTC, 12:00 UTC / 한국 시간 09:00, 21:00)
+    # GitHub cron 지연을 완벽히 방어하여 7일 비활성 유휴 중지(Paused) 원천 차단
+    - cron: '0 0,12 * * *'
   workflow_dispatch: # GitHub Actions 탭에서 수동 즉시 실행 가능
 
 jobs:
@@ -11,13 +12,13 @@ jobs:
     name: Keep Alive Today's Manna
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Supabase Services
+      - name: Ping Supabase Database & Services
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
           echo "============================================================"
-          echo "🚀 [Today's Manna] Supabase 핑(Keep-Alive) 요청 시작"
+          echo "🚀 [Today's Manna] Supabase 3중 핑(Keep-Alive) 요청 시작"
           echo "============================================================"
           
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
@@ -27,28 +28,34 @@ jobs:
 
           CLEAN_URL="${SUPABASE_URL%/}"
 
-          # 1. Auth 헬스체크 엔드포인트 호출 (Supabase 서버 활성화)
-          echo "1️⃣ Auth Health Check: ${CLEAN_URL}/auth/v1/health"
+          # 1️⃣ 핵심: PostgreSQL 전용 keep_alive RPC 함수 호출 (POST 요청: 캐시 방지 및 DB 코어 트랜잭션 보장)
+          echo "1️⃣ Database Core RPC Ping: POST ${CLEAN_URL}/rest/v1/rpc/keep_alive"
+          RPC_STATUS=$(curl -s -S -o /tmp/rpc_res.txt -w "%{http_code}" -X POST "${CLEAN_URL}/rest/v1/rpc/keep_alive" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+            -H "Content-Type: application/json" || echo "CURL_FAILED")
+          echo "RPC Status Code: ${RPC_STATUS}"
+          echo "RPC 응답: $(cat /tmp/rpc_res.txt 2>/dev/null || echo '(없음)')"
+
+          # 2️⃣ Database REST API 테이블 직접 조회 (보조 쿼리)
+          echo "2️⃣ Database Table Query: GET ${CLEAN_URL}/rest/v1/manna_verses?select=id&limit=1"
+          DB_STATUS=$(curl -s -S -o /tmp/db_res.txt -w "%{http_code}" -X GET "${CLEAN_URL}/rest/v1/manna_verses?select=id&limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+            -H "Cache-Control: no-cache" || echo "CURL_FAILED")
+          echo "Database Table Status Code: ${DB_STATUS}"
+
+          # 3️⃣ Auth 헬스체크 엔드포인트 호출 (게이트웨이 활성화)
+          echo "3️⃣ Auth Health Check: GET ${CLEAN_URL}/auth/v1/health"
           AUTH_STATUS=$(curl -s -S -o /tmp/auth_res.txt -w "%{http_code}" -X GET "${CLEAN_URL}/auth/v1/health" \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
             -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" || echo "CURL_FAILED")
           echo "Auth Status Code: ${AUTH_STATUS}"
 
-          # 2. Database REST API 호출 (PostgreSQL 데이터베이스 쿼리 활성화)
-          echo "2️⃣ Database Ping: ${CLEAN_URL}/rest/v1/manna_verses?select=id&limit=1"
-          DB_STATUS=$(curl -s -S -o /tmp/db_res.txt -w "%{http_code}" -X GET "${CLEAN_URL}/rest/v1/manna_verses?select=id&limit=1" \
-            -H "apikey: ${SUPABASE_ANON_KEY}" \
-            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" || echo "CURL_FAILED")
-          echo "Database Status Code: ${DB_STATUS}"
-
-          # 둘 중 하나라도 성공(200~399)하면 프로젝트 활성화 성공 판정
-          if ([ "$AUTH_STATUS" -ge 200 ] && [ "$AUTH_STATUS" -lt 400 ]) || ([ "$DB_STATUS" -ge 200 ] && [ "$DB_STATUS" -lt 400 ]); then
-            echo "✅ [Today's Manna] Supabase 프로젝트 활성 상태 유지 성공!"
+          # 실제 데이터베이스를 깨우는 RPC 또는 Table 조회가 반드시 성공해야 최종 활성 유지 판정
+          if ([ "$RPC_STATUS" -ge 200 ] && [ "$RPC_STATUS" -lt 300 ]) || ([ "$DB_STATUS" -ge 200 ] && [ "$DB_STATUS" -lt 300 ]); then
+            echo "✅ [Today's Manna] PostgreSQL 데이터베이스 활성 상태 유지 성공!"
           else
-            echo "::error::[Today's Manna] Supabase 요청 실패 (Auth: ${AUTH_STATUS}, DB: ${DB_STATUS})"
-            echo "Auth 응답:"
-            cat /tmp/auth_res.txt 2>/dev/null || echo "(없음)"
-            echo "DB 응답:"
-            cat /tmp/db_res.txt 2>/dev/null || echo "(없음)"
+            echo "::error::[Today's Manna] 데이터베이스 쿼리 실패 (RPC: ${RPC_STATUS}, DB Table: ${DB_STATUS}, Auth: ${AUTH_STATUS})"
             exit 1
           fi
